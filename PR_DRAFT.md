@@ -8,7 +8,7 @@ Add an execution-graded streaming eval and outcome-verified results
 
 ## Description
 
-I used the skill while measuring how often coding agents ship AssemblyAI integrations that run cleanly but don't do what the user asked. The existing evals grade the generated code by reading it. This PR adds one eval that is graded by running the code and reading what the API actually applied, plus the results from 120 runs.
+I used the skill while measuring how often coding agents ship AssemblyAI integrations that run cleanly but don't do what the user asked. The skill's public evals grade the generated code by reading it. This PR adds one eval that is graded by running the code and reading what the API actually applied, plus the results from 120 runs.
 
 ### What this adds
 

@@ -16,7 +16,7 @@
 
 ## Next actions, in order
 
-1. **Owner:** read `WRITEUP.md` and `PR_DRAFT.md`; choose the eval for the PR (streaming proposed, async redaction is the fully server-side alternative); open the PR yourself; then add its link to the README's third line and run `scripts/publish_public.sh` to update the public copy.
+1. **Owner:** read `WRITEUP.md` and `PR_DRAFT.md`; choose the eval for the PR (streaming proposed, async redaction is the fully server-side alternative); open the PR yourself; then put its link in the README's "Three small fixes" line and run `scripts/publish_public.sh` to update the public copy.
 2. **Owner, live, any later day:** F5 (re-check the five skill disagreements) and the dictation `language_codes: "it"` probe (decision 25). PR_DRAFT leaves the disagreements out until F5 is done.
 
 ## Open items
