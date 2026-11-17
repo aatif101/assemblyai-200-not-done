@@ -5,7 +5,7 @@
 
 ## Where we are
 
-**All three phases are run, graded and published.** The public copy is [`aatif101/assemblyai-200-not-done`](https://github.com/aatif101/assemblyai-200-not-done), a single clean commit of this repo's `main` (decision 39). The owner reviews `WRITEUP.md` and `PR_DRAFT.md` and opens the PR.
+**All three phases are run, graded and published.** The public copy is [`aatif101/assemblyai-200-not-done`](https://github.com/aatif101/assemblyai-200-not-done), a single clean commit of this repo's `main` (decision 39). The PR is open: [AssemblyAI/assemblyai-skill#37](https://github.com/AssemblyAI/assemblyai-skill/pull/37).
 
 - Lead (decision 38): asked for a current Pro model 12/40 bare, 40/40 skill, 40/40 skill + MCP. Pre-registered headline (reading: "silent failures are rare everywhere"): 2 of 120 runs ran clean without doing what was asked, 2/40 bare (5%, 95% CI 1.4-16.5%), 0/40 skill, 0/40 skill + docs MCP (0-8.8%). Difference not established. Every figure: `results/phase3/headline.md` / `headline.json`, rebuilt offline by `make grade`.
 - Failures (`results/phase3/failures.csv`): both are T1 bare, `universal-streaming-english` picked from the SDK's `SpeechModel` enum. Related, not failures: 6 T1 bare runs asked for removed `u3-rt-pro` and the server ran `universal-3-6-pro` (`t1_models.csv`); bare async runs used `universal-2` (14) or superseded `universal-3-pro` (6) (`headline.json` `async_models`).
@@ -16,7 +16,7 @@
 
 ## Next actions, in order
 
-1. **Owner:** read `WRITEUP.md` and `PR_DRAFT.md`; choose the eval for the PR (streaming proposed, async redaction is the fully server-side alternative); open the PR yourself; then put its link in the README's "Three small fixes" line and run `scripts/publish_public.sh` to update the public copy.
+1. **Owner:** send the message (in `.planning/DEMO.local.md`). PR [#37](https://github.com/AssemblyAI/assemblyai-skill/pull/37) is open (2026-11-17); answer review comments there. Its checker's live mode was run on 2026-11-17 (two apps, results as in the sweep).
 2. **Owner, live, any later day:** F5 (re-check the five skill disagreements) and the dictation `language_codes: "it"` probe (decision 25). PR_DRAFT leaves the disagreements out until F5 is done.
 
 ## Open items

@@ -10,7 +10,7 @@
 
 **What it means:** the skill works. Without it, agents learn model names from the Python SDK, which lists nine models, doesn't say which to use, and still includes a removed one. Six times the server quietly swapped the removed model for the new one. Twice the agent picked an older model, and nothing warned it.
 
-**Three small fixes:** mark the recommended model in the SDK; have the server say so when it swaps a model; keep a test that runs the code ([proposed](PR_DRAFT.md)).
+**Three small fixes:** mark the recommended model in the SDK; have the server say so when it swaps a model; keep a test that runs the code ([open PR](https://github.com/AssemblyAI/assemblyai-skill/pull/37)).
 
 **See one example:** [the agent's code](results/phase2/codex/runs/t1_stream_clinic/bare/03/workspace/transcribe.py#L36) asks for `u3-rt-pro`; [the server's reply](results/phase2/codex/runs/t1_stream_clinic/bare/03/out.json.frames.jsonl) shows it ran `universal-3-6-pro`.
 

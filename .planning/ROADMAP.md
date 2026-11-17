@@ -51,7 +51,7 @@ Question: what does the data say, and what would be useful to the team that owns
 - [x] Two charts, generated from `results/` (`make grade`).
 - [x] `WRITEUP.md`, 600 words or fewer (595, tables included).
 - [ ] `PR_DRAFT.md` for the owner; **the owner opens the PR.**
-- [x] README first three lines with real values; `make all` (PR link pending).
+- [x] README first three lines with real values; `make all`; PR link added (#37).
 - [ ] Pre-publication checks.
 - [x] One-line summary with real numbers (`STATE.md`, D4).
 
