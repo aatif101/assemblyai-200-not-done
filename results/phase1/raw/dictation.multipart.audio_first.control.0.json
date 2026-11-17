@@ -1,0 +1,47 @@
+{
+  "probe_id": "dictation.multipart.audio_first",
+  "variant": "control",
+  "rep": 0,
+  "surface": "dictation",
+  "recorded_at": "2026-11-14T21:48:59Z",
+  "skill_commit": "f584ec557e97ca9ce8151ec4d3b6e2ec8e3ade75",
+  "request": {
+    "kind": "http",
+    "method": "POST",
+    "url": "https://dictation.assemblyai.com/v1/transcribe/live",
+    "auth_scheme": "Authorization: <key>",
+    "headers": {},
+    "multipart_order": [
+      {
+        "name": "config",
+        "content_type": "application/json",
+        "json": {}
+      },
+      {
+        "name": "audio",
+        "content_type": "audio/wav",
+        "audio": "short_en.wav"
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "json": {
+      "text": "The quarterly review is scheduled for Tuesday at 10:30 in the main conference room. I was really happy with how the launch went.",
+      "words_count": 23,
+      "confidence": 0.9931027630520416,
+      "audio_duration_ms": 8591,
+      "session_id": "4f47267b-f12a-4ebc-8b66-d5d2a6fc9a00",
+      "request_time_ms": 276.6523560276255,
+      "llm_response": "The quarterly review is scheduled for Tuesday at 10:30 in the main conference room. I was really happy with how the launch went.",
+      "llm_error": null,
+      "sync_time_ms": 116.513701970689,
+      "auth_time_ms": 8.478202973492444
+    }
+  },
+  "elapsed_ms": 569,
+  "reused_control": true
+}

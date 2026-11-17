@@ -1,0 +1,54 @@
+{
+  "task": "t4_legacy_upgrade",
+  "runs": true,
+  "runs_problems": [],
+  "outcome": true,
+  "checks": {
+    "server_transcript_fetched": {
+      "pass": true,
+      "evidence": "server/transcript.json present"
+    },
+    "server_completed": {
+      "pass": true,
+      "evidence": "status='completed'"
+    },
+    "id_matches_output": {
+      "pass": true,
+      "evidence": "out.json id='55f8597c-8895-4671-81ab-2b725e05bbcb', server id='55f8597c-8895-4671-81ab-2b725e05bbcb'"
+    },
+    "is_the_fixture": {
+      "pass": true,
+      "evidence": "audio_duration=18, fixture 17.27 s"
+    },
+    "speaker_labels": {
+      "pass": true,
+      "evidence": "speaker_labels=True"
+    },
+    "names_exact_server": {
+      "pass": true,
+      "evidence": "3/3 exact: ['Quorvex', 'Zyntrix Flow', 'Talvanta']"
+    },
+    "names_exact_output": {
+      "pass": true,
+      "evidence": "3/3 exact: ['Quorvex', 'Zyntrix Flow', 'Talvanta']"
+    },
+    "summary_present": {
+      "pass": true,
+      "evidence": "summary length 223"
+    }
+  },
+  "evidence_kind": "server",
+  "info": {
+    "summary_source": "speech_understanding",
+    "keyterms_prompt": [
+      "Quorvex",
+      "Zyntrix Flow",
+      "Talvanta"
+    ],
+    "word_boost": [],
+    "prompt_set": false,
+    "speech_model_used": "universal-3-5-pro",
+    "warnings": null
+  },
+  "silent_failure": false
+}

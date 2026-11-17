@@ -1,0 +1,12 @@
+{
+  "exit_code": 0,
+  "timed_out": false,
+  "seconds": 54.2,
+  "cap_hit": null,
+  "stdout_tail": "",
+  "stderr_tail": "",
+  "files": [
+    "out.json",
+    "out.json.frames.jsonl"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "probe_id": "async.sentiment.non_english",
+  "variant": "mistake",
+  "rep": 1,
+  "surface": "async",
+  "recorded_at": "2026-11-14T21:47:40Z",
+  "skill_commit": "f584ec557e97ca9ce8151ec4d3b6e2ec8e3ade75",
+  "request": {
+    "kind": "http",
+    "method": "POST",
+    "url": "https://api.assemblyai.com/v2/transcript",
+    "auth_scheme": "Authorization: <key>",
+    "headers": {},
+    "poll": true,
+    "json": {
+      "audio_url": "https://cdn.assemblyai.com/upload/[REDACTED:upload_id]/ccb71d05-50de-44ad-a7df-51801a6a5fb2",
+      "language_code": "it",
+      "sentiment_analysis": true
+    }
+  },
+  "response": {
+    "status": 400,
+    "headers": {
+      "Content-Type": "application/json; charset=UTF-8"
+    },
+    "json": {
+      "error": "The following models are not available in this language: sentiment_analysis"
+    }
+  },
+  "elapsed_ms": 283
+}

@@ -1,0 +1,44 @@
+{
+  "turns": [
+    {
+      "speaker": "A",
+      "text": "Thank you for calling ###### ##### #########. This is #####. How can I help you today?"
+    },
+    {
+      "speaker": "B",
+      "text": "Hi #####, my name is #### #########. I need to update the billing address on my policy."
+    },
+    {
+      "speaker": "A",
+      "text": "I can help with that. To verify your identity, can you give me your Social Security number?"
+    },
+    {
+      "speaker": "B",
+      "text": "Sure, it's ###-##-####."
+    },
+    {
+      "speaker": "A",
+      "text": "Thank you. And what is the best phone number to reach you?"
+    },
+    {
+      "speaker": "B",
+      "text": "###-###-####."
+    },
+    {
+      "speaker": "A",
+      "text": "Got it. What is the new address?"
+    },
+    {
+      "speaker": "B",
+      "text": "#### ######## ######, ##########, ##########."
+    },
+    {
+      "speaker": "A",
+      "text": "Perfect. I have updated your policy. Is there anything else?"
+    },
+    {
+      "speaker": "B",
+      "text": "No, that is everything. Thanks for your help."
+    }
+  ]
+}

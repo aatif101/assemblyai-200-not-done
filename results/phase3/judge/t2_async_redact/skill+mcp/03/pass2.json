@@ -1,0 +1,64 @@
+{
+  "run": "t2_async_redact/skill+mcp/03",
+  "files": [
+    "run.sh",
+    "transcribe.py"
+  ],
+  "judge_model": "gpt-6.1-sol",
+  "judge_effort": "medium",
+  "image": "twohundred-runner",
+  "image_digest": "sha256:f0dc2399e824cfd646a31f650736c272fb5e74dfb2f1703bca49d27708fec21c",
+  "prompt_sha256_16": "b32141a418136b5b",
+  "assertions": [
+    "Enables speaker_labels",
+    "Enables redact_pii with policies that include person_name, phone_number and us_social_security_number",
+    "If a model is set, uses the speech_models list (not singular speech_model)",
+    "Checks the transcript status for errors",
+    "Authenticates with the raw API key (no Bearer prefix) or the SDK",
+    "Writes the redacted text, not an unredacted copy"
+  ],
+  "verdict": true,
+  "expectations": [
+    {
+      "text": "Enables speaker_labels",
+      "passed": true,
+      "evidence": "transcribe.py:67: \"speaker_labels\": True"
+    },
+    {
+      "text": "Enables redact_pii with policies that include person_name, phone_number and us_social_security_number",
+      "passed": true,
+      "evidence": "transcribe.py:17 defines all three policies; lines 70–71 set \"redact_pii\": True and \"redact_pii_policies\": POLICIES."
+    },
+    {
+      "text": "If a model is set, uses the speech_models list (not singular speech_model)",
+      "passed": true,
+      "evidence": "transcribe.py:65: \"speech_models\": [\"universal-3-5-pro\"]"
+    },
+    {
+      "text": "Checks the transcript status for errors",
+      "passed": true,
+      "evidence": "transcribe.py:85–89 checks status and raises TranscriptionError when status == \"error\"."
+    },
+    {
+      "text": "Authenticates with the raw API key (no Bearer prefix) or the SDK",
+      "passed": true,
+      "evidence": "transcribe.py:25: headers = {\"Authorization\": api_key}"
+    },
+    {
+      "text": "Writes the redacted text, not an unredacted copy",
+      "passed": true,
+      "evidence": "transcribe.py:70–73 requests redaction with unredacted output disabled; lines 97–105 validate redaction and reject unredacted data; lines 106–117 output text and utterances from that result."
+    }
+  ],
+  "usage": {
+    "input_tokens": 13266,
+    "cached_input_tokens": 8960,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 305,
+    "reasoning_output_tokens": 0
+  },
+  "errors": [],
+  "exit_code": 0,
+  "tool_calls": 0,
+  "stderr_tail": ""
+}

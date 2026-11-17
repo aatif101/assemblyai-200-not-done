@@ -1,0 +1,7 @@
+{
+  "id": "t1_stream_clinic",
+  "surface": "streaming",
+  "fixture": "support_call.wav",
+  "contract_timeout_s": 240,
+  "frames": true
+}

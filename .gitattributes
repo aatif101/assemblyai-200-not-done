@@ -1,0 +1,5 @@
+*.sh text eol=lf
+runner/tasks/** text eol=lf
+runner/Dockerfile text eol=lf
+*.wav binary
+*.mp3 binary

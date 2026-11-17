@@ -1,0 +1,135 @@
+{
+  "run": "t1_stream_clinic/bare/04",
+  "files": [
+    ".vendor/websockets/__init__.py",
+    ".vendor/websockets/__main__.py",
+    ".vendor/websockets/asyncio/__init__.py",
+    ".vendor/websockets/asyncio/client.py",
+    ".vendor/websockets/asyncio/connection.py",
+    ".vendor/websockets/asyncio/messages.py",
+    ".vendor/websockets/asyncio/router.py",
+    ".vendor/websockets/asyncio/server.py",
+    ".vendor/websockets/auth.py",
+    ".vendor/websockets/cli.py",
+    ".vendor/websockets/client.py",
+    ".vendor/websockets/connection.py",
+    ".vendor/websockets/datastructures.py",
+    ".vendor/websockets/exceptions.py",
+    ".vendor/websockets/extensions/__init__.py",
+    ".vendor/websockets/extensions/base.py",
+    ".vendor/websockets/extensions/permessage_deflate.py",
+    ".vendor/websockets/frames.py",
+    ".vendor/websockets/headers.py",
+    ".vendor/websockets/http11.py",
+    ".vendor/websockets/imports.py",
+    ".vendor/websockets/legacy/__init__.py",
+    ".vendor/websockets/legacy/auth.py",
+    ".vendor/websockets/legacy/client.py",
+    ".vendor/websockets/legacy/exceptions.py",
+    ".vendor/websockets/legacy/framing.py",
+    ".vendor/websockets/legacy/handshake.py",
+    ".vendor/websockets/legacy/http.py",
+    ".vendor/websockets/legacy/protocol.py",
+    ".vendor/websockets/legacy/server.py",
+    ".vendor/websockets/protocol.py",
+    ".vendor/websockets/proxy.py",
+    ".vendor/websockets/server.py",
+    ".vendor/websockets/streams.py",
+    ".vendor/websockets/sync/__init__.py",
+    ".vendor/websockets/sync/client.py",
+    ".vendor/websockets/sync/connection.py",
+    ".vendor/websockets/sync/messages.py",
+    ".vendor/websockets/sync/router.py",
+    ".vendor/websockets/sync/server.py",
+    ".vendor/websockets/sync/utils.py",
+    ".vendor/websockets/trio/__init__.py",
+    ".vendor/websockets/trio/client.py",
+    ".vendor/websockets/trio/connection.py",
+    ".vendor/websockets/trio/messages.py",
+    ".vendor/websockets/trio/router.py",
+    ".vendor/websockets/trio/server.py",
+    ".vendor/websockets/trio/utils.py",
+    ".vendor/websockets/typing.py",
+    ".vendor/websockets/uri.py",
+    ".vendor/websockets/utils.py",
+    ".vendor/websockets/version.py",
+    "run.sh",
+    "test_transcribe.py",
+    "transcribe.py"
+  ],
+  "judge_model": "gpt-6.1-sol",
+  "judge_effort": "medium",
+  "image": "twohundred-runner",
+  "image_digest": "sha256:f0dc2399e824cfd646a31f650736c272fb5e74dfb2f1703bca49d27708fec21c",
+  "prompt_sha256_16": "10e018a62279ef05",
+  "assertions": [
+    "Connects to the v3 streaming endpoint (streaming.assemblyai.com/v3/ws), not the v2 realtime URL",
+    "Sets the streaming model explicitly to universal-3-6-pro (universal-3-5-pro also acceptable); not u3-rt-pro or an older model",
+    "Enables Medical Mode with domain=medical-v1",
+    "Enables speaker_labels",
+    "Enables redact_pii, with policies that cover person names, phone numbers and SSNs (or the default, which is all)",
+    "Sends audio at real-time pace in small chunks",
+    "Sends Terminate and waits for Termination before exiting",
+    "Does not use word_boost, boost_param or v2-era parameters such as end_utterance_silence_threshold",
+    "Authenticates with the raw API key or a temporary token, not a Bearer prefix"
+  ],
+  "verdict": false,
+  "expectations": [
+    {
+      "text": "Connects to the v3 streaming endpoint (streaming.assemblyai.com/v3/ws), not the v2 realtime URL",
+      "passed": true,
+      "evidence": "transcribe.py:45 returns \"wss://streaming.assemblyai.com/v3/ws?\" + urlencode(params)."
+    },
+    {
+      "text": "Sets the streaming model explicitly to universal-3-6-pro (universal-3-5-pro also acceptable); not u3-rt-pro or an older model",
+      "passed": false,
+      "evidence": "transcribe.py:34 sets \"speech_model\": \"u3-rt-pro\"."
+    },
+    {
+      "text": "Enables Medical Mode with domain=medical-v1",
+      "passed": true,
+      "evidence": "transcribe.py:35 sets \"domain\": \"medical-v1\"."
+    },
+    {
+      "text": "Enables speaker_labels",
+      "passed": true,
+      "evidence": "transcribe.py:37 sets \"speaker_labels\": \"true\"."
+    },
+    {
+      "text": "Enables redact_pii, with policies that cover person names, phone numbers and SSNs (or the default, which is all)",
+      "passed": true,
+      "evidence": "transcribe.py:38–39 enables redact_pii and supplies PII_POLICIES; line 18 includes \"person_name\", \"phone_number\", and \"us_social_security_number\"."
+    },
+    {
+      "text": "Sends audio at real-time pace in small chunks",
+      "passed": true,
+      "evidence": "transcribe.py:122 reads 100 ms chunks; lines 127–129 advance the deadline by 0.1 seconds, sleep, then send."
+    },
+    {
+      "text": "Sends Terminate and waits for Termination before exiting",
+      "passed": true,
+      "evidence": "transcribe.py:131 sends '{\"type\":\"Terminate\"}'; lines 111–115 require Termination, and line 143 awaits the receiver."
+    },
+    {
+      "text": "Does not use word_boost, boost_param or v2-era parameters such as end_utterance_silence_threshold",
+      "passed": true,
+      "evidence": "transcribe.py:31–44 defines the connection parameters without word_boost, boost_param, or end_utterance_silence_threshold."
+    },
+    {
+      "text": "Authenticates with the raw API key or a temporary token, not a Bearer prefix",
+      "passed": true,
+      "evidence": "transcribe.py:86 passes additional_headers={\"Authorization\": key}; line 174 reads key from ASSEMBLYAI_API_KEY."
+    }
+  ],
+  "usage": {
+    "input_tokens": 215173,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 648,
+    "reasoning_output_tokens": 38
+  },
+  "errors": [],
+  "exit_code": 0,
+  "tool_calls": 0,
+  "stderr_tail": ""
+}

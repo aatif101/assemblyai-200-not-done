@@ -1,0 +1,70 @@
+{
+  "validated_at": "2026-11-14T21:46:04Z",
+  "backend": "espeak",
+  "checks": [
+    {
+      "fixture": "support_call",
+      "check": "SSN is audible to the API (no redaction)",
+      "passed": true,
+      "required": true,
+      "detail": "digits found: True"
+    },
+    {
+      "fixture": "support_call",
+      "check": "two speakers separated",
+      "passed": true,
+      "required": true,
+      "detail": "speakers=['A', 'B']"
+    },
+    {
+      "fixture": "support_call",
+      "check": "SSN absent when redaction is on",
+      "passed": true,
+      "required": true,
+      "detail": "status=completed, SSN digits present=False"
+    },
+    {
+      "fixture": "support_call",
+      "check": "phone number absent when redaction is on",
+      "passed": true,
+      "required": false,
+      "detail": "phone digits present=False"
+    },
+    {
+      "fixture": "product_memo",
+      "check": "product names spelled exactly, with keyterms_prompt",
+      "passed": true,
+      "required": true,
+      "detail": "3/3 (Quorvex, Zyntrix Flow, Talvanta)"
+    },
+    {
+      "fixture": "product_memo",
+      "check": "product names spelled exactly, with no options",
+      "passed": false,
+      "required": false,
+      "detail": "0/3 (none)"
+    },
+    {
+      "fixture": "verbatim_memo",
+      "check": "fillers kept with disfluencies=true",
+      "passed": false,
+      "required": true,
+      "detail": "5 fillers with disfluencies=true, 5 with no options, 5 spoken"
+    },
+    {
+      "fixture": "short_it",
+      "check": "Italian content transcribed",
+      "passed": true,
+      "required": true,
+      "detail": "contains ['paziente', 'febbre']"
+    },
+    {
+      "fixture": "short_en",
+      "check": "English content transcribed",
+      "passed": true,
+      "required": true,
+      "detail": "contains ['quarterly', 'Tuesday']"
+    }
+  ],
+  "passed": false
+}

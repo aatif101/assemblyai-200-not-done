@@ -1,0 +1,84 @@
+{
+  "run": "t1_stream_clinic/bare/01",
+  "files": [
+    "requirements.txt",
+    "run.sh",
+    "test_transcribe.py",
+    "transcribe.py"
+  ],
+  "judge_model": "gpt-6.1-sol",
+  "judge_effort": "medium",
+  "image": "twohundred-runner",
+  "image_digest": "sha256:f0dc2399e824cfd646a31f650736c272fb5e74dfb2f1703bca49d27708fec21c",
+  "prompt_sha256_16": "676a92992ce2143d",
+  "assertions": [
+    "Connects to the v3 streaming endpoint (streaming.assemblyai.com/v3/ws), not the v2 realtime URL",
+    "Sets the streaming model explicitly to universal-3-6-pro (universal-3-5-pro also acceptable); not u3-rt-pro or an older model",
+    "Enables Medical Mode with domain=medical-v1",
+    "Enables speaker_labels",
+    "Enables redact_pii, with policies that cover person names, phone numbers and SSNs (or the default, which is all)",
+    "Sends audio at real-time pace in small chunks",
+    "Sends Terminate and waits for Termination before exiting",
+    "Does not use word_boost, boost_param or v2-era parameters such as end_utterance_silence_threshold",
+    "Authenticates with the raw API key or a temporary token, not a Bearer prefix"
+  ],
+  "verdict": false,
+  "expectations": [
+    {
+      "text": "Connects to the v3 streaming endpoint (streaming.assemblyai.com/v3/ws), not the v2 realtime URL",
+      "passed": true,
+      "evidence": "transcribe.py:79: uri = \"wss://streaming.assemblyai.com/v3/ws?\" + urlencode(parameters())"
+    },
+    {
+      "text": "Sets the streaming model explicitly to universal-3-6-pro (universal-3-5-pro also acceptable); not u3-rt-pro or an older model",
+      "passed": false,
+      "evidence": "transcribe.py:36 sets \"speech_model\": \"universal-streaming-english\", rather than either accepted model."
+    },
+    {
+      "text": "Enables Medical Mode with domain=medical-v1",
+      "passed": true,
+      "evidence": "transcribe.py:36: \"domain\": \"medical-v1\""
+    },
+    {
+      "text": "Enables speaker_labels",
+      "passed": true,
+      "evidence": "transcribe.py:37: \"speaker_labels\": \"true\""
+    },
+    {
+      "text": "Enables redact_pii, with policies that cover person names, phone numbers and SSNs (or the default, which is all)",
+      "passed": true,
+      "evidence": "transcribe.py:38–39 enables redact_pii and supplies PII_POLICIES; line 18 includes \"person_name\", \"phone_number\", and \"us_social_security_number\"."
+    },
+    {
+      "text": "Sends audio at real-time pace in small chunks",
+      "passed": true,
+      "evidence": "transcribe.py:120 reads 1600 frames per chunk (100 ms at 16 kHz); lines 125–127 send each chunk and sleep against a deadline advanced by its duration."
+    },
+    {
+      "text": "Sends Terminate and waits for Termination before exiting",
+      "passed": true,
+      "evidence": "transcribe.py:130–131 sends {\"type\": \"Terminate\"} and awaits terminated.wait(); lines 107–108 set that event upon receiving Termination."
+    },
+    {
+      "text": "Does not use word_boost, boost_param or v2-era parameters such as end_utterance_silence_threshold",
+      "passed": true,
+      "evidence": "transcribe.py:33–41 lists the connection parameters and contains none of the prohibited parameters."
+    },
+    {
+      "text": "Authenticates with the raw API key or a temporary token, not a Bearer prefix",
+      "passed": true,
+      "evidence": "transcribe.py:159 reads ASSEMBLYAI_API_KEY; line 80 passes it directly as additional_headers={\"Authorization\": key}."
+    }
+  ],
+  "usage": {
+    "input_tokens": 15453,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 514,
+    "reasoning_output_tokens": 0
+  },
+  "errors": [],
+  "exit_code": 0,
+  "tool_calls": 0,
+  "stderr_tail": ""
+}

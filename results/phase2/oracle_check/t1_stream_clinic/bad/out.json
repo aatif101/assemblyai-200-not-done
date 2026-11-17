@@ -1,0 +1,64 @@
+{
+  "turns": [
+    {
+      "speaker": null,
+      "text": "Thank you for calling ###### ##### #########. This is #####. How can I help you today?"
+    },
+    {
+      "speaker": null,
+      "text": "Hi, #####."
+    },
+    {
+      "speaker": null,
+      "text": "My name is #### #########. I need to update the billing address on my policy."
+    },
+    {
+      "speaker": null,
+      "text": "I can help with that."
+    },
+    {
+      "speaker": null,
+      "text": "To verify your identity, can you give me your Social Security number?"
+    },
+    {
+      "speaker": null,
+      "text": "Sure."
+    },
+    {
+      "speaker": null,
+      "text": "It's ### and big time."
+    },
+    {
+      "speaker": null,
+      "text": "#, #, #, #. Thank you."
+    },
+    {
+      "speaker": null,
+      "text": "And what is the best phone number to reach you?"
+    },
+    {
+      "speaker": null,
+      "text": "###-###-####. Got it."
+    },
+    {
+      "speaker": null,
+      "text": "What is the number, ma'am?"
+    },
+    {
+      "speaker": null,
+      "text": "#### ######## ######, ##########, ##########. Perfect."
+    },
+    {
+      "speaker": null,
+      "text": "I am updating your policy. Is there anything else?"
+    },
+    {
+      "speaker": null,
+      "text": "No, that is everything."
+    },
+    {
+      "speaker": null,
+      "text": "Thanks for your help."
+    }
+  ]
+}

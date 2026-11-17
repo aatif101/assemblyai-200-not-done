@@ -1,0 +1,30 @@
+{
+  "probe_id": "async.speech_model.singular",
+  "variant": "mistake",
+  "rep": 0,
+  "surface": "async",
+  "recorded_at": "2026-11-14T21:46:15Z",
+  "skill_commit": "f584ec557e97ca9ce8151ec4d3b6e2ec8e3ade75",
+  "request": {
+    "kind": "http",
+    "method": "POST",
+    "url": "https://api.assemblyai.com/v2/transcript",
+    "auth_scheme": "Authorization: <key>",
+    "headers": {},
+    "poll": true,
+    "json": {
+      "audio_url": "https://cdn.assemblyai.com/upload/[REDACTED:upload_id]/51511605-ad6d-4b46-8c68-885df3a6f2b7",
+      "speech_model": "universal-3-5-pro"
+    }
+  },
+  "response": {
+    "status": 400,
+    "headers": {
+      "Content-Type": "application/json; charset=UTF-8"
+    },
+    "json": {
+      "error": "The speech_model parameter is deprecated. Use speech_models: [\"universal-3-5-pro\", \"universal-2\"] for the best accuracy, performance, and language coverage. See documentation: https://www.assemblyai.com/docs/pre-recorded-audio/select-the-speech-model"
+    }
+  },
+  "elapsed_ms": 286
+}

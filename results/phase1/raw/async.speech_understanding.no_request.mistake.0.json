@@ -1,0 +1,36 @@
+{
+  "probe_id": "async.speech_understanding.no_request",
+  "variant": "mistake",
+  "rep": 0,
+  "surface": "async",
+  "recorded_at": "2026-11-14T21:47:16Z",
+  "skill_commit": "f584ec557e97ca9ce8151ec4d3b6e2ec8e3ade75",
+  "request": {
+    "kind": "http",
+    "method": "POST",
+    "url": "https://api.assemblyai.com/v2/transcript",
+    "auth_scheme": "Authorization: <key>",
+    "headers": {},
+    "poll": true,
+    "json": {
+      "audio_url": "https://cdn.assemblyai.com/upload/[REDACTED:upload_id]/51511605-ad6d-4b46-8c68-885df3a6f2b7",
+      "speech_understanding": {
+        "translation": {
+          "target_languages": [
+            "es"
+          ]
+        }
+      }
+    }
+  },
+  "response": {
+    "status": 400,
+    "headers": {
+      "Content-Type": "application/json; charset=UTF-8"
+    },
+    "json": {
+      "error": "speech_understanding.request field not provided"
+    }
+  },
+  "elapsed_ms": 480
+}

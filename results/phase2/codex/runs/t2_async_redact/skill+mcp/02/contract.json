@@ -1,0 +1,11 @@
+{
+  "exit_code": 0,
+  "timed_out": false,
+  "seconds": 6.4,
+  "cap_hit": null,
+  "stdout_tail": "",
+  "stderr_tail": "Transcript ID: a817963c-aec5-4cec-88ef-910d1c3a79b9\n",
+  "files": [
+    "out.json"
+  ]
+}

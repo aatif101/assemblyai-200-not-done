@@ -1,0 +1,41 @@
+{
+  "probe_id": "dictation.config.unknown_field",
+  "variant": "mistake",
+  "rep": 0,
+  "surface": "dictation",
+  "recorded_at": "2026-11-14T21:44:31Z",
+  "skill_commit": "f584ec557e97ca9ce8151ec4d3b6e2ec8e3ade75",
+  "request": {
+    "kind": "http",
+    "method": "POST",
+    "url": "https://dictation.assemblyai.com/v1/transcribe/live",
+    "auth_scheme": "Authorization: <key>",
+    "headers": {},
+    "multipart_order": [
+      {
+        "name": "config",
+        "content_type": "application/json",
+        "json": {
+          "redact_pii": true
+        }
+      },
+      {
+        "name": "audio",
+        "content_type": "audio/wav",
+        "audio": "short_en.wav"
+      }
+    ]
+  },
+  "response": {
+    "status": 400,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "json": {
+      "status": 400,
+      "title": "Bad Request",
+      "detail": "invalid config part: redact_pii: Extra inputs are not permitted"
+    }
+  },
+  "elapsed_ms": 415
+}

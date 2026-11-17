@@ -1,0 +1,69 @@
+{
+  "agent": {
+    "result_event": true,
+    "subtype": "success",
+    "num_turns": 9,
+    "usage": {
+      "input_tokens": 213294,
+      "cached_input_tokens": 184320,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 2320,
+      "reasoning_output_tokens": 63
+    },
+    "total_cost_usd": null,
+    "mcp_calls": 1,
+    "skill_read": true,
+    "errors": [],
+    "cap_hit": null,
+    "exit_code": 0,
+    "seconds": 66.3,
+    "stderr_tail": "WARNING: failed to clean up stale arg0 temp dirs: Permission denied (os error 13)\n"
+  },
+  "agent_cli": "codex",
+  "task": "t3_british",
+  "condition": "skill+mcp",
+  "index": 0,
+  "kind": "pilot",
+  "model": "gpt-6.1-sol",
+  "reasoning_effort": "medium",
+  "max_turns": 40,
+  "turn_rule": "completed tool items (command, file change, MCP call)",
+  "max_agent_seconds": 1200,
+  "skill_commit": "f584ec557e97ca9ce8151ec4d3b6e2ec8e3ade75",
+  "skill_install": "assemblyai/ + AGENTS.md pointer (assemblyai-skill README, Codex)",
+  "mcp_url": "http://host.docker.internal:8765/docs/mcp",
+  "disabled_features": [
+    "apps",
+    "plugins",
+    "remote_plugin",
+    "browser_use",
+    "browser_use_external",
+    "computer_use",
+    "image_generation"
+  ],
+  "web_search": "disabled",
+  "blocked_hosts": [
+    "www.assemblyai.com",
+    "assemblyai.com",
+    "github.com",
+    "www.github.com",
+    "raw.githubusercontent.com",
+    "api.github.com",
+    "codeload.github.com",
+    "objects.githubusercontent.com",
+    "gist.github.com",
+    "gist.githubusercontent.com"
+  ],
+  "credential_kind": [
+    "codex auth.json (ChatGPT plan)"
+  ],
+  "image": "twohundred-runner",
+  "image_digest": "sha256:dc5faf53b082b4248344baf9f2df03ebd0121c35c9f8e00222a6dc8293040be2",
+  "started_at": "2026-11-15T22:30:46Z",
+  "codex_version": "codex-cli 0.169.0",
+  "workspace_skipped": [
+    "sample.wav"
+  ],
+  "ended_at": "2026-11-15T22:32:00Z",
+  "complete": true
+}

@@ -1,0 +1,43 @@
+{
+  "probe_id": "tts.voice_param",
+  "variant": "mistake",
+  "rep": 1,
+  "surface": "tts",
+  "recorded_at": "2026-11-14T21:44:33Z",
+  "skill_commit": "f584ec557e97ca9ce8151ec4d3b6e2ec8e3ade75",
+  "request": {
+    "kind": "http",
+    "method": "POST",
+    "url": "https://tts.us.assemblyai.com/v1/speech",
+    "auth_scheme": "Authorization: <key>",
+    "headers": {},
+    "json": {
+      "text": "Testing, one two three.",
+      "voice": "aai-jane",
+      "stream": false
+    }
+  },
+  "response": {
+    "status": 422,
+    "headers": {
+      "Content-Type": "application/json",
+      "x-tts-region": "us-east-1"
+    },
+    "json": {
+      "code": "invalid_parameter",
+      "message": "voice: voice is retired: name the voice with voice_id, for example voice_id=aai-jane",
+      "param": "voice",
+      "request_id": "f3b70327-db59-4081-9748-c5f298e617a4",
+      "errors": [
+        {
+          "message": "voice is retired: name the voice with voice_id, for example voice_id=aai-jane",
+          "param": "voice"
+        }
+      ],
+      "retryable": false,
+      "retry_after_seconds": null,
+      "error": "voice: voice is retired: name the voice with voice_id, for example voice_id=aai-jane"
+    }
+  },
+  "elapsed_ms": 261
+}

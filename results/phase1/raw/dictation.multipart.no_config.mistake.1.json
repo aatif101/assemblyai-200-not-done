@@ -1,0 +1,33 @@
+{
+  "probe_id": "dictation.multipart.no_config",
+  "variant": "mistake",
+  "rep": 1,
+  "surface": "dictation",
+  "recorded_at": "2026-11-14T21:49:00Z",
+  "skill_commit": "f584ec557e97ca9ce8151ec4d3b6e2ec8e3ade75",
+  "request": {
+    "kind": "http",
+    "method": "POST",
+    "url": "https://dictation.assemblyai.com/v1/transcribe/live",
+    "auth_scheme": "Authorization: <key>",
+    "headers": {},
+    "multipart_order": [
+      {
+        "name": "audio",
+        "content_type": "audio/wav",
+        "audio": "short_en.wav"
+      }
+    ]
+  },
+  "response": {
+    "status": 400,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "json": {
+      "error": "the `config` part must be sent before the `audio` part on the streaming endpoint, because the upstream call cannot be opened without it",
+      "error_code": "bad_request"
+    }
+  },
+  "elapsed_ms": 356
+}

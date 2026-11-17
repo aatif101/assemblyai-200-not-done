@@ -1,0 +1,30 @@
+{
+  "task": "t2_async_redact",
+  "style": "AssemblyAI assemblyai-skill evals.json assertions",
+  "assertions": [
+    {
+      "text": "Enables speaker_labels",
+      "type": "semantic"
+    },
+    {
+      "text": "Enables redact_pii with policies that include person_name, phone_number and us_social_security_number",
+      "type": "semantic"
+    },
+    {
+      "text": "If a model is set, uses the speech_models list (not singular speech_model)",
+      "type": "semantic"
+    },
+    {
+      "text": "Checks the transcript status for errors",
+      "type": "semantic"
+    },
+    {
+      "text": "Authenticates with the raw API key (no Bearer prefix) or the SDK",
+      "type": "semantic"
+    },
+    {
+      "text": "Writes the redacted text, not an unredacted copy",
+      "type": "semantic"
+    }
+  ]
+}

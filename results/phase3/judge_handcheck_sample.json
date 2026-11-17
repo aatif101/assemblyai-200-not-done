@@ -1,0 +1,26 @@
+{
+  "seed": 20261116,
+  "rule": "one random run per task x condition cell, then 8 more at random from the rest",
+  "runs": [
+    "t1_stream_clinic/bare/03",
+    "t1_stream_clinic/skill+mcp/06",
+    "t1_stream_clinic/skill/03",
+    "t2_async_redact/bare/04",
+    "t2_async_redact/bare/05",
+    "t2_async_redact/skill+mcp/05",
+    "t2_async_redact/skill/01",
+    "t2_async_redact/skill/08",
+    "t3_british/bare/01",
+    "t3_british/bare/09",
+    "t3_british/skill+mcp/01",
+    "t3_british/skill+mcp/03",
+    "t3_british/skill+mcp/08",
+    "t3_british/skill/00",
+    "t3_british/skill/01",
+    "t3_british/skill/02",
+    "t3_british/skill/09",
+    "t4_legacy_upgrade/bare/03",
+    "t4_legacy_upgrade/skill+mcp/08",
+    "t4_legacy_upgrade/skill/00"
+  ]
+}

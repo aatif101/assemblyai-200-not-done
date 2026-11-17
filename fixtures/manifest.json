@@ -1,0 +1,51 @@
+{
+  "backend": "espeak",
+  "sample_rate": 16000,
+  "files": {
+    "product_memo.wav": {
+      "script": "fixtures/scripts/product_memo.json",
+      "seconds": 17.27,
+      "voices": {
+        "A": "en-us+f3"
+      },
+      "sha256": "b51b31db186626d7881a8b4d8036f403c7747942d5187a77146c999ea33064d3"
+    },
+    "short_en.wav": {
+      "script": "fixtures/scripts/short_en.json",
+      "seconds": 8.59,
+      "voices": {
+        "A": "en-us+f3"
+      },
+      "sha256": "75d6ee79deac049bfaf824b5bc3c02764a220efe3e3dde387b495affc7d5119b"
+    },
+    "short_it.wav": {
+      "script": "fixtures/scripts/short_it.json",
+      "seconds": 13.66,
+      "voices": {
+        "A": "it+f3"
+      },
+      "sha256": "2b317cab49295f0ef4e869c8021c1d23aae3d722218365f46a8232f6923ba690"
+    },
+    "support_call.wav": {
+      "script": "fixtures/scripts/support_call.json",
+      "seconds": 50.71,
+      "voices": {
+        "A": "en-us+f3",
+        "B": "en-us+m3"
+      },
+      "sha256": "f4ad8a19cb64d34ccb05b5b1ebcc620620837cf63f7b7c3546b537fd5580c375"
+    },
+    "verbatim_memo.wav": {
+      "script": "fixtures/scripts/verbatim_memo.json",
+      "seconds": 12.11,
+      "voices": {
+        "A": "en-us+f3"
+      },
+      "sha256": "e4fd6eaa72b9d5522043a31dc888c0d28313d6e142214e419e1ede04da4dc113"
+    },
+    "short_en.mp3": {
+      "derived_from": "short_en.wav",
+      "sha256": "31c1167aa34c73d1fa32d8a8ae4f7fe052e7f52752a6f46edd4700a1135d7a45"
+    }
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "probe_id": "stream.pacing.fast",
+  "variant": "mistake",
+  "rep": 0,
+  "surface": "streaming",
+  "recorded_at": "2026-11-14T21:54:45Z",
+  "skill_commit": "f584ec557e97ca9ce8151ec4d3b6e2ec8e3ade75",
+  "request": {
+    "kind": "ws",
+    "method": "GET (websocket upgrade)",
+    "url": "wss://streaming.assemblyai.com/v3/ws",
+    "auth_scheme": "Authorization: <key>",
+    "headers": {},
+    "query": {
+      "sample_rate": "16000",
+      "encoding": "pcm_s16le",
+      "speech_model": "universal-3-6-pro"
+    },
+    "audio": "support_call.wav",
+    "send_seconds": 12.0,
+    "pace": 0.0
+  },
+  "ws": {
+    "messages": [
+      {
+        "type": "Begin",
+        "id": "831e0420-e8ba-435f-9a5a-e64d7a85f718",
+        "expires_at": 1794704082,
+        "configuration": {
+          "model": "universal-3-6-pro",
+          "mode": "balanced",
+          "api_version": "2025-05-12",
+          "speaker_labels": false,
+          "redact_pii": false,
+          "filter_profanity": false,
+          "domain": null,
+          "voice_focus": null
+        }
+      },
+      {
+        "type": "SpeechStarted",
+        "timestamp": 0,
+        "confidence": 0.599428
+      },
+      {
+        "turn_order": 0,
+        "turn_is_formatted": true,
+        "end_of_turn": false,
+        "transcript": "and you",
+        "end_of_turn_confidence": 0.0,
+        "utterance": "",
+        "type": "Turn"
+      },
+      {
+        "turn_order": 0,
+        "turn_is_formatted": true,
+        "end_of_turn": true,
+        "transcript": "Thank you for calling Harbor Ridge Insurance. This is Priya. How can I help you today? Hi Priya, my name is Dana Whitfield. I need to update the billing address on my policy.",
+        "end_of_turn_confidence": 1.0,
+        "utterance": "Thank you for calling Harbor Ridge Insurance. This is Priya. How can I help you today? Hi Priya, my name is Dana Whitfield. I need to update the billing address on my policy.",
+        "type": "Turn"
+      },
+      {
+        "type": "Termination",
+        "audio_duration_seconds": 12,
+        "session_duration_seconds": 2
+      }
+    ],
+    "handshake_status": 101,
+    "begin": {
+      "type": "Begin",
+      "id": "831e0420-e8ba-435f-9a5a-e64d7a85f718",
+      "expires_at": 1794704082,
+      "configuration": {
+        "model": "universal-3-6-pro",
+        "mode": "balanced",
+        "api_version": "2025-05-12",
+        "speaker_labels": false,
+        "redact_pii": false,
+        "filter_profanity": false,
+        "domain": null,
+        "voice_focus": null
+      }
+    },
+    "audio_seconds_sent": 12.1,
+    "closed_by_server": true,
+    "server_close_code": 1000,
+    "server_close_reason": "Session Ended",
+    "final_close_code": 1000,
+    "final_close_reason": "Session Ended"
+  },
+  "elapsed_ms": 3432
+}

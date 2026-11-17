@@ -1,0 +1,30 @@
+{
+  "probe_id": "async.language_code.hyphen",
+  "variant": "mistake",
+  "rep": 1,
+  "surface": "async",
+  "recorded_at": "2026-11-14T21:48:00Z",
+  "skill_commit": "f584ec557e97ca9ce8151ec4d3b6e2ec8e3ade75",
+  "request": {
+    "kind": "http",
+    "method": "POST",
+    "url": "https://api.assemblyai.com/v2/transcript",
+    "auth_scheme": "Authorization: <key>",
+    "headers": {},
+    "poll": true,
+    "json": {
+      "audio_url": "https://cdn.assemblyai.com/upload/[REDACTED:upload_id]/51511605-ad6d-4b46-8c68-885df3a6f2b7",
+      "language_code": "en-US"
+    }
+  },
+  "response": {
+    "status": 400,
+    "headers": {
+      "Content-Type": "application/json; charset=UTF-8"
+    },
+    "json": {
+      "error": "Language code en-US is not supported. See https://www.assemblyai.com/docs/concepts/supported-languages."
+    }
+  },
+  "elapsed_ms": 275
+}

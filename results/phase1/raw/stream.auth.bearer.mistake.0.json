@@ -1,0 +1,39 @@
+{
+  "probe_id": "stream.auth.bearer",
+  "variant": "mistake",
+  "rep": 0,
+  "surface": "streaming",
+  "recorded_at": "2026-11-14T21:48:31Z",
+  "skill_commit": "f584ec557e97ca9ce8151ec4d3b6e2ec8e3ade75",
+  "request": {
+    "kind": "ws",
+    "method": "GET (websocket upgrade)",
+    "url": "wss://streaming.assemblyai.com/v3/ws",
+    "auth_scheme": "Authorization: Bearer <key>",
+    "headers": {},
+    "query": {
+      "sample_rate": "16000",
+      "encoding": "pcm_s16le",
+      "speech_model": "universal-3-6-pro"
+    },
+    "audio": "short_en.wav",
+    "send_seconds": 3.0,
+    "pace": 1.0
+  },
+  "ws": {
+    "messages": [
+      {
+        "type": "Error",
+        "error_code": 1008,
+        "error": "Unauthorized Connection: Invalid API key"
+      }
+    ],
+    "handshake_status": 101,
+    "closed_by_server": true,
+    "server_close_code": 1008,
+    "server_close_reason": "See Error message for details",
+    "final_close_code": 1008,
+    "final_close_reason": "See Error message for details"
+  },
+  "elapsed_ms": 155
+}

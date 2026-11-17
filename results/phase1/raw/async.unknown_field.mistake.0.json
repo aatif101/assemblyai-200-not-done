@@ -1,0 +1,30 @@
+{
+  "probe_id": "async.unknown_field",
+  "variant": "mistake",
+  "rep": 0,
+  "surface": "async",
+  "recorded_at": "2026-11-14T21:43:14Z",
+  "skill_commit": "f584ec557e97ca9ce8151ec4d3b6e2ec8e3ade75",
+  "request": {
+    "kind": "http",
+    "method": "POST",
+    "url": "https://api.assemblyai.com/v2/transcript",
+    "auth_scheme": "Authorization: <key>",
+    "headers": {},
+    "poll": true,
+    "json": {
+      "audio_url": "https://cdn.assemblyai.com/upload/[REDACTED:upload_id]/57cc04cb-9a98-4b60-b5a1-05b5af5f390c",
+      "zz_not_a_real_param": true
+    }
+  },
+  "response": {
+    "status": 400,
+    "headers": {
+      "Content-Type": "application/json; charset=UTF-8"
+    },
+    "json": {
+      "error": "Invalid endpoint schema, please refer to documentation for examples."
+    }
+  },
+  "elapsed_ms": 502
+}

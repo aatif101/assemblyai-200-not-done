@@ -1,0 +1,40 @@
+{
+  "probe_id": "tts.wav_with_mp3",
+  "variant": "control",
+  "rep": 0,
+  "surface": "tts",
+  "recorded_at": "2026-11-14T21:49:08Z",
+  "skill_commit": "f584ec557e97ca9ce8151ec4d3b6e2ec8e3ade75",
+  "request": {
+    "kind": "http",
+    "method": "POST",
+    "url": "https://tts.us.assemblyai.com/v1/speech",
+    "auth_scheme": "Authorization: <key>",
+    "headers": {},
+    "json": {
+      "text": "Testing, one two three.",
+      "voice_id": "aai-jane",
+      "stream": false
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "audio/pcm;rate=24000;channels=1",
+      "x-tts-region": "us-east-1",
+      "x-tts-model": "assemblyai-tts-1",
+      "x-tts-voice-id": "aai-jane",
+      "x-tts-language": "english",
+      "x-tts-encoding": "pcm_s16le",
+      "x-tts-sample-rate": "24000",
+      "x-tts-container": "raw",
+      "x-tts-billed-characters": "23",
+      "x-tts-audio-duration-ms": "2960"
+    },
+    "bytes_len": 142080,
+    "bytes_head_hex": "38 00 ac 00 3b 01 95 01 9d 01 9b 01",
+    "starts_with_riff": false
+  },
+  "elapsed_ms": 662,
+  "reused_control": true
+}

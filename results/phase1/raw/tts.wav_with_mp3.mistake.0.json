@@ -1,0 +1,45 @@
+{
+  "probe_id": "tts.wav_with_mp3",
+  "variant": "mistake",
+  "rep": 0,
+  "surface": "tts",
+  "recorded_at": "2026-11-14T21:49:08Z",
+  "skill_commit": "f584ec557e97ca9ce8151ec4d3b6e2ec8e3ade75",
+  "request": {
+    "kind": "http",
+    "method": "POST",
+    "url": "https://tts.us.assemblyai.com/v1/speech",
+    "auth_scheme": "Authorization: <key>",
+    "headers": {},
+    "json": {
+      "text": "Testing, one two three.",
+      "voice_id": "aai-jane",
+      "stream": false,
+      "container": "wav",
+      "encoding": "mp3"
+    }
+  },
+  "response": {
+    "status": 422,
+    "headers": {
+      "Content-Type": "application/json",
+      "x-tts-region": "us-east-1"
+    },
+    "json": {
+      "code": "invalid_parameter",
+      "message": "container: wav needs a pcm encoding; mp3 has no container",
+      "param": "container",
+      "request_id": "8b766a02-f1ad-41bc-831d-cad4a78429c3",
+      "errors": [
+        {
+          "message": "wav needs a pcm encoding; mp3 has no container",
+          "param": "container"
+        }
+      ],
+      "retryable": false,
+      "retry_after_seconds": null,
+      "error": "container: wav needs a pcm encoding; mp3 has no container"
+    }
+  },
+  "elapsed_ms": 276
+}

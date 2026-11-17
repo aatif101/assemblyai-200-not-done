@@ -1,0 +1,64 @@
+{
+  "eval": "eval-3-llm-gateway-pii",
+  "config": "without_skill",
+  "files": [
+    "support_call_analyzer.ts"
+  ],
+  "judge_model": "gpt-6.1-sol",
+  "judge_effort": "medium",
+  "image": "twohundred-runner",
+  "image_digest": "sha256:f0dc2399e824cfd646a31f650736c272fb5e74dfb2f1703bca49d27708fec21c",
+  "prompt_sha256_16": "ede356642f012bd2",
+  "assertions": [
+    "Auth uses raw API key (no Bearer prefix)",
+    "Enables PII redaction with person_name, phone_number, us_social_security_number policies",
+    "Uses LLM Gateway (llm-gateway.assemblyai.com), NOT LeMUR",
+    "Uses a current Claude model ID without provider prefix (e.g. claude-sonnet-4-5-20250929, claude-sonnet-4-6, or claude-sonnet-5 — not anthropic/claude-... and not removed Claude 4.0 IDs)",
+    "Passes transcript text in messages, not transcript_ids",
+    "If structured outputs (json_schema) are used, the chosen model supports them (Claude 4.5+/OpenAI/Gemini — not Claude 3.x and not claude-sonnet-5)"
+  ],
+  "verdict": false,
+  "expectations": [
+    {
+      "text": "Auth uses raw API key (no Bearer prefix)",
+      "passed": true,
+      "evidence": "Lines 9–11: new AssemblyAI({ apiKey: process.env.ASSEMBLYAI_API_KEY! }); no Bearer prefix is added."
+    },
+    {
+      "text": "Enables PII redaction with person_name, phone_number, us_social_security_number policies",
+      "passed": true,
+      "evidence": "Lines 22–26: redact_pii: true with PiiPolicy.PersonName, PiiPolicy.PhoneNumber, and PiiPolicy.UsSocialSecurityNumber."
+    },
+    {
+      "text": "Uses LLM Gateway (llm-gateway.assemblyai.com), NOT LeMUR",
+      "passed": false,
+      "evidence": "Lines 51 and 76 call client.lemur.task(...)."
+    },
+    {
+      "text": "Uses a current Claude model ID without provider prefix (e.g. claude-sonnet-4-5-20250929, claude-sonnet-4-6, or claude-sonnet-5 — not anthropic/claude-... and not removed Claude 4.0 IDs)",
+      "passed": false,
+      "evidence": "Lines 54 and 78: final_model: \"anthropic/claude-3-5-sonnet\"."
+    },
+    {
+      "text": "Passes transcript text in messages, not transcript_ids",
+      "passed": false,
+      "evidence": "Lines 52 and 77: transcript_ids: [transcriptId]; no messages containing transcript text are supplied."
+    },
+    {
+      "text": "If structured outputs (json_schema) are used, the chosen model supports them (Claude 4.5+/OpenAI/Gemini — not Claude 3.x and not claude-sonnet-5)",
+      "passed": true,
+      "evidence": "Lines 55–64 and 79–95 request JSON through prompt text only; no json_schema structured output is used."
+    }
+  ],
+  "usage": {
+    "input_tokens": 12782,
+    "cached_input_tokens": 8960,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 393,
+    "reasoning_output_tokens": 0
+  },
+  "errors": [],
+  "exit_code": 0,
+  "tool_calls": 0,
+  "stderr_tail": ""
+}

@@ -1,0 +1,65 @@
+{
+  "run": "t2_async_redact/bare/00",
+  "files": [
+    "run.sh",
+    "test_transcribe.py",
+    "transcribe.py"
+  ],
+  "judge_model": "gpt-6.1-sol",
+  "judge_effort": "medium",
+  "image": "twohundred-runner",
+  "image_digest": "sha256:f0dc2399e824cfd646a31f650736c272fb5e74dfb2f1703bca49d27708fec21c",
+  "prompt_sha256_16": "0a8380bcdfc7071d",
+  "assertions": [
+    "Enables speaker_labels",
+    "Enables redact_pii with policies that include person_name, phone_number and us_social_security_number",
+    "If a model is set, uses the speech_models list (not singular speech_model)",
+    "Checks the transcript status for errors",
+    "Authenticates with the raw API key (no Bearer prefix) or the SDK",
+    "Writes the redacted text, not an unredacted copy"
+  ],
+  "verdict": true,
+  "expectations": [
+    {
+      "text": "Enables speaker_labels",
+      "passed": true,
+      "evidence": "transcribe.py:59: \"speaker_labels\": True"
+    },
+    {
+      "text": "Enables redact_pii with policies that include person_name, phone_number and us_social_security_number",
+      "passed": true,
+      "evidence": "transcribe.py:16 defines all three policies; lines 61–62 set \"redact_pii\": True and \"redact_pii_policies\": POLICIES."
+    },
+    {
+      "text": "If a model is set, uses the speech_models list (not singular speech_model)",
+      "passed": true,
+      "evidence": "transcribe.py:58: \"speech_models\": [\"universal-2\"]"
+    },
+    {
+      "text": "Checks the transcript status for errors",
+      "passed": true,
+      "evidence": "transcribe.py:73–77 reads job.get(\"status\") and raises TranscriptionError when status == \"error\"."
+    },
+    {
+      "text": "Authenticates with the raw API key (no Bearer prefix) or the SDK",
+      "passed": true,
+      "evidence": "transcribe.py:26: headers = {\"authorization\": key}"
+    },
+    {
+      "text": "Writes the redacted text, not an unredacted copy",
+      "passed": true,
+      "evidence": "transcribe.py:85–92 validates redaction settings and rejects unredacted fields; lines 93–103 return job text and utterance text, which lines 143–144 write to output."
+    }
+  ],
+  "usage": {
+    "input_tokens": 14219,
+    "cached_input_tokens": 8960,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 300,
+    "reasoning_output_tokens": 0
+  },
+  "errors": [],
+  "exit_code": 0,
+  "tool_calls": 0,
+  "stderr_tail": ""
+}

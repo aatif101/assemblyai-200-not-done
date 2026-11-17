@@ -1,0 +1,245 @@
+{
+  "request": {
+    "kind": "http",
+    "method": "POST",
+    "url": "https://api.assemblyai.com/v2/transcript",
+    "auth_scheme": "Authorization: <key>",
+    "headers": {},
+    "poll": true,
+    "json": {
+      "audio_url": "https://cdn.assemblyai.com/upload/[REDACTED:upload_id]/f61b1897-278c-4d97-a8fb-2f11ed3d3044",
+      "speech_understanding": {
+        "request": {
+          "summarization": {
+            "summary_type": "paragraph"
+          }
+        }
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json; charset=UTF-8"
+    },
+    "json": {
+      "id": "be4b51b4-033f-45a5-afd8-3750968d4160",
+      "language_model": "assemblyai_default",
+      "acoustic_model": "assemblyai_default",
+      "language_code": null,
+      "speech_understanding": {
+        "request": {
+          "summarization": {
+            "summary_type": "paragraph"
+          }
+        }
+      },
+      "translated_texts": null,
+      "status": "processing",
+      "audio_url": "https://cdn.assemblyai.com/upload/[REDACTED:upload_id]/f61b1897-278c-4d97-a8fb-2f11ed3d3044",
+      "text": null,
+      "words": null,
+      "utterances": null,
+      "confidence": null,
+      "audio_duration": null,
+      "punctuate": true,
+      "format_text": true,
+      "webhook_url": null,
+      "webhook_status_code": null,
+      "webhook_auth": false,
+      "webhook_auth_header_name": null,
+      "speed_boost": false,
+      "auto_highlights_result": null,
+      "auto_highlights": false,
+      "audio_start_from": null,
+      "audio_end_at": null,
+      "word_boost": [],
+      "boost_param": null,
+      "prompt": null,
+      "keyterms_prompt": null,
+      "filter_profanity": false,
+      "redact_pii": false,
+      "redact_pii_audio": false,
+      "redact_pii_audio_quality": null,
+      "redact_pii_audio_options": null,
+      "redact_pii_policies": null,
+      "redact_pii_sub": null,
+      "redact_static_entities": null,
+      "speaker_labels": false,
+      "speaker_options": null,
+      "content_safety": false,
+      "iab_categories": false,
+      "content_safety_labels": {},
+      "iab_categories_result": {},
+      "language_detection": true,
+      "language_detection_options": {
+        "expected_languages": null,
+        "fallback_language": null,
+        "code_switching": null,
+        "code_switching_confidence_threshold": null,
+        "on_low_language_confidence": null,
+        "on_no_speech_detected": "fallback",
+        "swiss_german": null,
+        "language_detection_model": null,
+        "localization": null
+      },
+      "language_detection_results": null,
+      "language_confidence_threshold": null,
+      "language_confidence": null,
+      "custom_spelling": null,
+      "throttled": false,
+      "auto_chapters": false,
+      "summarization": false,
+      "summary_type": null,
+      "summary_model": null,
+      "custom_topics": false,
+      "topics": [],
+      "speech_threshold": null,
+      "speech_model": null,
+      "speech_models": [
+        "universal-3-5-pro",
+        "universal-2"
+      ],
+      "speech_model_used": null,
+      "temperature": null,
+      "remove_audio_tags": "all",
+      "chapters": null,
+      "disfluencies": false,
+      "entity_detection": false,
+      "sentiment_analysis": false,
+      "sentiment_analysis_results": null,
+      "entities": null,
+      "speakers_expected": null,
+      "summary": null,
+      "custom_topics_results": null,
+      "is_deleted": null,
+      "multichannel": null,
+      "project_id": "[REDACTED:project_id]",
+      "token_id": "[REDACTED:token_id]"
+    }
+  },
+  "final": {
+    "id": "be4b51b4-033f-45a5-afd8-3750968d4160",
+    "language_model": "assemblyai_default",
+    "acoustic_model": "assemblyai_default",
+    "language_code": "en",
+    "speech_understanding": {
+      "request": {
+        "summarization": {
+          "summary_type": "paragraph"
+        }
+      },
+      "response": {
+        "summarization": {
+          "summary": [
+            {
+              "start": 337,
+              "end": 16560,
+              "text": "The QuorumX dashboard is scheduled to ship Thursday, and its release notes should be updated before the standup. Lintrix Flow remains blocked on the billing migration, while Talenta onboarding moves to the next sprint.",
+              "headline": "Project Updates Cover Releases, Dependencies, Scheduling, And Immediate Documentation Tasks"
+            }
+          ],
+          "block_summary": "The QuorumX dashboard is scheduled to ship Thursday, and its release notes should be updated before the standup. Lintrix Flow remains blocked on the billing migration, while Talenta onboarding moves to the next sprint.",
+          "summary_type": "paragraph",
+          "effort": "low",
+          "status": "success"
+        }
+      }
+    },
+    "translated_texts": null,
+    "status": "completed",
+    "audio_url": "https://cdn.assemblyai.com/upload/[REDACTED:upload_id]/f61b1897-278c-4d97-a8fb-2f11ed3d3044",
+    "text": "Quick update for the team. The QuorumX dashboard ships on Thursday. Lintrix Flow is still locked on the billing migration. And Talenta onboarding moves to the next sprint. Please update the QuorumX release notes before the standup.",
+    "words_count": 37,
+    "utterances": null,
+    "confidence": 0.93827826,
+    "audio_duration": 18,
+    "punctuate": true,
+    "format_text": true,
+    "webhook_url": null,
+    "webhook_status_code": null,
+    "webhook_auth": false,
+    "webhook_auth_header_name": null,
+    "speed_boost": false,
+    "auto_highlights_result": null,
+    "auto_highlights": false,
+    "audio_start_from": null,
+    "audio_end_at": null,
+    "word_boost": [],
+    "boost_param": null,
+    "prompt": null,
+    "keyterms_prompt": [],
+    "filter_profanity": false,
+    "redact_pii": false,
+    "redact_pii_audio": false,
+    "redact_pii_audio_quality": null,
+    "redact_pii_audio_options": null,
+    "redact_pii_policies": null,
+    "redact_pii_sub": null,
+    "redact_static_entities": null,
+    "speaker_labels": false,
+    "speaker_options": null,
+    "content_safety": false,
+    "iab_categories": false,
+    "content_safety_labels": {
+      "status": "unavailable",
+      "results": [],
+      "summary": {}
+    },
+    "iab_categories_result": {
+      "status": "unavailable",
+      "results": [],
+      "summary": {}
+    },
+    "language_detection": true,
+    "language_detection_options": {
+      "expected_languages": null,
+      "fallback_language": null,
+      "code_switching": null,
+      "code_switching_confidence_threshold": null,
+      "on_low_language_confidence": null,
+      "on_no_speech_detected": "fallback",
+      "swiss_german": null,
+      "language_detection_model": null,
+      "localization": null
+    },
+    "language_detection_results": null,
+    "language_confidence_threshold": null,
+    "language_confidence": 0.9666,
+    "custom_spelling": null,
+    "throttled": false,
+    "auto_chapters": false,
+    "summarization": false,
+    "summary_type": null,
+    "summary_model": null,
+    "custom_topics": false,
+    "topics": [],
+    "speech_threshold": null,
+    "speech_model": null,
+    "speech_models": [
+      "universal-3-5-pro",
+      "universal-2"
+    ],
+    "speech_model_used": "universal-3-5-pro",
+    "temperature": null,
+    "remove_audio_tags": "all",
+    "chapters": null,
+    "disfluencies": false,
+    "entity_detection": false,
+    "sentiment_analysis": false,
+    "sentiment_analysis_results": null,
+    "entities": null,
+    "speakers_expected": null,
+    "summary": null,
+    "custom_topics_results": null,
+    "is_deleted": null,
+    "multichannel": null,
+    "project_id": "[REDACTED:project_id]",
+    "token_id": "[REDACTED:token_id]"
+  },
+  "elapsed_ms": 3986,
+  "check": "q4",
+  "clip": "product_memo.wav",
+  "request_name": "summarization",
+  "recorded_at": "2026-11-15T08:21:39Z"
+}

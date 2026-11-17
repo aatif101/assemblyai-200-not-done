@@ -1,0 +1,454 @@
+{
+  "n_runs": 120,
+  "by_condition": {
+    "bare": {
+      "silent_failures": {
+        "k": 2,
+        "n": 40,
+        "p": 0.05,
+        "lo": 0.013820667386148344,
+        "hi": 0.16503877369140962
+      },
+      "silent_failures_of_runs_that_ran": {
+        "k": 2,
+        "n": 40,
+        "p": 0.05,
+        "lo": 0.013820667386148344,
+        "hi": 0.16503877369140962
+      },
+      "looks_right": {
+        "k": 32,
+        "n": 40,
+        "p": 0.8,
+        "lo": 0.652426936536005,
+        "hi": 0.895000102745623
+      },
+      "runs": {
+        "k": 40,
+        "n": 40,
+        "p": 1.0,
+        "lo": 0.9123783988027135,
+        "hi": 1.0
+      },
+      "outcome": {
+        "k": 38,
+        "n": 40,
+        "p": 0.95,
+        "lo": 0.8349612263085903,
+        "hi": 0.9861793326138516
+      },
+      "first_call_s": {
+        "n": 40,
+        "median": 55.085499999999996,
+        "q1": 48.73675,
+        "q3": 84.13825,
+        "min": 18.87,
+        "max": 118.527
+      },
+      "agent_s": {
+        "n": 40,
+        "median": 173.2,
+        "q1": 124.75,
+        "q3": 222.79999999999998,
+        "min": 92.6,
+        "max": 395.8
+      },
+      "total_tokens": {
+        "n": 40,
+        "median": 313650.5,
+        "q1": 206145.75,
+        "q3": 547933.25,
+        "min": 127876,
+        "max": 807836
+      },
+      "output_tokens": {
+        "n": 40,
+        "median": 5640.5,
+        "q1": 4380.0,
+        "q3": 7550.0,
+        "min": 2996,
+        "max": 14528
+      },
+      "num_turns": {
+        "n": 40,
+        "median": 17.5,
+        "q1": 13.0,
+        "q3": 22.25,
+        "min": 9,
+        "max": 36
+      },
+      "no_first_call": 0,
+      "caps_hit": 0
+    },
+    "skill": {
+      "silent_failures": {
+        "k": 0,
+        "n": 40,
+        "p": 0.0,
+        "lo": 0.0,
+        "hi": 0.08762160119728664
+      },
+      "silent_failures_of_runs_that_ran": {
+        "k": 0,
+        "n": 40,
+        "p": 0.0,
+        "lo": 0.0,
+        "hi": 0.08762160119728664
+      },
+      "looks_right": {
+        "k": 40,
+        "n": 40,
+        "p": 1.0,
+        "lo": 0.9123783988027135,
+        "hi": 1.0
+      },
+      "runs": {
+        "k": 40,
+        "n": 40,
+        "p": 1.0,
+        "lo": 0.9123783988027135,
+        "hi": 1.0
+      },
+      "outcome": {
+        "k": 40,
+        "n": 40,
+        "p": 1.0,
+        "lo": 0.9123783988027135,
+        "hi": 1.0
+      },
+      "first_call_s": {
+        "n": 40,
+        "median": 81.21000000000001,
+        "q1": 62.669500000000006,
+        "q3": 107.9805,
+        "min": 16.102,
+        "max": 187.182
+      },
+      "agent_s": {
+        "n": 40,
+        "median": 152.7,
+        "q1": 104.42500000000001,
+        "q3": 173.8,
+        "min": 67.6,
+        "max": 253.7
+      },
+      "total_tokens": {
+        "n": 40,
+        "median": 365269.0,
+        "q1": 283534.75,
+        "q3": 609958.25,
+        "min": 200904,
+        "max": 1054303
+      },
+      "output_tokens": {
+        "n": 40,
+        "median": 5350.0,
+        "q1": 3977.5,
+        "q3": 5991.0,
+        "min": 2309,
+        "max": 7862
+      },
+      "num_turns": {
+        "n": 40,
+        "median": 14.0,
+        "q1": 11.0,
+        "q3": 22.0,
+        "min": 9,
+        "max": 29
+      },
+      "no_first_call": 0,
+      "caps_hit": 0
+    },
+    "skill+mcp": {
+      "silent_failures": {
+        "k": 0,
+        "n": 40,
+        "p": 0.0,
+        "lo": 0.0,
+        "hi": 0.08762160119728664
+      },
+      "silent_failures_of_runs_that_ran": {
+        "k": 0,
+        "n": 40,
+        "p": 0.0,
+        "lo": 0.0,
+        "hi": 0.08762160119728664
+      },
+      "looks_right": {
+        "k": 40,
+        "n": 40,
+        "p": 1.0,
+        "lo": 0.9123783988027135,
+        "hi": 1.0
+      },
+      "runs": {
+        "k": 40,
+        "n": 40,
+        "p": 1.0,
+        "lo": 0.9123783988027135,
+        "hi": 1.0
+      },
+      "outcome": {
+        "k": 40,
+        "n": 40,
+        "p": 1.0,
+        "lo": 0.9123783988027135,
+        "hi": 1.0
+      },
+      "first_call_s": {
+        "n": 40,
+        "median": 85.3755,
+        "q1": 73.18674999999999,
+        "q3": 128.798,
+        "min": 12.298,
+        "max": 222.966
+      },
+      "agent_s": {
+        "n": 40,
+        "median": 156.6,
+        "q1": 119.14999999999999,
+        "q3": 182.02499999999998,
+        "min": 65.3,
+        "max": 247.5
+      },
+      "total_tokens": {
+        "n": 40,
+        "median": 468740.5,
+        "q1": 373759.0,
+        "q3": 718513.25,
+        "min": 232310,
+        "max": 1258059
+      },
+      "output_tokens": {
+        "n": 40,
+        "median": 5017.0,
+        "q1": 3764.0,
+        "q3": 5932.75,
+        "min": 2379,
+        "max": 7744
+      },
+      "num_turns": {
+        "n": 40,
+        "median": 17.0,
+        "q1": 15.0,
+        "q3": 22.5,
+        "min": 9,
+        "max": 33
+      },
+      "no_first_call": 0,
+      "caps_hit": 0
+    }
+  },
+  "by_task_condition": {
+    "t1_stream_clinic|bare": {
+      "n": 10,
+      "looks_right": 2,
+      "runs": 10,
+      "outcome": 8,
+      "silent_failures": 2,
+      "first_call_median_s": 52.6475
+    },
+    "t2_async_redact|bare": {
+      "n": 10,
+      "looks_right": 10,
+      "runs": 10,
+      "outcome": 10,
+      "silent_failures": 0,
+      "first_call_median_s": 95.4925
+    },
+    "t3_british|bare": {
+      "n": 10,
+      "looks_right": 10,
+      "runs": 10,
+      "outcome": 10,
+      "silent_failures": 0,
+      "first_call_median_s": 50.439499999999995
+    },
+    "t4_legacy_upgrade|bare": {
+      "n": 10,
+      "looks_right": 10,
+      "runs": 10,
+      "outcome": 10,
+      "silent_failures": 0,
+      "first_call_median_s": 57.230999999999995
+    },
+    "t1_stream_clinic|skill": {
+      "n": 10,
+      "looks_right": 10,
+      "runs": 10,
+      "outcome": 10,
+      "silent_failures": 0,
+      "first_call_median_s": 148.625
+    },
+    "t2_async_redact|skill": {
+      "n": 10,
+      "looks_right": 10,
+      "runs": 10,
+      "outcome": 10,
+      "silent_failures": 0,
+      "first_call_median_s": 85.41900000000001
+    },
+    "t3_british|skill": {
+      "n": 10,
+      "looks_right": 10,
+      "runs": 10,
+      "outcome": 10,
+      "silent_failures": 0,
+      "first_call_median_s": 57.2705
+    },
+    "t4_legacy_upgrade|skill": {
+      "n": 10,
+      "looks_right": 10,
+      "runs": 10,
+      "outcome": 10,
+      "silent_failures": 0,
+      "first_call_median_s": 71.8965
+    },
+    "t1_stream_clinic|skill+mcp": {
+      "n": 10,
+      "looks_right": 10,
+      "runs": 10,
+      "outcome": 10,
+      "silent_failures": 0,
+      "first_call_median_s": 161.01999999999998
+    },
+    "t2_async_redact|skill+mcp": {
+      "n": 10,
+      "looks_right": 10,
+      "runs": 10,
+      "outcome": 10,
+      "silent_failures": 0,
+      "first_call_median_s": 85.3755
+    },
+    "t3_british|skill+mcp": {
+      "n": 10,
+      "looks_right": 10,
+      "runs": 10,
+      "outcome": 10,
+      "silent_failures": 0,
+      "first_call_median_s": 65.3525
+    },
+    "t4_legacy_upgrade|skill+mcp": {
+      "n": 10,
+      "looks_right": 10,
+      "runs": 10,
+      "outcome": 10,
+      "silent_failures": 0,
+      "first_call_median_s": 84.703
+    }
+  },
+  "judge": {
+    "runs_judged_twice": 120,
+    "run_level_agreement": 120,
+    "unusable_pass1": 0,
+    "assertion_level_agreement": 780,
+    "assertions_compared": 780
+  },
+  "looks_right_not_outcome": 0,
+  "outcome_not_looks_right": 6,
+  "t1_non_v3_names_by_condition": {
+    "bare": 0,
+    "skill": 0,
+    "skill+mcp": 0
+  },
+  "probe_matrix": {
+    "by_class_surface": {
+      "instructive error": {
+        "async": 5,
+        "streaming": 3,
+        "sync": 1,
+        "dictation": 4,
+        "tts": 4
+      },
+      "opaque error": {
+        "async": 5,
+        "streaming": 2,
+        "sync": 1,
+        "dictation": 1,
+        "tts": 1
+      },
+      "silent accept": {
+        "async": 1,
+        "streaming": 5,
+        "sync": 0,
+        "dictation": 0,
+        "tts": 0
+      },
+      "accepted with warning": {
+        "async": 2,
+        "streaming": 0,
+        "sync": 0,
+        "dictation": 0,
+        "tts": 2
+      },
+      "accepted and applied": {
+        "async": 3,
+        "streaming": 3,
+        "sync": 2,
+        "dictation": 1,
+        "tts": 1
+      },
+      "accepted, effect unverifiable": {
+        "async": 1,
+        "streaming": 0,
+        "sync": 2,
+        "dictation": 1,
+        "tts": 0
+      }
+    },
+    "total": 51
+  },
+  "t1_model_requested_applied": {
+    "bare|universal-3-6-pro|universal-3-6-pro": 2,
+    "bare|universal-streaming-english|universal-streaming-english": 2,
+    "bare|u3-rt-pro|universal-3-6-pro": 6,
+    "skill|universal-3-6-pro|universal-3-6-pro": 10,
+    "skill+mcp|universal-3-6-pro|universal-3-6-pro": 10
+  },
+  "async_models": {
+    "bare|t2_async_redact|universal-2|universal-2": 8,
+    "bare|t2_async_redact|universal-3-5-pro,universal-2|universal-3-5-pro": 2,
+    "skill|t2_async_redact|universal-3-5-pro,universal-2|universal-3-5-pro": 8,
+    "skill|t2_async_redact|universal-3-5-pro|universal-3-5-pro": 2,
+    "skill+mcp|t2_async_redact|universal-3-5-pro,universal-2|universal-3-5-pro": 9,
+    "skill+mcp|t2_async_redact|universal-3-5-pro|universal-3-5-pro": 1,
+    "bare|t3_british|universal-2|universal-2": 6,
+    "bare|t3_british|universal-3-5-pro,universal-2|universal-3-5-pro": 3,
+    "bare|t3_british|universal-3-pro|universal-3-pro": 1,
+    "skill|t3_british|universal-3-5-pro|universal-3-5-pro": 7,
+    "skill|t3_british|universal-3-5-pro,universal-2|universal-3-5-pro": 3,
+    "skill+mcp|t3_british|universal-3-5-pro|universal-3-5-pro": 9,
+    "skill+mcp|t3_british|universal-3-5-pro,universal-2|universal-3-5-pro": 1,
+    "bare|t4_legacy_upgrade|universal-3-5-pro,universal-2|universal-3-5-pro": 3,
+    "bare|t4_legacy_upgrade|universal-3-pro|universal-3-pro": 4,
+    "bare|t4_legacy_upgrade|universal-3-pro,universal-2|universal-3-pro": 1,
+    "bare|t4_legacy_upgrade|universal-3-5-pro|universal-3-5-pro": 2,
+    "skill|t4_legacy_upgrade|universal-3-5-pro,universal-2|universal-3-5-pro": 4,
+    "skill|t4_legacy_upgrade|universal-3-5-pro|universal-3-5-pro": 6,
+    "skill+mcp|t4_legacy_upgrade|universal-3-5-pro,universal-2|universal-3-5-pro": 5,
+    "skill+mcp|t4_legacy_upgrade|universal-3-5-pro|universal-3-5-pro": 5
+  },
+  "asked_for_current_model": {
+    "bare": {
+      "k": 12,
+      "n": 40,
+      "p": 0.3,
+      "lo": 0.18074845229746528,
+      "hi": 0.45430018818144935
+    },
+    "skill": {
+      "k": 40,
+      "n": 40,
+      "p": 1.0,
+      "lo": 0.9123783988027135,
+      "hi": 1.0
+    },
+    "skill+mcp": {
+      "k": 40,
+      "n": 40,
+      "p": 1.0,
+      "lo": 0.9123783988027135,
+      "hi": 1.0
+    }
+  }
+}

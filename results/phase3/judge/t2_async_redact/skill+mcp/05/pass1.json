@@ -1,0 +1,64 @@
+{
+  "run": "t2_async_redact/skill+mcp/05",
+  "files": [
+    "run.sh",
+    "transcribe.py"
+  ],
+  "judge_model": "gpt-6.1-sol",
+  "judge_effort": "medium",
+  "image": "twohundred-runner",
+  "image_digest": "sha256:f0dc2399e824cfd646a31f650736c272fb5e74dfb2f1703bca49d27708fec21c",
+  "prompt_sha256_16": "107b775622cad843",
+  "assertions": [
+    "Enables speaker_labels",
+    "Enables redact_pii with policies that include person_name, phone_number and us_social_security_number",
+    "If a model is set, uses the speech_models list (not singular speech_model)",
+    "Checks the transcript status for errors",
+    "Authenticates with the raw API key (no Bearer prefix) or the SDK",
+    "Writes the redacted text, not an unredacted copy"
+  ],
+  "verdict": true,
+  "expectations": [
+    {
+      "text": "Enables speaker_labels",
+      "passed": true,
+      "evidence": "transcribe.py:101 sets \"speaker_labels\": True."
+    },
+    {
+      "text": "Enables redact_pii with policies that include person_name, phone_number and us_social_security_number",
+      "passed": true,
+      "evidence": "transcribe.py:18 defines all three required POLICIES; lines 103–104 set \"redact_pii\": True and \"redact_pii_policies\": POLICIES."
+    },
+    {
+      "text": "If a model is set, uses the speech_models list (not singular speech_model)",
+      "passed": true,
+      "evidence": "transcribe.py:99 sets \"speech_models\": [\"universal-3-5-pro\", \"universal-2\"]."
+    },
+    {
+      "text": "Checks the transcript status for errors",
+      "passed": true,
+      "evidence": "transcribe.py:117–121 checks status and raises Failure when status == \"error\"."
+    },
+    {
+      "text": "Authenticates with the raw API key (no Bearer prefix) or the SDK",
+      "passed": true,
+      "evidence": "transcribe.py:26 sets headers = {\"Authorization\": key, \"Accept\": \"application/json\"}."
+    },
+    {
+      "text": "Writes the redacted text, not an unredacted copy",
+      "passed": true,
+      "evidence": "transcribe.py:57–65 verifies redaction and rejects unredacted fields; lines 66–77 export the returned text and utterances, and line 134 writes that output."
+    }
+  ],
+  "usage": {
+    "input_tokens": 12995,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 314,
+    "reasoning_output_tokens": 0
+  },
+  "errors": [],
+  "exit_code": 0,
+  "tool_calls": 0,
+  "stderr_tail": ""
+}

@@ -1,0 +1,42 @@
+{
+  "task": "t1_stream_clinic",
+  "style": "AssemblyAI assemblyai-skill evals.json assertions",
+  "assertions": [
+    {
+      "text": "Connects to the v3 streaming endpoint (streaming.assemblyai.com/v3/ws), not the v2 realtime URL",
+      "type": "semantic"
+    },
+    {
+      "text": "Sets the streaming model explicitly to universal-3-6-pro (universal-3-5-pro also acceptable); not u3-rt-pro or an older model",
+      "type": "semantic"
+    },
+    {
+      "text": "Enables Medical Mode with domain=medical-v1",
+      "type": "semantic"
+    },
+    {
+      "text": "Enables speaker_labels",
+      "type": "semantic"
+    },
+    {
+      "text": "Enables redact_pii, with policies that cover person names, phone numbers and SSNs (or the default, which is all)",
+      "type": "semantic"
+    },
+    {
+      "text": "Sends audio at real-time pace in small chunks",
+      "type": "semantic"
+    },
+    {
+      "text": "Sends Terminate and waits for Termination before exiting",
+      "type": "semantic"
+    },
+    {
+      "text": "Does not use word_boost, boost_param or v2-era parameters such as end_utterance_silence_threshold",
+      "type": "semantic"
+    },
+    {
+      "text": "Authenticates with the raw API key or a temporary token, not a Bearer prefix",
+      "type": "semantic"
+    }
+  ]
+}

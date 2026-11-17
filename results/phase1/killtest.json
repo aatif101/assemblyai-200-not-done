@@ -1,0 +1,270 @@
+{
+  "summary": {
+    "generated_at": "2026-11-14T21:55:24Z",
+    "skill_commit": "f584ec557e97ca9ce8151ec4d3b6e2ec8e3ade75",
+    "probes": 10,
+    "decided": 10,
+    "counts": {
+      "instructive_error": 3,
+      "opaque_error": 1,
+      "silent_accept": 2,
+      "accepted_with_warning": 1,
+      "honored": 3
+    },
+    "by_surface": {
+      "async": {
+        "honored": 3,
+        "opaque_error": 1
+      },
+      "dictation": {
+        "instructive_error": 1
+      },
+      "streaming": {
+        "silent_accept": 2
+      },
+      "sync": {
+        "instructive_error": 1
+      },
+      "tts": {
+        "accepted_with_warning": 1,
+        "instructive_error": 1
+      }
+    },
+    "disagrees_with_skill": [
+      "async.speech_models.u3_pro"
+    ],
+    "kill_test": {
+      "loud": 4,
+      "of": 10,
+      "undecided": [],
+      "threshold": 8,
+      "verdict": "PROCEED: enough requests are accepted without an error to measure"
+    }
+  },
+  "rows": [
+    {
+      "code": "HTTP 200",
+      "stage": "request",
+      "names_offender": null,
+      "names_fix": null,
+      "effect": "applied",
+      "evidence": "request was authenticated",
+      "signals": [],
+      "error_excerpt": "",
+      "class": "honored",
+      "id": "async.auth.bearer",
+      "reps": 2,
+      "per_rep": [
+        "honored",
+        "honored"
+      ],
+      "matches_skill": "n/a",
+      "surface": "async",
+      "mistake": "`Authorization: Bearer KEY` instead of the raw key",
+      "origin": "skill",
+      "documented": "unspecified"
+    },
+    {
+      "code": "HTTP 400",
+      "stage": "request",
+      "names_offender": false,
+      "names_fix": null,
+      "effect": "",
+      "evidence": "",
+      "signals": [],
+      "error_excerpt": "error: Invalid endpoint schema, please refer to documentation for examples.",
+      "class": "opaque_error",
+      "id": "async.unknown_field",
+      "reps": 2,
+      "per_rep": [
+        "opaque_error",
+        "opaque_error"
+      ],
+      "matches_skill": "n/a",
+      "surface": "async",
+      "mistake": "a parameter that does not exist (`zz_not_a_real_param`)",
+      "origin": "author",
+      "documented": "unspecified"
+    },
+    {
+      "code": "HTTP 200",
+      "stage": "request",
+      "names_offender": null,
+      "names_fix": null,
+      "effect": "applied",
+      "evidence": "echo {'word_boost': ['Quorvex', 'Zyntrix Flow'], 'keyterms_prompt': []} (echo only; decoder bias not measured)",
+      "signals": [
+        "body metadata.warnings: [{\"message\": \"Skipped word_boost because it is not a supported feature on Universal-3 Pro.\"}]"
+      ],
+      "error_excerpt": "",
+      "class": "honored",
+      "id": "async.word_boost",
+      "reps": 2,
+      "per_rep": [
+        "honored",
+        "honored"
+      ],
+      "matches_skill": "n/a",
+      "surface": "async",
+      "mistake": "`word_boost` (+`boost_param`) instead of `keyterms_prompt`",
+      "origin": "skill",
+      "documented": "unspecified"
+    },
+    {
+      "code": "HTTP 200",
+      "stage": "request",
+      "names_offender": null,
+      "names_fix": null,
+      "effect": "applied",
+      "evidence": "requested 'universal-3-pro', speech_model_used='universal-3-pro'",
+      "signals": [],
+      "error_excerpt": "",
+      "class": "honored",
+      "id": "async.speech_models.u3_pro",
+      "reps": 2,
+      "per_rep": [
+        "honored",
+        "honored"
+      ],
+      "matches_skill": "NO",
+      "surface": "async",
+      "mistake": "`speech_models: [\"universal-3-pro\"]` (superseded model)",
+      "origin": "skill",
+      "documented": "reject"
+    },
+    {
+      "code": "session opened",
+      "stage": "session",
+      "names_offender": null,
+      "names_fix": null,
+      "effect": "not_applied",
+      "evidence": "Begin.configuration.model='universal-3-6-pro'",
+      "signals": [],
+      "error_excerpt": "",
+      "class": "silent_accept",
+      "id": "stream.param.model_name",
+      "reps": 2,
+      "per_rep": [
+        "silent_accept",
+        "silent_accept"
+      ],
+      "matches_skill": "yes",
+      "surface": "streaming",
+      "mistake": "`model=` instead of `speech_model=`",
+      "origin": "skill",
+      "documented": "silent"
+    },
+    {
+      "code": "session opened",
+      "stage": "session",
+      "names_offender": null,
+      "names_fix": null,
+      "effect": "not_applied",
+      "evidence": "Begin.configuration.model='universal-3-6-pro'",
+      "signals": [],
+      "error_excerpt": "",
+      "class": "silent_accept",
+      "id": "stream.model.u3_rt_pro",
+      "reps": 2,
+      "per_rep": [
+        "silent_accept",
+        "silent_accept"
+      ],
+      "matches_skill": "yes",
+      "surface": "streaming",
+      "mistake": "`speech_model=u3-rt-pro` (removed model)",
+      "origin": "skill",
+      "documented": "silent"
+    },
+    {
+      "code": "HTTP 400",
+      "stage": "request",
+      "names_offender": true,
+      "names_fix": null,
+      "effect": "",
+      "evidence": "",
+      "signals": [],
+      "error_excerpt": "status: 400 title: Bad Request detail: invalid config part: speaker_labels: Extra inputs are not permitted",
+      "class": "instructive_error",
+      "id": "sync.config.unknown_field",
+      "reps": 2,
+      "per_rep": [
+        "instructive_error",
+        "instructive_error"
+      ],
+      "matches_skill": "yes",
+      "surface": "sync",
+      "mistake": "async-only `speaker_labels` in the Sync `config`",
+      "origin": "skill",
+      "documented": "reject"
+    },
+    {
+      "code": "HTTP 400",
+      "stage": "request",
+      "names_offender": true,
+      "names_fix": null,
+      "effect": "",
+      "evidence": "",
+      "signals": [],
+      "error_excerpt": "status: 400 title: Bad Request detail: invalid config part: redact_pii: Extra inputs are not permitted",
+      "class": "instructive_error",
+      "id": "dictation.config.unknown_field",
+      "reps": 2,
+      "per_rep": [
+        "instructive_error",
+        "instructive_error"
+      ],
+      "matches_skill": "yes",
+      "surface": "dictation",
+      "mistake": "async-only `redact_pii` in the Dictation `config`",
+      "origin": "skill",
+      "documented": "reject"
+    },
+    {
+      "code": "HTTP 422",
+      "stage": "request",
+      "names_offender": true,
+      "names_fix": true,
+      "effect": "",
+      "evidence": "",
+      "signals": [],
+      "error_excerpt": "code: invalid_parameter message: voice: voice is retired: name the voice with voice_id, for example voice_id=aai-jane param: voice request_id: 9a71c282-5237-4f86-986d-ce2968cd17fb errors: message: voice is retired: name the voice with voice_id, for example voice_id=aai-jane param: voice retryable: False retry_after_seconds:  error: voice: voice is retired: name the voice with voice_id, for example",
+      "class": "instructive_error",
+      "id": "tts.voice_param",
+      "reps": 2,
+      "per_rep": [
+        "instructive_error",
+        "instructive_error"
+      ],
+      "matches_skill": "yes",
+      "surface": "tts",
+      "mistake": "`voice` instead of `voice_id`",
+      "origin": "skill",
+      "documented": "reject"
+    },
+    {
+      "code": "HTTP 200",
+      "stage": "request",
+      "names_offender": null,
+      "names_fix": null,
+      "effect": "not_applied",
+      "evidence": "not part of the public API (no server-side echo for this input)",
+      "signals": [
+        "header x-tts-unknown-params: zz_not_a_real_param"
+      ],
+      "error_excerpt": "",
+      "class": "accepted_with_warning",
+      "id": "tts.unknown_field",
+      "reps": 2,
+      "per_rep": [
+        "accepted_with_warning",
+        "accepted_with_warning"
+      ],
+      "matches_skill": "yes",
+      "surface": "tts",
+      "mistake": "a parameter that does not exist (`zz_not_a_real_param`)",
+      "origin": "skill",
+      "documented": "warn"
+    }
+  ]
+}

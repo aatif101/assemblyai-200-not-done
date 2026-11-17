@@ -1,0 +1,70 @@
+{
+  "agent": {
+    "result_event": true,
+    "subtype": "success",
+    "num_turns": 11,
+    "usage": {
+      "input_tokens": 232166,
+      "cached_input_tokens": 197504,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 4747,
+      "reasoning_output_tokens": 262
+    },
+    "total_cost_usd": null,
+    "mcp_calls": 0,
+    "skill_read": true,
+    "errors": [],
+    "cap_hit": null,
+    "exit_code": 0,
+    "seconds": 115.5,
+    "stderr_tail": "WARNING: failed to clean up stale arg0 temp dirs: Permission denied (os error 13)\n2026-11-16T04:14:58.207864Z ERROR codex_core::tools::router: error=write_stdin failed: Unknown process id 60940\n"
+  },
+  "agent_cli": "codex",
+  "task": "t2_async_redact",
+  "condition": "skill",
+  "index": 1,
+  "kind": "sweep",
+  "model": "gpt-6.1-sol",
+  "reasoning_effort": "medium",
+  "max_turns": 40,
+  "turn_rule": "completed tool items (command, file change, MCP call)",
+  "max_agent_seconds": 1200,
+  "skill_commit": "f584ec557e97ca9ce8151ec4d3b6e2ec8e3ade75",
+  "skill_install": "assemblyai/ + AGENTS.md pointer (assemblyai-skill README, Codex)",
+  "mcp_url": null,
+  "disabled_features": [
+    "apps",
+    "plugins",
+    "remote_plugin",
+    "browser_use",
+    "browser_use_external",
+    "computer_use",
+    "image_generation"
+  ],
+  "web_search": "disabled",
+  "blocked_hosts": [
+    "www.assemblyai.com",
+    "assemblyai.com",
+    "github.com",
+    "www.github.com",
+    "raw.githubusercontent.com",
+    "api.github.com",
+    "codeload.github.com",
+    "objects.githubusercontent.com",
+    "gist.github.com",
+    "gist.githubusercontent.com"
+  ],
+  "credential_kind": [
+    "codex auth.json (ChatGPT plan)"
+  ],
+  "image": "twohundred-runner",
+  "image_digest": "sha256:9c41ff0039516305a481c85c5d1ce0cc12821c1077034fbf6d3108224e67de70",
+  "started_at": "2026-11-16T04:13:25Z",
+  "codex_version": "codex-cli 0.169.0",
+  "workspace_skipped": [
+    "__pycache__/transcribe.cpython-312.pyc",
+    "sample.wav"
+  ],
+  "ended_at": "2026-11-16T04:15:32Z",
+  "complete": true
+}

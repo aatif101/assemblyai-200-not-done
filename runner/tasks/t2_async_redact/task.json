@@ -1,0 +1,6 @@
+{
+  "id": "t2_async_redact",
+  "surface": "async",
+  "fixture": "support_call.wav",
+  "contract_timeout_s": 300
+}

@@ -1,0 +1,52 @@
+{
+  "run": "t3_british/skill/05",
+  "files": [
+    "run.sh",
+    "transcribe.py"
+  ],
+  "judge_model": "gpt-6.1-sol",
+  "judge_effort": "medium",
+  "image": "twohundred-runner",
+  "image_digest": "sha256:f0dc2399e824cfd646a31f650736c272fb5e74dfb2f1703bca49d27708fec21c",
+  "prompt_sha256_16": "5868b4d977ecadfc",
+  "assertions": [
+    "Requests British spelling from the API: language_detection with language_detection_options.localization [\"en_uk\"], or language_code \"en_uk\"",
+    "Does not convert American to British spelling with a local word list or regex",
+    "Checks the transcript status for errors",
+    "Authenticates with the raw API key (no Bearer prefix) or the SDK"
+  ],
+  "verdict": true,
+  "expectations": [
+    {
+      "text": "Requests British spelling from the API: language_detection with language_detection_options.localization [\"en_uk\"], or language_code \"en_uk\"",
+      "passed": true,
+      "evidence": "transcribe.py:48–52 sets \"language_detection\": True and \"language_detection_options\": { ... \"localization\": [\"en_uk\"] }."
+    },
+    {
+      "text": "Does not convert American to British spelling with a local word list or regex",
+      "passed": true,
+      "evidence": "transcribe.py:68 returns \"text\": result[\"text\"] directly without spelling conversion."
+    },
+    {
+      "text": "Checks the transcript status for errors",
+      "passed": true,
+      "evidence": "transcribe.py:69–70 checks if status == \"error\" and raises RuntimeError with the API error."
+    },
+    {
+      "text": "Authenticates with the raw API key (no Bearer prefix) or the SDK",
+      "passed": true,
+      "evidence": "transcribe.py:20 sets headers = {\"Authorization\": api_key}."
+    }
+  ],
+  "usage": {
+    "input_tokens": 12539,
+    "cached_input_tokens": 8960,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 216,
+    "reasoning_output_tokens": 0
+  },
+  "errors": [],
+  "exit_code": 0,
+  "tool_calls": 0,
+  "stderr_tail": ""
+}

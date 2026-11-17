@@ -1,0 +1,38 @@
+{
+  "probe_id": "tts.voice_bare_name",
+  "variant": "mistake",
+  "rep": 0,
+  "surface": "tts",
+  "recorded_at": "2026-11-14T21:49:05Z",
+  "skill_commit": "f584ec557e97ca9ce8151ec4d3b6e2ec8e3ade75",
+  "request": {
+    "kind": "http",
+    "method": "POST",
+    "url": "https://tts.us.assemblyai.com/v1/speech",
+    "auth_scheme": "Authorization: <key>",
+    "headers": {},
+    "json": {
+      "text": "Testing, one two three.",
+      "voice_id": "jane",
+      "stream": false
+    }
+  },
+  "response": {
+    "status": 422,
+    "headers": {
+      "Content-Type": "application/json",
+      "x-tts-region": "us-east-1"
+    },
+    "json": {
+      "code": "voice_not_found",
+      "message": "The requested voice was not found. It may not exist, may have been deleted, or may be another account's private voice. Voices exist only in the data zone where they were created, so it may also belong to the EU data zone: use tts.eu.assemblyai.com for a voice created there. Did you mean voice_id=aai-jane?",
+      "param": "voice_id",
+      "request_id": "4c700b29-5951-488e-81f2-794765ed09be",
+      "errors": null,
+      "retryable": false,
+      "retry_after_seconds": null,
+      "error": "The requested voice was not found. It may not exist, may have been deleted, or may be another account's private voice. Voices exist only in the data zone where they were created, so it may also belong to the EU data zone: use tts.eu.assemblyai.com for a voice created there. Did you mean voice_id=aai-jane?"
+    }
+  },
+  "elapsed_ms": 314
+}

@@ -1,0 +1,72 @@
+{
+  "kind": "pilot",
+  "seed": 20261115,
+  "model": "gpt-6.1-sol",
+  "budget_usd": null,
+  "total_usd": null,
+  "parallel": 3,
+  "agent": "codex",
+  "effort": "medium",
+  "order": [
+    [
+      "t4_legacy_upgrade",
+      "skill+mcp",
+      0
+    ],
+    [
+      "t4_legacy_upgrade",
+      "skill",
+      0
+    ],
+    [
+      "t3_british",
+      "skill+mcp",
+      0
+    ],
+    [
+      "t3_british",
+      "bare",
+      0
+    ],
+    [
+      "t2_async_redact",
+      "bare",
+      0
+    ],
+    [
+      "t4_legacy_upgrade",
+      "bare",
+      0
+    ],
+    [
+      "t1_stream_clinic",
+      "skill",
+      0
+    ],
+    [
+      "t2_async_redact",
+      "skill+mcp",
+      0
+    ],
+    [
+      "t1_stream_clinic",
+      "skill+mcp",
+      0
+    ],
+    [
+      "t3_british",
+      "skill",
+      0
+    ],
+    [
+      "t1_stream_clinic",
+      "bare",
+      0
+    ],
+    [
+      "t2_async_redact",
+      "skill",
+      0
+    ]
+  ]
+}

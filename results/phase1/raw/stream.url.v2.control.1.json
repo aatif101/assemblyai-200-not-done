@@ -1,0 +1,103 @@
+{
+  "probe_id": "stream.url.v2",
+  "variant": "control",
+  "rep": 1,
+  "surface": "streaming",
+  "recorded_at": "2026-11-14T21:48:50Z",
+  "skill_commit": "f584ec557e97ca9ce8151ec4d3b6e2ec8e3ade75",
+  "request": {
+    "kind": "ws",
+    "method": "GET (websocket upgrade)",
+    "url": "wss://streaming.assemblyai.com/v3/ws",
+    "auth_scheme": "Authorization: <key>",
+    "headers": {},
+    "query": {
+      "sample_rate": "16000",
+      "encoding": "pcm_s16le",
+      "speech_model": "universal-3-6-pro"
+    },
+    "audio": "short_en.wav",
+    "send_seconds": 3.0,
+    "pace": 1.0
+  },
+  "ws": {
+    "messages": [
+      {
+        "type": "Begin",
+        "id": "7961b393-8505-4b61-a6e2-3520b10b172b",
+        "expires_at": 1794703707,
+        "configuration": {
+          "model": "universal-3-6-pro",
+          "mode": "balanced",
+          "api_version": "2025-05-12",
+          "speaker_labels": false,
+          "redact_pii": false,
+          "filter_profanity": false,
+          "domain": null,
+          "voice_focus": null
+        }
+      },
+      {
+        "type": "SpeechStarted",
+        "timestamp": 0,
+        "confidence": 0.490171
+      },
+      {
+        "turn_order": 0,
+        "turn_is_formatted": true,
+        "end_of_turn": false,
+        "transcript": "The call is",
+        "end_of_turn_confidence": 0.0,
+        "utterance": "",
+        "type": "Turn"
+      },
+      {
+        "turn_order": 0,
+        "turn_is_formatted": true,
+        "end_of_turn": false,
+        "transcript": "The quarterly review is scheduled",
+        "end_of_turn_confidence": 0.0,
+        "utterance": "",
+        "type": "Turn"
+      },
+      {
+        "turn_order": 0,
+        "turn_is_formatted": true,
+        "end_of_turn": true,
+        "transcript": "The quarterly review is scheduled for Tuesday at 2",
+        "end_of_turn_confidence": 1.0,
+        "utterance": "The quarterly review is scheduled for Tuesday at 2",
+        "type": "Turn"
+      },
+      {
+        "type": "Termination",
+        "audio_duration_seconds": 3,
+        "session_duration_seconds": 4
+      }
+    ],
+    "handshake_status": 101,
+    "begin": {
+      "type": "Begin",
+      "id": "7961b393-8505-4b61-a6e2-3520b10b172b",
+      "expires_at": 1794703707,
+      "configuration": {
+        "model": "universal-3-6-pro",
+        "mode": "balanced",
+        "api_version": "2025-05-12",
+        "speaker_labels": false,
+        "redact_pii": false,
+        "filter_profanity": false,
+        "domain": null,
+        "voice_focus": null
+      }
+    },
+    "audio_seconds_sent": 3.0,
+    "closed_by_server": true,
+    "server_close_code": 1000,
+    "server_close_reason": "Session Ended",
+    "final_close_code": 1000,
+    "final_close_reason": "Session Ended"
+  },
+  "elapsed_ms": 4449,
+  "reused_control": true
+}

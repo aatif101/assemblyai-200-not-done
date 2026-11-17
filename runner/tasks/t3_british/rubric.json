@@ -1,0 +1,22 @@
+{
+  "task": "t3_british",
+  "style": "AssemblyAI assemblyai-skill evals.json assertions",
+  "assertions": [
+    {
+      "text": "Requests British spelling from the API: language_detection with language_detection_options.localization [\"en_uk\"], or language_code \"en_uk\"",
+      "type": "semantic"
+    },
+    {
+      "text": "Does not convert American to British spelling with a local word list or regex",
+      "type": "semantic"
+    },
+    {
+      "text": "Checks the transcript status for errors",
+      "type": "semantic"
+    },
+    {
+      "text": "Authenticates with the raw API key (no Bearer prefix) or the SDK",
+      "type": "semantic"
+    }
+  ]
+}

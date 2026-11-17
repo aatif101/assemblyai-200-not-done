@@ -1,0 +1,112 @@
+{
+  "q3": {
+    "verdict": "gradable",
+    "t3": "british_spelling",
+    "t3_fixture": "verbatim_memo.wav",
+    "clips": {
+      "verbatim_memo.wav": {
+        "requests": {
+          "baseline": {
+            "status": "completed",
+            "language_code": "en",
+            "speech_model_used": "universal-3-5-pro",
+            "british": [],
+            "american": [
+              "organize",
+              "color",
+              "center",
+              "cataloged"
+            ],
+            "error": null
+          },
+          "localized": {
+            "status": "completed",
+            "language_code": "en_uk",
+            "speech_model_used": "universal-3-5-pro",
+            "british": [
+              "organise",
+              "colour",
+              "centre",
+              "catalogued"
+            ],
+            "american": [],
+            "error": null
+          },
+          "code_en_uk": {
+            "status": "completed",
+            "language_code": "en_uk",
+            "speech_model_used": "universal-3-5-pro",
+            "british": [
+              "organise",
+              "colour",
+              "centre",
+              "catalogued"
+            ],
+            "american": [],
+            "error": null
+          }
+        },
+        "baseline_ok": true,
+        "localized_ok": true,
+        "passes": true,
+        "code_en_uk_gives_british": true
+      },
+      "verbatim_memo_x2": {
+        "requests": {
+          "baseline": {
+            "status": "completed",
+            "language_code": "en",
+            "speech_model_used": "universal-3-5-pro",
+            "british": [],
+            "american": [
+              "organize",
+              "color",
+              "center",
+              "cataloged"
+            ],
+            "error": null
+          },
+          "localized": {
+            "status": "completed",
+            "language_code": "en_uk",
+            "speech_model_used": "universal-3-5-pro",
+            "british": [
+              "organise",
+              "colour",
+              "centre",
+              "catalogued"
+            ],
+            "american": [],
+            "error": null
+          },
+          "code_en_uk": {
+            "status": "completed",
+            "language_code": "en_uk",
+            "speech_model_used": "universal-3-5-pro",
+            "british": [
+              "organise",
+              "colour",
+              "centre",
+              "catalogued"
+            ],
+            "american": [],
+            "error": null
+          }
+        },
+        "baseline_ok": true,
+        "localized_ok": true,
+        "passes": true,
+        "code_en_uk_gives_british": true
+      }
+    }
+  },
+  "q4": {
+    "verdict": "works",
+    "t4_includes_lemur": true,
+    "transcript_status": "completed",
+    "http_status": 200,
+    "summarization_status": "success",
+    "block_summary_chars": 218,
+    "error": null
+  }
+}

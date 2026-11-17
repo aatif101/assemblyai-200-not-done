@@ -1,0 +1,64 @@
+{
+  "eval": "eval-3-llm-gateway-pii",
+  "config": "with_skill",
+  "files": [
+    "support_call_analyzer.ts"
+  ],
+  "judge_model": "gpt-6.1-sol",
+  "judge_effort": "medium",
+  "image": "twohundred-runner",
+  "image_digest": "sha256:f0dc2399e824cfd646a31f650736c272fb5e74dfb2f1703bca49d27708fec21c",
+  "prompt_sha256_16": "5aa063c7e1a0ad32",
+  "assertions": [
+    "Auth uses raw API key (no Bearer prefix)",
+    "Enables PII redaction with person_name, phone_number, us_social_security_number policies",
+    "Uses LLM Gateway (llm-gateway.assemblyai.com), NOT LeMUR",
+    "Uses a current Claude model ID without provider prefix (e.g. claude-sonnet-4-5-20250929, claude-sonnet-4-6, or claude-sonnet-5 — not anthropic/claude-... and not removed Claude 4.0 IDs)",
+    "Passes transcript text in messages, not transcript_ids",
+    "If structured outputs (json_schema) are used, the chosen model supports them (Claude 4.5+/OpenAI/Gemini — not Claude 3.x and not claude-sonnet-5)"
+  ],
+  "verdict": true,
+  "expectations": [
+    {
+      "text": "Auth uses raw API key (no Bearer prefix)",
+      "passed": true,
+      "evidence": "support_call_analyzer.ts:22: Authorization: process.env.ASSEMBLYAI_API_KEY!"
+    },
+    {
+      "text": "Enables PII redaction with person_name, phone_number, us_social_security_number policies",
+      "passed": true,
+      "evidence": "support_call_analyzer.ts:45–49 enables redact_pii and specifies PiiPolicy.PersonName, PiiPolicy.PhoneNumber, and PiiPolicy.UsSocialSecurityNumber."
+    },
+    {
+      "text": "Uses LLM Gateway (llm-gateway.assemblyai.com), NOT LeMUR",
+      "passed": true,
+      "evidence": "support_call_analyzer.ts:7: \"https://llm-gateway.assemblyai.com/v1/chat/completions\""
+    },
+    {
+      "text": "Uses a current Claude model ID without provider prefix (e.g. claude-sonnet-4-5-20250929, claude-sonnet-4-6, or claude-sonnet-5 — not anthropic/claude-... and not removed Claude 4.0 IDs)",
+      "passed": true,
+      "evidence": "support_call_analyzer.ts:27: model: \"claude-sonnet-4-5-20250929\""
+    },
+    {
+      "text": "Passes transcript text in messages, not transcript_ids",
+      "passed": true,
+      "evidence": "Lines 74 and 88 interpolate transcript text into userPrompt; lines 28–30 send that prompt in messages."
+    },
+    {
+      "text": "If structured outputs (json_schema) are used, the chosen model supports them (Claude 4.5+/OpenAI/Gemini — not Claude 3.x and not claude-sonnet-5)",
+      "passed": true,
+      "evidence": "support_call_analyzer.ts:25–32 sends model and messages without json_schema; JSON is requested only through prompts (lines 68 and 86)."
+    }
+  ],
+  "usage": {
+    "input_tokens": 12485,
+    "cached_input_tokens": 8960,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 404,
+    "reasoning_output_tokens": 0
+  },
+  "errors": [],
+  "exit_code": 0,
+  "tool_calls": 0,
+  "stderr_tail": ""
+}

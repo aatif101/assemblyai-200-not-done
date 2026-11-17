@@ -1,0 +1,76 @@
+{
+  "eval": "eval-2-voice-agent",
+  "config": "without_skill",
+  "files": [
+    "dental_voice_agent.py"
+  ],
+  "judge_model": "gpt-6.1-sol",
+  "judge_effort": "medium",
+  "image": "twohundred-runner",
+  "image_digest": "sha256:f0dc2399e824cfd646a31f650736c272fb5e74dfb2f1703bca49d27708fec21c",
+  "prompt_sha256_16": "107a8b4b95372a4c",
+  "assertions": [
+    "Passes model=\"universal-3-6-pro\" explicitly (plugin releases before 1.8.4 default to universal-3-5-pro; not u3-rt-pro, which was removed July 2026, or older streaming models)",
+    "Sets mode or max_turn_silence explicitly (not relying on the LiveKit plugin's 100ms default turn-silence windows)",
+    "If it pins livekit-agents, pins 1.8.0 or newer (the first release that accepts universal-3-6-pro)",
+    "Sets endpointing min_delay to 0 (via TurnHandlingOptions) to avoid the additive 500ms delay",
+    "Synchronizes VAD thresholds (both ~0.3)",
+    "Includes keyterms_prompt with dental vocabulary",
+    "Uses STT-based turn detection (turn_detection='stt')",
+    "Does not use deprecated word_boost parameter"
+  ],
+  "verdict": false,
+  "expectations": [
+    {
+      "text": "Passes model=\"universal-3-6-pro\" explicitly (plugin releases before 1.8.4 default to universal-3-5-pro; not u3-rt-pro, which was removed July 2026, or older streaming models)",
+      "passed": false,
+      "evidence": "dental_voice_agent.py:46–82: STT constructor has no model argument."
+    },
+    {
+      "text": "Sets mode or max_turn_silence explicitly (not relying on the LiveKit plugin's 100ms default turn-silence windows)",
+      "passed": false,
+      "evidence": "dental_voice_agent.py:46–82: neither mode nor max_turn_silence is specified."
+    },
+    {
+      "text": "If it pins livekit-agents, pins 1.8.0 or newer (the first release that accepts universal-3-6-pro)",
+      "passed": true,
+      "evidence": "The supplied code contains no livekit-agents version pin; lines 13–22 only import it."
+    },
+    {
+      "text": "Sets endpointing min_delay to 0 (via TurnHandlingOptions) to avoid the additive 500ms delay",
+      "passed": false,
+      "evidence": "dental_voice_agent.py:132: min_endpointing_delay=0.8; no TurnHandlingOptions is used."
+    },
+    {
+      "text": "Synchronizes VAD thresholds (both ~0.3)",
+      "passed": false,
+      "evidence": "dental_voice_agent.py:33: silero.VAD.load() uses defaults; lines 46–82 specify no AssemblyAI VAD threshold."
+    },
+    {
+      "text": "Includes keyterms_prompt with dental vocabulary",
+      "passed": false,
+      "evidence": "dental_voice_agent.py:47–75: dental vocabulary is supplied through word_boost, with no keyterms_prompt."
+    },
+    {
+      "text": "Uses STT-based turn detection (turn_detection='stt')",
+      "passed": false,
+      "evidence": "dental_voice_agent.py:123–133: VoicePipelineAgent has no turn_detection='stt' setting."
+    },
+    {
+      "text": "Does not use deprecated word_boost parameter",
+      "passed": false,
+      "evidence": "dental_voice_agent.py:47: word_boost=[ is explicitly passed to STT."
+    }
+  ],
+  "usage": {
+    "input_tokens": 12722,
+    "cached_input_tokens": 8960,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 509,
+    "reasoning_output_tokens": 50
+  },
+  "errors": [],
+  "exit_code": 0,
+  "tool_calls": 0,
+  "stderr_tail": ""
+}

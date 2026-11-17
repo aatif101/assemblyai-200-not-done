@@ -1,0 +1,79 @@
+[
+  {
+    "task": "t1_stream_clinic",
+    "variant": "good",
+    "runs": true,
+    "outcome": true,
+    "as_expected": true,
+    "failed_checks": []
+  },
+  {
+    "task": "t1_stream_clinic",
+    "variant": "bad",
+    "runs": true,
+    "outcome": false,
+    "as_expected": true,
+    "failed_checks": [
+      "speaker_labels"
+    ]
+  },
+  {
+    "task": "t2_async_redact",
+    "variant": "good",
+    "runs": true,
+    "outcome": true,
+    "as_expected": true,
+    "failed_checks": []
+  },
+  {
+    "task": "t2_async_redact",
+    "variant": "bad",
+    "runs": true,
+    "outcome": false,
+    "as_expected": true,
+    "failed_checks": [
+      "policies_cover_request",
+      "phone_absent_server",
+      "names_absent_server",
+      "phone_absent_output"
+    ]
+  },
+  {
+    "task": "t3_british",
+    "variant": "good",
+    "runs": true,
+    "outcome": true,
+    "as_expected": true,
+    "failed_checks": []
+  },
+  {
+    "task": "t3_british",
+    "variant": "bad",
+    "runs": true,
+    "outcome": false,
+    "as_expected": true,
+    "failed_checks": [
+      "british_server",
+      "british_output"
+    ]
+  },
+  {
+    "task": "t4_legacy_upgrade",
+    "variant": "good",
+    "runs": true,
+    "outcome": true,
+    "as_expected": true,
+    "failed_checks": []
+  },
+  {
+    "task": "t4_legacy_upgrade",
+    "variant": "bad",
+    "runs": true,
+    "outcome": false,
+    "as_expected": true,
+    "failed_checks": [
+      "names_exact_server",
+      "names_exact_output"
+    ]
+  }
+]

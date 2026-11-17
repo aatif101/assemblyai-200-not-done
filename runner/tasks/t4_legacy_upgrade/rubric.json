@@ -1,0 +1,34 @@
+{
+  "task": "t4_legacy_upgrade",
+  "style": "AssemblyAI assemblyai-skill evals.json assertions",
+  "assertions": [
+    {
+      "text": "Upgrades the SDK to 1.x (or replaces it with direct REST calls); no 0.x pin left",
+      "type": "semantic"
+    },
+    {
+      "text": "Replaces singular speech_model / SpeechModel.best with the speech_models list, or drops it",
+      "type": "semantic"
+    },
+    {
+      "text": "Replaces word_boost and boost_param with keyterms_prompt for the product names",
+      "type": "semantic"
+    },
+    {
+      "text": "Keeps speaker_labels enabled",
+      "type": "semantic"
+    },
+    {
+      "text": "Replaces LeMUR with Speech Understanding summarization or the LLM Gateway",
+      "type": "semantic"
+    },
+    {
+      "text": "Keeps the command line and the output format",
+      "type": "semantic"
+    },
+    {
+      "text": "Checks the transcript status for errors",
+      "type": "semantic"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "run": "t4_legacy_upgrade/skill/01",
+  "files": [
+    "README.md",
+    "requirements.txt",
+    "run.sh",
+    "transcribe.py"
+  ],
+  "judge_model": "gpt-6.1-sol",
+  "judge_effort": "medium",
+  "image": "twohundred-runner",
+  "image_digest": "sha256:f0dc2399e824cfd646a31f650736c272fb5e74dfb2f1703bca49d27708fec21c",
+  "prompt_sha256_16": "aa9fac990cece276",
+  "assertions": [
+    "Upgrades the SDK to 1.x (or replaces it with direct REST calls); no 0.x pin left",
+    "Replaces singular speech_model / SpeechModel.best with the speech_models list, or drops it",
+    "Replaces word_boost and boost_param with keyterms_prompt for the product names",
+    "Keeps speaker_labels enabled",
+    "Replaces LeMUR with Speech Understanding summarization or the LLM Gateway",
+    "Keeps the command line and the output format",
+    "Checks the transcript status for errors"
+  ],
+  "verdict": true,
+  "expectations": [
+    {
+      "text": "Upgrades the SDK to 1.x (or replaces it with direct REST calls); no 0.x pin left",
+      "passed": true,
+      "evidence": "requirements.txt:1 pins assemblyai==1.10.0."
+    },
+    {
+      "text": "Replaces singular speech_model / SpeechModel.best with the speech_models list, or drops it",
+      "passed": true,
+      "evidence": "transcribe.py:60 uses speech_models=[\"universal-3-5-pro\"]."
+    },
+    {
+      "text": "Replaces word_boost and boost_param with keyterms_prompt for the product names",
+      "passed": true,
+      "evidence": "transcribe.py:15 defines PRODUCT_NAMES; line 62 sets keyterms_prompt=PRODUCT_NAMES."
+    },
+    {
+      "text": "Keeps speaker_labels enabled",
+      "passed": true,
+      "evidence": "transcribe.py:61 sets speaker_labels=True."
+    },
+    {
+      "text": "Replaces LeMUR with Speech Understanding summarization or the LLM Gateway",
+      "passed": true,
+      "evidence": "transcribe.py:18–35 requests a summary through https://llm-gateway.assemblyai.com/v1/chat/completions."
+    },
+    {
+      "text": "Keeps the command line and the output format",
+      "passed": true,
+      "evidence": "run.sh:4–10 accepts two arguments and forwards them to transcribe.py; transcribe.py:74–81 writes transcript_id, text, utterances containing speaker/text, and summary."
+    },
+    {
+      "text": "Checks the transcript status for errors",
+      "passed": true,
+      "evidence": "transcribe.py:67–70 raises on TranscriptStatus.error and on any status other than completed."
+    }
+  ],
+  "usage": {
+    "input_tokens": 12306,
+    "cached_input_tokens": 8960,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 335,
+    "reasoning_output_tokens": 0
+  },
+  "errors": [],
+  "exit_code": 0,
+  "tool_calls": 0,
+  "stderr_tail": ""
+}

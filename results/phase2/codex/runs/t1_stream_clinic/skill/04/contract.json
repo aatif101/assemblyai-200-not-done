@@ -1,0 +1,12 @@
+{
+  "exit_code": 0,
+  "timed_out": false,
+  "seconds": 54.0,
+  "cap_hit": null,
+  "stdout_tail": "Transcript written to /out/out.json\n",
+  "stderr_tail": "",
+  "files": [
+    "out.json",
+    "out.json.frames.jsonl"
+  ]
+}

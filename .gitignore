@@ -1,0 +1,12 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store
+
+# Who the write-up is for. Kept out of git because the repo is meant to become public.
+.planning/*.local.md
+
+# Scratch workspaces for agent runs (copied, scrubbed, into results/ afterwards)
+runner/.work/

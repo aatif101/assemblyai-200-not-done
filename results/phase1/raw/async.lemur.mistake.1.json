@@ -1,0 +1,30 @@
+{
+  "probe_id": "async.lemur",
+  "variant": "mistake",
+  "rep": 1,
+  "surface": "async",
+  "recorded_at": "2026-11-14T21:48:11Z",
+  "skill_commit": "f584ec557e97ca9ce8151ec4d3b6e2ec8e3ade75",
+  "request": {
+    "kind": "http",
+    "method": "POST",
+    "url": "https://api.assemblyai.com/lemur/v3/generate/task",
+    "auth_scheme": "Authorization: <key>",
+    "headers": {},
+    "json": {
+      "transcript_ids": [
+        "a56941a3-9b23-4a48-bbba-14ca0d863287"
+      ],
+      "prompt": "Summarize this call.",
+      "final_model": "anthropic/claude-3-5-sonnet"
+    }
+  },
+  "response": {
+    "status": 404,
+    "headers": {
+      "Content-Type": "text/plain; charset=utf-8"
+    },
+    "text": "Not found"
+  },
+  "elapsed_ms": 268
+}

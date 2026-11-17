@@ -1,0 +1,44 @@
+{
+  "probe_id": "sync.audio.mp3",
+  "variant": "mistake",
+  "rep": 0,
+  "surface": "sync",
+  "recorded_at": "2026-11-14T21:48:55Z",
+  "skill_commit": "f584ec557e97ca9ce8151ec4d3b6e2ec8e3ade75",
+  "request": {
+    "kind": "http",
+    "method": "POST",
+    "url": "https://sync.assemblyai.com/v1/transcribe",
+    "auth_scheme": "Authorization: <key>",
+    "headers": {
+      "X-AAI-Model": "universal-3-5-pro"
+    },
+    "multipart_order": [
+      {
+        "name": "config",
+        "content_type": "application/json",
+        "json": {}
+      },
+      {
+        "name": "audio",
+        "content_type": "audio/mpeg",
+        "audio": "short_en.mp3"
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "json": {
+      "text": "The quarterly review is scheduled for Tuesday at 10:30 in the main conference room. I was really happy with how the launch went.",
+      "words_count": 23,
+      "confidence": 0.994030812180331,
+      "audio_duration_ms": 8591,
+      "session_id": "c6e7cff1-ea16-49b7-8c96-6e88c69f27a5",
+      "request_time_ms": 98.70014397893101
+    }
+  },
+  "elapsed_ms": 366
+}

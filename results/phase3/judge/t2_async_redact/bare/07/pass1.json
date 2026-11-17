@@ -1,0 +1,64 @@
+{
+  "run": "t2_async_redact/bare/07",
+  "files": [
+    "run.sh",
+    "transcribe.py"
+  ],
+  "judge_model": "gpt-6.1-sol",
+  "judge_effort": "medium",
+  "image": "twohundred-runner",
+  "image_digest": "sha256:f0dc2399e824cfd646a31f650736c272fb5e74dfb2f1703bca49d27708fec21c",
+  "prompt_sha256_16": "893273a8c1b22e9c",
+  "assertions": [
+    "Enables speaker_labels",
+    "Enables redact_pii with policies that include person_name, phone_number and us_social_security_number",
+    "If a model is set, uses the speech_models list (not singular speech_model)",
+    "Checks the transcript status for errors",
+    "Authenticates with the raw API key (no Bearer prefix) or the SDK",
+    "Writes the redacted text, not an unredacted copy"
+  ],
+  "verdict": true,
+  "expectations": [
+    {
+      "text": "Enables speaker_labels",
+      "passed": true,
+      "evidence": "transcribe.py:112 sets \"speaker_labels\": True."
+    },
+    {
+      "text": "Enables redact_pii with policies that include person_name, phone_number and us_social_security_number",
+      "passed": true,
+      "evidence": "transcribe.py:16 defines all three required policies; lines 114–115 set \"redact_pii\": True and \"redact_pii_policies\": POLICIES."
+    },
+    {
+      "text": "If a model is set, uses the speech_models list (not singular speech_model)",
+      "passed": true,
+      "evidence": "transcribe.py:111 sets \"speech_models\": [\"universal-2\"]."
+    },
+    {
+      "text": "Checks the transcript status for errors",
+      "passed": true,
+      "evidence": "transcribe.py:126–130 reads the transcript status and raises Failure when status == \"error\"."
+    },
+    {
+      "text": "Authenticates with the raw API key (no Bearer prefix) or the SDK",
+      "passed": true,
+      "evidence": "transcribe.py:92 reads ASSEMBLYAI_API_KEY; line 25 sets headers = {\"authorization\": key, \"content-type\": content_type}."
+    },
+    {
+      "text": "Writes the redacted text, not an unredacted copy",
+      "passed": true,
+      "evidence": "transcribe.py:117 sets \"redact_pii_return_unredacted\": False; lines 54–58 verify redaction settings and read transcript[\"text\"] via get; line 138 writes the validated result."
+    }
+  ],
+  "usage": {
+    "input_tokens": 13063,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 322,
+    "reasoning_output_tokens": 0
+  },
+  "errors": [],
+  "exit_code": 0,
+  "tool_calls": 0,
+  "stderr_tail": ""
+}

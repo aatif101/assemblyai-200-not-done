@@ -1,0 +1,64 @@
+{
+  "run": "t2_async_redact/skill+mcp/02",
+  "files": [
+    "run.sh",
+    "transcribe.py"
+  ],
+  "judge_model": "gpt-6.1-sol",
+  "judge_effort": "medium",
+  "image": "twohundred-runner",
+  "image_digest": "sha256:f0dc2399e824cfd646a31f650736c272fb5e74dfb2f1703bca49d27708fec21c",
+  "prompt_sha256_16": "98d026f006620870",
+  "assertions": [
+    "Enables speaker_labels",
+    "Enables redact_pii with policies that include person_name, phone_number and us_social_security_number",
+    "If a model is set, uses the speech_models list (not singular speech_model)",
+    "Checks the transcript status for errors",
+    "Authenticates with the raw API key (no Bearer prefix) or the SDK",
+    "Writes the redacted text, not an unredacted copy"
+  ],
+  "verdict": true,
+  "expectations": [
+    {
+      "text": "Enables speaker_labels",
+      "passed": true,
+      "evidence": "transcribe.py:25 sets \"speaker_labels\": True."
+    },
+    {
+      "text": "Enables redact_pii with policies that include person_name, phone_number and us_social_security_number",
+      "passed": true,
+      "evidence": "transcribe.py:17 defines all three required policies; lines 28–29 enable redact_pii and apply PII_POLICIES."
+    },
+    {
+      "text": "If a model is set, uses the speech_models list (not singular speech_model)",
+      "passed": true,
+      "evidence": "transcribe.py:23 sets \"speech_models\": [\"universal-3-5-pro\", \"universal-2\"]."
+    },
+    {
+      "text": "Checks the transcript status for errors",
+      "passed": true,
+      "evidence": "transcribe.py:158 reads status; lines 164–165 raise RuntimeError when status == \"error\"."
+    },
+    {
+      "text": "Authenticates with the raw API key (no Bearer prefix) or the SDK",
+      "passed": true,
+      "evidence": "transcribe.py:48 sets headers={\"Authorization\": api_key, **(headers or {})}."
+    },
+    {
+      "text": "Writes the redacted text, not an unredacted copy",
+      "passed": true,
+      "evidence": "transcribe.py:78–86 verify redaction and reject unredacted fields; lines 102–103 output transcript text and utterance text from that checked response."
+    }
+  ],
+  "usage": {
+    "input_tokens": 13291,
+    "cached_input_tokens": 8960,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 301,
+    "reasoning_output_tokens": 0
+  },
+  "errors": [],
+  "exit_code": 0,
+  "tool_calls": 0,
+  "stderr_tail": ""
+}

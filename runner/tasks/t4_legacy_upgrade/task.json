@@ -1,0 +1,7 @@
+{
+  "id": "t4_legacy_upgrade",
+  "surface": "async",
+  "fixture": "product_memo.wav",
+  "contract_timeout_s": 300,
+  "seed": true
+}

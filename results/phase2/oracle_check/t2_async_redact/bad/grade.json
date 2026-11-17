@@ -1,0 +1,62 @@
+{
+  "task": "t2_async_redact",
+  "runs": true,
+  "runs_problems": [],
+  "outcome": false,
+  "checks": {
+    "server_transcript_fetched": {
+      "pass": true,
+      "evidence": "server/transcript.json present"
+    },
+    "server_completed": {
+      "pass": true,
+      "evidence": "status='completed'"
+    },
+    "id_matches_output": {
+      "pass": true,
+      "evidence": "out.json id='83a3daee-5029-4159-ba01-28f9d99d5c59', server id='83a3daee-5029-4159-ba01-28f9d99d5c59'"
+    },
+    "is_the_fixture": {
+      "pass": true,
+      "evidence": "audio_duration=51, fixture 50.71 s"
+    },
+    "speaker_labels": {
+      "pass": true,
+      "evidence": "speaker_labels=True"
+    },
+    "redact_pii": {
+      "pass": true,
+      "evidence": "redact_pii=True"
+    },
+    "policies_cover_request": {
+      "pass": false,
+      "evidence": "redact_pii_policies=['us_social_security_number']"
+    },
+    "ssn_absent_server": {
+      "pass": true,
+      "evidence": "digits absent"
+    },
+    "phone_absent_server": {
+      "pass": false,
+      "evidence": "digits present"
+    },
+    "names_absent_server": {
+      "pass": false,
+      "evidence": "names present: ['Dana Whitfield', 'Priya']"
+    },
+    "two_speakers_server": {
+      "pass": true,
+      "evidence": "speakers=['A', 'B']"
+    },
+    "ssn_absent_output": {
+      "pass": true,
+      "evidence": "digits absent"
+    },
+    "phone_absent_output": {
+      "pass": false,
+      "evidence": "digits present"
+    }
+  },
+  "evidence_kind": "server",
+  "silent_failure": true
+}

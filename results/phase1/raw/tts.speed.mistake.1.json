@@ -1,0 +1,44 @@
+{
+  "probe_id": "tts.speed",
+  "variant": "mistake",
+  "rep": 1,
+  "surface": "tts",
+  "recorded_at": "2026-11-14T21:49:11Z",
+  "skill_commit": "f584ec557e97ca9ce8151ec4d3b6e2ec8e3ade75",
+  "request": {
+    "kind": "http",
+    "method": "POST",
+    "url": "https://tts.us.assemblyai.com/v1/speech",
+    "auth_scheme": "Authorization: <key>",
+    "headers": {},
+    "json": {
+      "text": "Testing, one two three.",
+      "voice_id": "aai-jane",
+      "stream": false,
+      "speed": 1.25
+    }
+  },
+  "response": {
+    "status": 422,
+    "headers": {
+      "Content-Type": "application/json",
+      "x-tts-region": "us-east-1"
+    },
+    "json": {
+      "code": "invalid_parameter",
+      "message": "speed: only 1 is supported, got 1.25",
+      "param": "speed",
+      "request_id": "97b01537-c632-4efb-9c8b-6b7baea617db",
+      "errors": [
+        {
+          "message": "only 1 is supported, got 1.25",
+          "param": "speed"
+        }
+      ],
+      "retryable": false,
+      "retry_after_seconds": null,
+      "error": "speed: only 1 is supported, got 1.25"
+    }
+  },
+  "elapsed_ms": 275
+}

@@ -1,0 +1,10 @@
+{
+  "id": "short_en",
+  "purpose": "Short English clip used as the payload for most probes.",
+  "language": "en",
+  "gap_seconds": 0.3,
+  "segments": [
+    {"speaker": "A", "text": "The quarterly review is scheduled for Tuesday at ten thirty in the main conference room. I was really happy with how the launch went."}
+  ],
+  "ground_truth": {"speakers": 1, "must_contain": ["quarterly", "Tuesday"]}
+}

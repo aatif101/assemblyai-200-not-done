@@ -1,0 +1,3 @@
+{"id": "skill+mcp", "skill": true,
+ "mcp": {"mcpServers": {"assemblyai-docs": {"type": "http", "url": "http://host.docker.internal:8765/docs/mcp"}}},
+ "note": "relayed to https://www.assemblyai.com/docs/mcp by runner/mcp_relay.py (decision 30)"}

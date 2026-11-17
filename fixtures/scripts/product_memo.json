@@ -1,0 +1,13 @@
+{
+  "id": "product_memo",
+  "purpose": "One speaker using invented product names. Used for key-term checks.",
+  "language": "en",
+  "gap_seconds": 0.35,
+  "segments": [
+    {"speaker": "A", "text": "Quick update for the team. The Quorvex dashboard ships on Thursday."},
+    {"speaker": "A", "text": "Zyntrix Flow is still blocked on the billing migration."},
+    {"speaker": "A", "text": "And Talvanta onboarding moves to the next sprint."},
+    {"speaker": "A", "text": "Please update the Quorvex release notes before the stand up."}
+  ],
+  "ground_truth": {"speakers": 1, "key_terms": ["Quorvex", "Zyntrix Flow", "Talvanta"]}
+}

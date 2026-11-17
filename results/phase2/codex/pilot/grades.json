@@ -1,0 +1,316 @@
+[
+  {
+    "task": "t1_stream_clinic",
+    "condition": "bare",
+    "index": 0,
+    "runs": true,
+    "outcome": false,
+    "silent_failure": true,
+    "failed_checks": [
+      "model_current_pro"
+    ],
+    "runs_problems": [],
+    "num_turns": 18,
+    "subtype": "success",
+    "cap_hit": null,
+    "agent_seconds": 205.5,
+    "reported_cost_usd": null,
+    "skill_loaded": false,
+    "mcp": "-",
+    "outside_fetches": [
+      "assemblyai.com",
+      "www.assemblyai.com"
+    ],
+    "info": null,
+    "secondary": {
+      "non_v3_stream_names": []
+    }
+  },
+  {
+    "task": "t1_stream_clinic",
+    "condition": "skill",
+    "index": 0,
+    "runs": true,
+    "outcome": true,
+    "silent_failure": false,
+    "failed_checks": [],
+    "runs_problems": [],
+    "num_turns": 29,
+    "subtype": "success",
+    "cap_hit": null,
+    "agent_seconds": 296.6,
+    "reported_cost_usd": null,
+    "skill_loaded": true,
+    "mcp": "-",
+    "outside_fetches": [],
+    "info": null,
+    "secondary": {
+      "non_v3_stream_names": []
+    }
+  },
+  {
+    "task": "t1_stream_clinic",
+    "condition": "skill+mcp",
+    "index": 0,
+    "runs": true,
+    "outcome": true,
+    "silent_failure": false,
+    "failed_checks": [],
+    "runs_problems": [],
+    "num_turns": 22,
+    "subtype": "success",
+    "cap_hit": null,
+    "agent_seconds": 161.7,
+    "reported_cost_usd": null,
+    "skill_loaded": true,
+    "mcp": "calls:5",
+    "outside_fetches": [],
+    "info": null,
+    "secondary": {
+      "non_v3_stream_names": []
+    }
+  },
+  {
+    "task": "t2_async_redact",
+    "condition": "bare",
+    "index": 0,
+    "runs": true,
+    "outcome": true,
+    "silent_failure": false,
+    "failed_checks": [],
+    "runs_problems": [],
+    "num_turns": 20,
+    "subtype": "success",
+    "cap_hit": null,
+    "agent_seconds": 155.4,
+    "reported_cost_usd": null,
+    "skill_loaded": false,
+    "mcp": "-",
+    "outside_fetches": [
+      "assemblyai.com",
+      "raw.githubusercontent.com",
+      "www.assemblyai.com"
+    ],
+    "info": null,
+    "secondary": null
+  },
+  {
+    "task": "t2_async_redact",
+    "condition": "skill",
+    "index": 0,
+    "runs": true,
+    "outcome": true,
+    "silent_failure": false,
+    "failed_checks": [],
+    "runs_problems": [],
+    "num_turns": 15,
+    "subtype": "success",
+    "cap_hit": null,
+    "agent_seconds": 177.8,
+    "reported_cost_usd": null,
+    "skill_loaded": true,
+    "mcp": "-",
+    "outside_fetches": [
+      "raw.githubusercontent.com",
+      "www.assemblyai.com"
+    ],
+    "info": null,
+    "secondary": null
+  },
+  {
+    "task": "t2_async_redact",
+    "condition": "skill+mcp",
+    "index": 0,
+    "runs": true,
+    "outcome": true,
+    "silent_failure": false,
+    "failed_checks": [],
+    "runs_problems": [],
+    "num_turns": 13,
+    "subtype": "success",
+    "cap_hit": null,
+    "agent_seconds": 110.0,
+    "reported_cost_usd": null,
+    "skill_loaded": true,
+    "mcp": "calls:3",
+    "outside_fetches": [],
+    "info": null,
+    "secondary": null
+  },
+  {
+    "task": "t3_british",
+    "condition": "bare",
+    "index": 0,
+    "runs": true,
+    "outcome": true,
+    "silent_failure": false,
+    "failed_checks": [],
+    "runs_problems": [],
+    "num_turns": 14,
+    "subtype": "success",
+    "cap_hit": null,
+    "agent_seconds": 134.5,
+    "reported_cost_usd": null,
+    "skill_loaded": false,
+    "mcp": "-",
+    "outside_fetches": [
+      "assemblyai.com",
+      "example.invalid",
+      "raw.githubusercontent.com",
+      "www.assemblyai.com"
+    ],
+    "info": {
+      "language_code": "en_uk",
+      "language_detection_options": null,
+      "speech_model_used": "universal-2"
+    },
+    "secondary": null
+  },
+  {
+    "task": "t3_british",
+    "condition": "skill",
+    "index": 0,
+    "runs": true,
+    "outcome": true,
+    "silent_failure": false,
+    "failed_checks": [],
+    "runs_problems": [],
+    "num_turns": 11,
+    "subtype": "success",
+    "cap_hit": null,
+    "agent_seconds": 82.6,
+    "reported_cost_usd": null,
+    "skill_loaded": true,
+    "mcp": "-",
+    "outside_fetches": [
+      "raw.githubusercontent.com"
+    ],
+    "info": {
+      "language_code": "en_uk",
+      "language_detection_options": null,
+      "speech_model_used": "universal-3-5-pro"
+    },
+    "secondary": null
+  },
+  {
+    "task": "t3_british",
+    "condition": "skill+mcp",
+    "index": 0,
+    "runs": true,
+    "outcome": true,
+    "silent_failure": false,
+    "failed_checks": [],
+    "runs_problems": [],
+    "num_turns": 9,
+    "subtype": "success",
+    "cap_hit": null,
+    "agent_seconds": 66.3,
+    "reported_cost_usd": null,
+    "skill_loaded": true,
+    "mcp": "calls:1",
+    "outside_fetches": [],
+    "info": {
+      "language_code": "en_uk",
+      "language_detection_options": null,
+      "speech_model_used": "universal-3-5-pro"
+    },
+    "secondary": null
+  },
+  {
+    "task": "t4_legacy_upgrade",
+    "condition": "bare",
+    "index": 0,
+    "runs": true,
+    "outcome": true,
+    "silent_failure": false,
+    "failed_checks": [],
+    "runs_problems": [],
+    "num_turns": 20,
+    "subtype": "success",
+    "cap_hit": null,
+    "agent_seconds": 161.3,
+    "reported_cost_usd": null,
+    "skill_loaded": false,
+    "mcp": "-",
+    "outside_fetches": [
+      "assemblyai.com",
+      "raw.githubusercontent.com",
+      "www.assemblyai.com"
+    ],
+    "info": {
+      "summary_source": "not on transcript (LLM Gateway or other; self-reported)",
+      "keyterms_prompt": [
+        "Quorvex",
+        "Zyntrix Flow",
+        "Talvanta"
+      ],
+      "word_boost": [],
+      "prompt_set": false,
+      "speech_model_used": "universal-3-pro",
+      "warnings": null
+    },
+    "secondary": null
+  },
+  {
+    "task": "t4_legacy_upgrade",
+    "condition": "skill",
+    "index": 0,
+    "runs": true,
+    "outcome": true,
+    "silent_failure": false,
+    "failed_checks": [],
+    "runs_problems": [],
+    "num_turns": 24,
+    "subtype": "success",
+    "cap_hit": null,
+    "agent_seconds": 162.5,
+    "reported_cost_usd": null,
+    "skill_loaded": true,
+    "mcp": "-",
+    "outside_fetches": [],
+    "info": {
+      "summary_source": "not on transcript (LLM Gateway or other; self-reported)",
+      "keyterms_prompt": [
+        "Quorvex",
+        "Zyntrix Flow",
+        "Talvanta"
+      ],
+      "word_boost": [],
+      "prompt_set": false,
+      "speech_model_used": "universal-3-5-pro",
+      "warnings": null
+    },
+    "secondary": null
+  },
+  {
+    "task": "t4_legacy_upgrade",
+    "condition": "skill+mcp",
+    "index": 0,
+    "runs": true,
+    "outcome": true,
+    "silent_failure": false,
+    "failed_checks": [],
+    "runs_problems": [],
+    "num_turns": 27,
+    "subtype": "success",
+    "cap_hit": null,
+    "agent_seconds": 169.7,
+    "reported_cost_usd": null,
+    "skill_loaded": true,
+    "mcp": "calls:2",
+    "outside_fetches": [],
+    "info": {
+      "summary_source": "not on transcript (LLM Gateway or other; self-reported)",
+      "keyterms_prompt": [
+        "Quorvex",
+        "Zyntrix Flow",
+        "Talvanta"
+      ],
+      "word_boost": [],
+      "prompt_set": false,
+      "speech_model_used": "universal-3-5-pro",
+      "warnings": null
+    },
+    "secondary": null
+  }
+]

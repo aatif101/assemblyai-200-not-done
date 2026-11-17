@@ -1,0 +1,53 @@
+{
+  "task": "t1_stream_clinic",
+  "runs": true,
+  "runs_problems": [],
+  "outcome": false,
+  "checks": {
+    "begin_logged": {
+      "pass": true,
+      "evidence": "32 frames logged"
+    },
+    "model_current_pro": {
+      "pass": true,
+      "evidence": "model='universal-3-6-pro'"
+    },
+    "medical_mode": {
+      "pass": true,
+      "evidence": "domain='medical-v1'"
+    },
+    "speaker_labels": {
+      "pass": false,
+      "evidence": "speaker_labels=False"
+    },
+    "redact_pii": {
+      "pass": true,
+      "evidence": "redact_pii=True"
+    },
+    "final_turns_logged": {
+      "pass": true,
+      "evidence": "15 final turns in frames"
+    },
+    "ssn_absent_server_turns": {
+      "pass": true,
+      "evidence": "digits absent"
+    },
+    "phone_absent_server_turns": {
+      "pass": true,
+      "evidence": "digits absent"
+    },
+    "ssn_absent_output": {
+      "pass": true,
+      "evidence": "digits absent"
+    },
+    "phone_absent_output": {
+      "pass": true,
+      "evidence": "digits absent"
+    }
+  },
+  "evidence_kind": "self-reported frames (decision 19)",
+  "secondary": {
+    "non_v3_stream_names": []
+  },
+  "silent_failure": true
+}

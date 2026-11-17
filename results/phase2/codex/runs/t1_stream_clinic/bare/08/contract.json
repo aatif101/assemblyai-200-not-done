@@ -1,0 +1,12 @@
+{
+  "exit_code": 0,
+  "timed_out": false,
+  "seconds": 53.6,
+  "cap_hit": null,
+  "stdout_tail": "Transcription complete: 8 turns.\n",
+  "stderr_tail": "",
+  "files": [
+    "out.json",
+    "out.json.frames.jsonl"
+  ]
+}

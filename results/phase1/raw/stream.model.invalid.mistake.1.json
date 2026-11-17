@@ -1,0 +1,39 @@
+{
+  "probe_id": "stream.model.invalid",
+  "variant": "mistake",
+  "rep": 1,
+  "surface": "streaming",
+  "recorded_at": "2026-11-14T21:48:42Z",
+  "skill_commit": "f584ec557e97ca9ce8151ec4d3b6e2ec8e3ade75",
+  "request": {
+    "kind": "ws",
+    "method": "GET (websocket upgrade)",
+    "url": "wss://streaming.assemblyai.com/v3/ws",
+    "auth_scheme": "Authorization: <key>",
+    "headers": {},
+    "query": {
+      "sample_rate": "16000",
+      "encoding": "pcm_s16le",
+      "speech_model": "whisper-large-v3"
+    },
+    "audio": "short_en.wav",
+    "send_seconds": 3.0,
+    "pace": 1.0
+  },
+  "ws": {
+    "messages": [
+      {
+        "type": "Error",
+        "error_code": 3006,
+        "error": "User Input Validation Error: Invalid 'speech_model': Input should be 'universal-streaming-english', 'universal-streaming-multilingual', 'whisper-rt', 'u3-rt-pro', 'u3-rt-agent', 'universal-3-5-pro', 'universal-3-6-pro', 'universal-3-6', 'universal-3-7-preview', 'assemblyai-stt-3-7-realtime', 'assemblyai-stt-3-7-realtime-agent' or '_universal-3-5-notetaker'"
+      }
+    ],
+    "handshake_status": 101,
+    "closed_by_server": true,
+    "server_close_code": 3006,
+    "server_close_reason": "See Error message for details",
+    "final_close_code": 3006,
+    "final_close_reason": "See Error message for details"
+  },
+  "elapsed_ms": 161
+}

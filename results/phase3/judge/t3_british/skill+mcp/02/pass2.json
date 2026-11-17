@@ -1,0 +1,52 @@
+{
+  "run": "t3_british/skill+mcp/02",
+  "files": [
+    "run.sh",
+    "transcribe.py"
+  ],
+  "judge_model": "gpt-6.1-sol",
+  "judge_effort": "medium",
+  "image": "twohundred-runner",
+  "image_digest": "sha256:f0dc2399e824cfd646a31f650736c272fb5e74dfb2f1703bca49d27708fec21c",
+  "prompt_sha256_16": "c159fa6d18c19abe",
+  "assertions": [
+    "Requests British spelling from the API: language_detection with language_detection_options.localization [\"en_uk\"], or language_code \"en_uk\"",
+    "Does not convert American to British spelling with a local word list or regex",
+    "Checks the transcript status for errors",
+    "Authenticates with the raw API key (no Bearer prefix) or the SDK"
+  ],
+  "verdict": true,
+  "expectations": [
+    {
+      "text": "Requests British spelling from the API: language_detection with language_detection_options.localization [\"en_uk\"], or language_code \"en_uk\"",
+      "passed": true,
+      "evidence": "transcribe.py:55 sets \"language_code\": \"en_uk\" in the API request config."
+    },
+    {
+      "text": "Does not convert American to British spelling with a local word list or regex",
+      "passed": true,
+      "evidence": "transcribe.py:73 returns transcript[\"text\"] directly; no local spelling replacements appear in the code."
+    },
+    {
+      "text": "Checks the transcript status for errors",
+      "passed": true,
+      "evidence": "transcribe.py:74–75 checks if status == \"error\" and raises RuntimeError."
+    },
+    {
+      "text": "Authenticates with the raw API key (no Bearer prefix) or the SDK",
+      "passed": true,
+      "evidence": "transcribe.py:23 sets headers={\"Authorization\": api_key, **(headers or {})}."
+    }
+  ],
+  "usage": {
+    "input_tokens": 12452,
+    "cached_input_tokens": 8960,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 208,
+    "reasoning_output_tokens": 0
+  },
+  "errors": [],
+  "exit_code": 0,
+  "tool_calls": 0,
+  "stderr_tail": ""
+}

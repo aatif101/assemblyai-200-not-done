@@ -1,0 +1,1191 @@
+{
+  "summary": {
+    "generated_at": "2026-11-15T08:17:54Z",
+    "skill_commit": "f584ec557e97ca9ce8151ec4d3b6e2ec8e3ade75",
+    "probes": 51,
+    "decided": 51,
+    "counts": {
+      "instructive_error": 17,
+      "opaque_error": 10,
+      "silent_accept": 6,
+      "accepted_with_warning": 4,
+      "honored": 10,
+      "accepted_unverified": 4
+    },
+    "by_surface": {
+      "async": {
+        "accepted_unverified": 1,
+        "accepted_with_warning": 2,
+        "honored": 3,
+        "instructive_error": 5,
+        "opaque_error": 5,
+        "silent_accept": 1
+      },
+      "dictation": {
+        "accepted_unverified": 1,
+        "honored": 1,
+        "instructive_error": 4,
+        "opaque_error": 1
+      },
+      "streaming": {
+        "honored": 3,
+        "instructive_error": 3,
+        "opaque_error": 2,
+        "silent_accept": 5
+      },
+      "sync": {
+        "accepted_unverified": 2,
+        "honored": 2,
+        "instructive_error": 1,
+        "opaque_error": 1
+      },
+      "tts": {
+        "accepted_with_warning": 2,
+        "honored": 1,
+        "instructive_error": 4,
+        "opaque_error": 1
+      }
+    },
+    "disagrees_with_skill": [
+      "async.speech_models.u3_pro",
+      "async.sentiment.non_english",
+      "stream.pacing.fast",
+      "stream.url.v2",
+      "sync.audio.mp3"
+    ]
+  },
+  "rows": [
+    {
+      "code": "HTTP 200",
+      "stage": "request",
+      "names_offender": null,
+      "names_fix": null,
+      "effect": "applied",
+      "evidence": "request was authenticated",
+      "signals": [],
+      "error_excerpt": "",
+      "class": "honored",
+      "id": "async.auth.bearer",
+      "reps": 2,
+      "per_rep": [
+        "honored",
+        "honored"
+      ],
+      "matches_skill": "n/a",
+      "surface": "async",
+      "mistake": "`Authorization: Bearer KEY` instead of the raw key",
+      "origin": "skill",
+      "documented": "unspecified"
+    },
+    {
+      "code": "HTTP 400",
+      "stage": "request",
+      "names_offender": false,
+      "names_fix": null,
+      "effect": "",
+      "evidence": "",
+      "signals": [],
+      "error_excerpt": "error: Invalid endpoint schema, please refer to documentation for examples.",
+      "class": "opaque_error",
+      "id": "async.unknown_field",
+      "reps": 2,
+      "per_rep": [
+        "opaque_error",
+        "opaque_error"
+      ],
+      "matches_skill": "n/a",
+      "surface": "async",
+      "mistake": "a parameter that does not exist (`zz_not_a_real_param`)",
+      "origin": "author",
+      "documented": "unspecified"
+    },
+    {
+      "code": "HTTP 200",
+      "stage": "request",
+      "names_offender": null,
+      "names_fix": null,
+      "effect": "not_applied",
+      "evidence": "a warning names the input as not used (body metadata.warnings: [{\"message\": \"Skipped word_boost because it is not a supported feature on Universal-3 Pro.\"}]); echo {'word_boost': ['Quorvex', 'Zyntrix Flow'], 'keyterms_prompt': []} (echo only; decoder bias not measured)",
+      "signals": [
+        "body metadata.warnings: [{\"message\": \"Skipped word_boost because it is not a supported feature on Universal-3 Pro.\"}]"
+      ],
+      "error_excerpt": "",
+      "class": "accepted_with_warning",
+      "id": "async.word_boost",
+      "reps": 2,
+      "per_rep": [
+        "accepted_with_warning",
+        "accepted_with_warning"
+      ],
+      "matches_skill": "n/a",
+      "surface": "async",
+      "mistake": "`word_boost` (+`boost_param`) instead of `keyterms_prompt`",
+      "origin": "skill",
+      "documented": "unspecified"
+    },
+    {
+      "code": "HTTP 400",
+      "stage": "request",
+      "names_offender": true,
+      "names_fix": true,
+      "effect": "",
+      "evidence": "",
+      "signals": [],
+      "error_excerpt": "error: The speech_model parameter is deprecated. Use speech_models: [\"universal-3-5-pro\", \"universal-2\"] for the best accuracy, performance, and language coverage. See documentation: https://www.assemblyai.com/docs/pre-recorded-audio/select-the-speech-model",
+      "class": "instructive_error",
+      "id": "async.speech_model.singular",
+      "reps": 2,
+      "per_rep": [
+        "instructive_error",
+        "instructive_error"
+      ],
+      "matches_skill": "yes",
+      "surface": "async",
+      "mistake": "singular `speech_model` with a current model name",
+      "origin": "skill",
+      "documented": "reject"
+    },
+    {
+      "code": "HTTP 200",
+      "stage": "request",
+      "names_offender": null,
+      "names_fix": null,
+      "effect": "applied",
+      "evidence": "requested 'universal-3-pro', speech_model_used='universal-3-pro'",
+      "signals": [],
+      "error_excerpt": "",
+      "class": "honored",
+      "id": "async.speech_models.u3_pro",
+      "reps": 2,
+      "per_rep": [
+        "honored",
+        "honored"
+      ],
+      "matches_skill": "NO",
+      "surface": "async",
+      "mistake": "`speech_models: [\"universal-3-pro\"]` (superseded model)",
+      "origin": "skill",
+      "documented": "reject"
+    },
+    {
+      "code": "HTTP 400",
+      "stage": "request",
+      "names_offender": false,
+      "names_fix": true,
+      "effect": "",
+      "evidence": "",
+      "signals": [],
+      "error_excerpt": "error: \"speech_models\" must be a non-empty list containing one or more of: \"universal-3-5-pro\", \"universal-2\"",
+      "class": "instructive_error",
+      "id": "async.speech_models.u36_pro",
+      "reps": 2,
+      "per_rep": [
+        "instructive_error",
+        "instructive_error"
+      ],
+      "matches_skill": "yes",
+      "surface": "async",
+      "mistake": "streaming-only `universal-3-6-pro` on the async API",
+      "origin": "skill",
+      "documented": "reject"
+    },
+    {
+      "code": "HTTP 200",
+      "stage": "request",
+      "names_offender": null,
+      "names_fix": null,
+      "effect": "not_applied",
+      "evidence": "requested 'universal', speech_model_used='universal-2'",
+      "signals": [],
+      "error_excerpt": "",
+      "class": "silent_accept",
+      "id": "async.speech_models.universal",
+      "reps": 2,
+      "per_rep": [
+        "silent_accept",
+        "silent_accept"
+      ],
+      "matches_skill": "yes",
+      "surface": "async",
+      "mistake": "`speech_models: [\"universal\"]` (legacy name)",
+      "origin": "skill",
+      "documented": "silent"
+    },
+    {
+      "code": "HTTP 200",
+      "stage": "request",
+      "names_offender": null,
+      "names_fix": null,
+      "effect": "applied",
+      "evidence": "summary returned",
+      "signals": [
+        "body metadata.warnings: [{\"message\": \"[Parameter change] Starting September 15, 2026, requests with a \\\"summarization\\\", \\\"summary_model\\\", or \\\"summary_type\\\" parameter specified will return an error. To migrate to the upgraded Summarization, reference our documentation here: https://www.assemblyai.com/docs/speech-underst"
+      ],
+      "error_excerpt": "",
+      "class": "honored",
+      "id": "async.summarization.top_level",
+      "reps": 2,
+      "per_rep": [
+        "honored",
+        "honored"
+      ],
+      "matches_skill": "yes",
+      "surface": "async",
+      "mistake": "deprecated top-level `summarization` params",
+      "origin": "skill",
+      "documented": "honored"
+    },
+    {
+      "code": "HTTP 400",
+      "stage": "request",
+      "names_offender": true,
+      "names_fix": true,
+      "effect": "",
+      "evidence": "",
+      "signals": [],
+      "error_excerpt": "error: speech_understanding.request field not provided",
+      "class": "instructive_error",
+      "id": "async.speech_understanding.no_request",
+      "reps": 2,
+      "per_rep": [
+        "instructive_error",
+        "instructive_error"
+      ],
+      "matches_skill": "yes",
+      "surface": "async",
+      "mistake": "`speech_understanding.translation` without the `request` wrapper",
+      "origin": "skill",
+      "documented": "reject"
+    },
+    {
+      "code": "HTTP 400",
+      "stage": "request",
+      "names_offender": true,
+      "names_fix": true,
+      "effect": "",
+      "evidence": "",
+      "signals": [],
+      "error_excerpt": "error: Unsupported domain. Please try again, using domains from this list: ['medical-v1', 'veterinary-v1'].",
+      "class": "instructive_error",
+      "id": "async.domain.medical",
+      "reps": 2,
+      "per_rep": [
+        "instructive_error",
+        "instructive_error"
+      ],
+      "matches_skill": "n/a",
+      "surface": "async",
+      "mistake": "`domain: \"medical\"` instead of `\"medical-v1\"`",
+      "origin": "skill",
+      "documented": "unspecified"
+    },
+    {
+      "code": "HTTP 200",
+      "stage": "request",
+      "names_offender": null,
+      "names_fix": null,
+      "effect": "not_applied",
+      "evidence": "metadata.domain_used=None",
+      "signals": [
+        "body metadata.warnings: [{\"message\": \"Skipped medical-v1 correction because the language is not supported\"}]"
+      ],
+      "error_excerpt": "",
+      "class": "accepted_with_warning",
+      "id": "async.domain.unsupported_language",
+      "reps": 2,
+      "per_rep": [
+        "accepted_with_warning",
+        "accepted_with_warning"
+      ],
+      "matches_skill": "yes",
+      "surface": "async",
+      "mistake": "Medical Mode on a language it does not support (Italian)",
+      "origin": "skill",
+      "documented": "warn"
+    },
+    {
+      "code": "HTTP 400",
+      "stage": "request",
+      "names_offender": true,
+      "names_fix": false,
+      "effect": "",
+      "evidence": "",
+      "signals": [],
+      "error_excerpt": "error: The following models are not available in this language: sentiment_analysis",
+      "class": "opaque_error",
+      "id": "async.sentiment.non_english",
+      "reps": 2,
+      "per_rep": [
+        "opaque_error",
+        "opaque_error"
+      ],
+      "matches_skill": "NO",
+      "surface": "async",
+      "mistake": "`sentiment_analysis` on non-English audio (Italian)",
+      "origin": "skill",
+      "documented": "silent"
+    },
+    {
+      "code": "HTTP 200",
+      "stage": "request",
+      "names_offender": null,
+      "names_fix": null,
+      "effect": "unverifiable",
+      "evidence": "control did not show the effect (5 fillers in transcript, same as or fewer than the 5 with no options); mistake: 5 fillers in transcript, same as or fewer than the 5 with no options",
+      "signals": [],
+      "error_excerpt": "",
+      "class": "accepted_unverified",
+      "id": "async.prompt.instructions",
+      "reps": 2,
+      "per_rep": [
+        "accepted_unverified",
+        "accepted_unverified"
+      ],
+      "matches_skill": "consistent (not verifiable)",
+      "surface": "async",
+      "mistake": "behavioral instructions in `prompt` (\"transcribe verbatim, keep um/uh\")",
+      "origin": "skill",
+      "documented": "silent"
+    },
+    {
+      "code": "HTTP 400",
+      "stage": "request",
+      "names_offender": true,
+      "names_fix": false,
+      "effect": "",
+      "evidence": "",
+      "signals": [],
+      "error_excerpt": "error: Language code en-US is not supported. See https://www.assemblyai.com/docs/concepts/supported-languages.",
+      "class": "opaque_error",
+      "id": "async.language_code.hyphen",
+      "reps": 2,
+      "per_rep": [
+        "opaque_error",
+        "opaque_error"
+      ],
+      "matches_skill": "n/a",
+      "surface": "async",
+      "mistake": "`language_code: \"en-US\"` instead of `\"en_us\"`",
+      "origin": "author",
+      "documented": "unspecified"
+    },
+    {
+      "code": "HTTP 400",
+      "stage": "request",
+      "names_offender": true,
+      "names_fix": true,
+      "effect": "",
+      "evidence": "",
+      "signals": [],
+      "error_excerpt": "error: Unsupported policy name in 'redact_pii_policies', supported policy names are ['account_number', 'banking_information', 'blood_type', 'credit_card_number', 'credit_card_expiration', 'credit_card_cvv', 'date', 'date_interval', 'date_of_birth', 'drivers_license', 'drug', 'duration', 'email_address', 'event', 'filename', 'gender', 'gender_sexuality', 'healthcare_number', 'injury', 'ip_address',",
+      "class": "instructive_error",
+      "id": "async.pii.policy_name",
+      "reps": 2,
+      "per_rep": [
+        "instructive_error",
+        "instructive_error"
+      ],
+      "matches_skill": "n/a",
+      "surface": "async",
+      "mistake": "`redact_pii_policies: [\"ssn\"]` instead of `us_social_security_number`",
+      "origin": "author",
+      "documented": "unspecified"
+    },
+    {
+      "code": "HTTP 404",
+      "stage": "request",
+      "names_offender": false,
+      "names_fix": false,
+      "effect": "",
+      "evidence": "",
+      "signals": [],
+      "error_excerpt": "Not found",
+      "class": "opaque_error",
+      "id": "async.lemur",
+      "reps": 2,
+      "per_rep": [
+        "opaque_error",
+        "opaque_error"
+      ],
+      "matches_skill": "yes",
+      "surface": "async",
+      "mistake": "calling the retired LeMUR endpoint",
+      "origin": "skill",
+      "documented": "reject"
+    },
+    {
+      "code": "HTTP 200, then status=error",
+      "stage": "processing",
+      "names_offender": true,
+      "names_fix": false,
+      "effect": "",
+      "evidence": "",
+      "signals": [],
+      "error_excerpt": "Transcoding failed. File type application/json (JSON text data) may be unsupported or an unexpected error occurred. See supported formats at https://www.assemblyai.com/docs/faq/what-audio-and-video-file-types-are-supported-by-your-api. If your file format is supported and you're still encountering this error, contact us at support@assemblyai.com.",
+      "class": "opaque_error",
+      "id": "async.upload.json_body",
+      "reps": 2,
+      "per_rep": [
+        "opaque_error",
+        "opaque_error"
+      ],
+      "matches_skill": "yes",
+      "surface": "async",
+      "mistake": "JSON body sent to `/v2/upload` instead of raw audio bytes",
+      "origin": "skill",
+      "documented": "late-fail"
+    },
+    {
+      "code": "error frame, close 1008",
+      "stage": "handshake",
+      "names_offender": null,
+      "names_fix": false,
+      "effect": "",
+      "evidence": "",
+      "signals": [],
+      "error_excerpt": "type: Error error_code: 1008 error: Unauthorized Connection: Invalid API key See Error message for details",
+      "class": "opaque_error",
+      "id": "stream.auth.bearer",
+      "reps": 2,
+      "per_rep": [
+        "opaque_error",
+        "opaque_error"
+      ],
+      "matches_skill": "n/a",
+      "surface": "streaming",
+      "mistake": "`Authorization: Bearer KEY` on the websocket",
+      "origin": "skill",
+      "documented": "unspecified"
+    },
+    {
+      "code": "session opened",
+      "stage": "session",
+      "names_offender": null,
+      "names_fix": null,
+      "effect": "not_applied",
+      "evidence": "Begin.configuration.model='universal-3-6-pro'",
+      "signals": [],
+      "error_excerpt": "",
+      "class": "silent_accept",
+      "id": "stream.param.model_name",
+      "reps": 2,
+      "per_rep": [
+        "silent_accept",
+        "silent_accept"
+      ],
+      "matches_skill": "yes",
+      "surface": "streaming",
+      "mistake": "`model=` instead of `speech_model=`",
+      "origin": "skill",
+      "documented": "silent"
+    },
+    {
+      "code": "session opened",
+      "stage": "session",
+      "names_offender": null,
+      "names_fix": null,
+      "effect": "not_applied",
+      "evidence": "Begin.configuration.model='universal-3-6-pro'",
+      "signals": [],
+      "error_excerpt": "",
+      "class": "silent_accept",
+      "id": "stream.model.u3_rt_pro",
+      "reps": 2,
+      "per_rep": [
+        "silent_accept",
+        "silent_accept"
+      ],
+      "matches_skill": "yes",
+      "surface": "streaming",
+      "mistake": "`speech_model=u3-rt-pro` (removed model)",
+      "origin": "skill",
+      "documented": "silent"
+    },
+    {
+      "code": "session opened",
+      "stage": "session",
+      "names_offender": null,
+      "names_fix": null,
+      "effect": "applied",
+      "evidence": "Begin.configuration.model='universal-3-6'",
+      "signals": [],
+      "error_excerpt": "",
+      "class": "honored",
+      "id": "stream.model.universal_3_6",
+      "reps": 2,
+      "per_rep": [
+        "honored",
+        "honored"
+      ],
+      "matches_skill": "n/a",
+      "surface": "streaming",
+      "mistake": "`speech_model=universal-3-6` (SDK enum value, not a documented model)",
+      "origin": "skill",
+      "documented": "unspecified"
+    },
+    {
+      "code": "error frame, close 3006",
+      "stage": "handshake",
+      "names_offender": true,
+      "names_fix": null,
+      "effect": "",
+      "evidence": "",
+      "signals": [],
+      "error_excerpt": "type: Error error_code: 3006 error: User Input Validation Error: Invalid 'speech_model': Input should be 'universal-streaming-english', 'universal-streaming-multilingual', 'whisper-rt', 'u3-rt-pro', 'u3-rt-agent', 'universal-3-5-pro', 'universal-3-6-pro', 'universal-3-6', 'universal-3-7-preview', 'assemblyai-stt-3-7-realtime', 'assemblyai-stt-3-7-realtime-agent' or '_universal-3-5-notetaker' See E",
+      "class": "instructive_error",
+      "id": "stream.model.invalid",
+      "reps": 2,
+      "per_rep": [
+        "instructive_error",
+        "instructive_error"
+      ],
+      "matches_skill": "n/a",
+      "surface": "streaming",
+      "mistake": "`speech_model=whisper-large-v3` (not an AssemblyAI model)",
+      "origin": "author",
+      "documented": "unspecified"
+    },
+    {
+      "code": "session opened",
+      "stage": "session",
+      "names_offender": null,
+      "names_fix": null,
+      "effect": "not_applied",
+      "evidence": "not part of the public API (no server-side echo for this input)",
+      "signals": [],
+      "error_excerpt": "",
+      "class": "silent_accept",
+      "id": "stream.param.word_boost",
+      "reps": 2,
+      "per_rep": [
+        "silent_accept",
+        "silent_accept"
+      ],
+      "matches_skill": "yes",
+      "surface": "streaming",
+      "mistake": "`word_boost=[...]` instead of `keyterms_prompt=[...]`",
+      "origin": "skill",
+      "documented": "silent"
+    },
+    {
+      "code": "session opened",
+      "stage": "session",
+      "names_offender": null,
+      "names_fix": null,
+      "effect": "not_applied",
+      "evidence": "Begin.configuration.speaker_labels=False",
+      "signals": [],
+      "error_excerpt": "",
+      "class": "silent_accept",
+      "id": "stream.param.camel_case",
+      "reps": 2,
+      "per_rep": [
+        "silent_accept",
+        "silent_accept"
+      ],
+      "matches_skill": "yes",
+      "surface": "streaming",
+      "mistake": "`speakerLabels=true` instead of `speaker_labels=true`",
+      "origin": "author",
+      "documented": "silent"
+    },
+    {
+      "code": "error frame, close 3006",
+      "stage": "handshake",
+      "names_offender": true,
+      "names_fix": true,
+      "effect": "",
+      "evidence": "",
+      "signals": [],
+      "error_excerpt": "type: Error error_code: 3006 error: User Input Validation Error: Invalid 'mode': Input should be 'max_accuracy', 'min_latency' or 'balanced' See Error message for details",
+      "class": "instructive_error",
+      "id": "stream.value.mode",
+      "reps": 2,
+      "per_rep": [
+        "instructive_error",
+        "instructive_error"
+      ],
+      "matches_skill": "n/a",
+      "surface": "streaming",
+      "mistake": "`mode=max-accuracy` (hyphen) instead of `max_accuracy`",
+      "origin": "author",
+      "documented": "unspecified"
+    },
+    {
+      "code": "session opened",
+      "stage": "session",
+      "names_offender": null,
+      "names_fix": null,
+      "effect": "applied",
+      "evidence": "Begin.configuration.domain='medical-v1'",
+      "signals": [],
+      "error_excerpt": "",
+      "class": "honored",
+      "id": "stream.value.domain",
+      "reps": 2,
+      "per_rep": [
+        "honored",
+        "honored"
+      ],
+      "matches_skill": "n/a",
+      "surface": "streaming",
+      "mistake": "`domain=medical` instead of `medical-v1`",
+      "origin": "skill",
+      "documented": "unspecified"
+    },
+    {
+      "code": "session opened",
+      "stage": "session",
+      "names_offender": null,
+      "names_fix": null,
+      "effect": "not_applied",
+      "evidence": "not part of the public API (no server-side echo for this input)",
+      "signals": [],
+      "error_excerpt": "",
+      "class": "silent_accept",
+      "id": "stream.param.v2_silence",
+      "reps": 2,
+      "per_rep": [
+        "silent_accept",
+        "silent_accept"
+      ],
+      "matches_skill": "yes",
+      "surface": "streaming",
+      "mistake": "v2-era `end_utterance_silence_threshold=1000`",
+      "origin": "author",
+      "documented": "silent"
+    },
+    {
+      "code": "error frame, close 3006",
+      "stage": "handshake",
+      "names_offender": true,
+      "names_fix": true,
+      "effect": "",
+      "evidence": "",
+      "signals": [],
+      "error_excerpt": "type: Error error_code: 3006 error: User Input Validation Error: Invalid 'keyterms_prompt': Value error, Invalid JSON array See Error message for details",
+      "class": "instructive_error",
+      "id": "stream.keyterms.csv",
+      "reps": 2,
+      "per_rep": [
+        "instructive_error",
+        "instructive_error"
+      ],
+      "matches_skill": "n/a",
+      "surface": "streaming",
+      "mistake": "`keyterms_prompt` as a comma string instead of a JSON array",
+      "origin": "skill",
+      "documented": "unspecified"
+    },
+    {
+      "code": "session opened",
+      "stage": "session",
+      "names_offender": null,
+      "names_fix": null,
+      "effect": "applied",
+      "evidence": "server accepted unpaced audio",
+      "signals": [],
+      "error_excerpt": "",
+      "class": "honored",
+      "id": "stream.pacing.fast",
+      "reps": 2,
+      "per_rep": [
+        "honored",
+        "honored"
+      ],
+      "matches_skill": "NO",
+      "surface": "streaming",
+      "mistake": "replaying a file without pacing (12 s of audio sent at once)",
+      "origin": "skill",
+      "documented": "reject"
+    },
+    {
+      "code": "HTTP 404",
+      "stage": "handshake",
+      "names_offender": false,
+      "names_fix": false,
+      "effect": "",
+      "evidence": "",
+      "signals": [],
+      "error_excerpt": "Not found",
+      "class": "opaque_error",
+      "id": "stream.url.v2",
+      "reps": 2,
+      "per_rep": [
+        "opaque_error",
+        "opaque_error"
+      ],
+      "matches_skill": "NO",
+      "surface": "streaming",
+      "mistake": "hardcoded v2 realtime URL",
+      "origin": "skill",
+      "documented": "honored"
+    },
+    {
+      "code": "HTTP 400",
+      "stage": "request",
+      "names_offender": true,
+      "names_fix": null,
+      "effect": "",
+      "evidence": "",
+      "signals": [],
+      "error_excerpt": "status: 400 title: Bad Request detail: invalid config part: speaker_labels: Extra inputs are not permitted",
+      "class": "instructive_error",
+      "id": "sync.config.unknown_field",
+      "reps": 2,
+      "per_rep": [
+        "instructive_error",
+        "instructive_error"
+      ],
+      "matches_skill": "yes",
+      "surface": "sync",
+      "mistake": "async-only `speaker_labels` in the Sync `config`",
+      "origin": "skill",
+      "documented": "reject"
+    },
+    {
+      "code": "HTTP 404",
+      "stage": "request",
+      "names_offender": null,
+      "names_fix": false,
+      "effect": "",
+      "evidence": "",
+      "signals": [],
+      "error_excerpt": "Not found",
+      "class": "opaque_error",
+      "id": "sync.header.missing_model",
+      "reps": 2,
+      "per_rep": [
+        "opaque_error",
+        "opaque_error"
+      ],
+      "matches_skill": "n/a",
+      "surface": "sync",
+      "mistake": "no `X-AAI-Model` header",
+      "origin": "skill",
+      "documented": "unspecified"
+    },
+    {
+      "code": "HTTP 200",
+      "stage": "request",
+      "names_offender": null,
+      "names_fix": null,
+      "effect": "unverifiable",
+      "evidence": "correct transcript returned, but Sync responses do not echo the model, so which model ran is not visible",
+      "signals": [],
+      "error_excerpt": "",
+      "class": "accepted_unverified",
+      "id": "sync.header.model_u36",
+      "reps": 2,
+      "per_rep": [
+        "accepted_unverified",
+        "accepted_unverified"
+      ],
+      "matches_skill": "n/a",
+      "surface": "sync",
+      "mistake": "`X-AAI-Model: universal-3-6-pro` (streaming-only model)",
+      "origin": "skill",
+      "documented": "unspecified"
+    },
+    {
+      "code": "HTTP 200",
+      "stage": "request",
+      "names_offender": null,
+      "names_fix": null,
+      "effect": "unverifiable",
+      "evidence": "Sync responses do not echo the config",
+      "signals": [],
+      "error_excerpt": "",
+      "class": "accepted_unverified",
+      "id": "sync.config.word_boost",
+      "reps": 2,
+      "per_rep": [
+        "accepted_unverified",
+        "accepted_unverified"
+      ],
+      "matches_skill": "consistent (not verifiable)",
+      "surface": "sync",
+      "mistake": "`word_boost` alias in the Sync `config`",
+      "origin": "skill",
+      "documented": "honored"
+    },
+    {
+      "code": "HTTP 200",
+      "stage": "request",
+      "names_offender": null,
+      "names_fix": null,
+      "effect": "applied",
+      "evidence": "transcript contains ['quarterly', 'Tuesday']",
+      "signals": [],
+      "error_excerpt": "",
+      "class": "honored",
+      "id": "sync.audio.mp3",
+      "reps": 2,
+      "per_rep": [
+        "honored",
+        "honored"
+      ],
+      "matches_skill": "NO",
+      "surface": "sync",
+      "mistake": "MP3 audio",
+      "origin": "skill",
+      "documented": "reject"
+    },
+    {
+      "code": "HTTP 200",
+      "stage": "request",
+      "names_offender": null,
+      "names_fix": null,
+      "effect": "applied",
+      "evidence": "request was authenticated",
+      "signals": [],
+      "error_excerpt": "",
+      "class": "honored",
+      "id": "sync.auth.bearer",
+      "reps": 2,
+      "per_rep": [
+        "honored",
+        "honored"
+      ],
+      "matches_skill": "yes",
+      "surface": "sync",
+      "mistake": "`Authorization: Bearer KEY`",
+      "origin": "skill",
+      "documented": "honored"
+    },
+    {
+      "code": "HTTP 400",
+      "stage": "request",
+      "names_offender": true,
+      "names_fix": null,
+      "effect": "",
+      "evidence": "",
+      "signals": [],
+      "error_excerpt": "status: 400 title: Bad Request detail: invalid config part: redact_pii: Extra inputs are not permitted",
+      "class": "instructive_error",
+      "id": "dictation.config.unknown_field",
+      "reps": 2,
+      "per_rep": [
+        "instructive_error",
+        "instructive_error"
+      ],
+      "matches_skill": "yes",
+      "surface": "dictation",
+      "mistake": "async-only `redact_pii` in the Dictation `config`",
+      "origin": "skill",
+      "documented": "reject"
+    },
+    {
+      "code": "HTTP 400",
+      "stage": "request",
+      "names_offender": true,
+      "names_fix": null,
+      "effect": "",
+      "evidence": "",
+      "signals": [],
+      "error_excerpt": "status: 400 title: Bad Request detail: invalid config part: model: Extra inputs are not permitted",
+      "class": "instructive_error",
+      "id": "dictation.config.model",
+      "reps": 2,
+      "per_rep": [
+        "instructive_error",
+        "instructive_error"
+      ],
+      "matches_skill": "yes",
+      "surface": "dictation",
+      "mistake": "`model` in the Dictation `config`",
+      "origin": "skill",
+      "documented": "reject"
+    },
+    {
+      "code": "HTTP 400",
+      "stage": "request",
+      "names_offender": true,
+      "names_fix": true,
+      "effect": "",
+      "evidence": "",
+      "signals": [],
+      "error_excerpt": "error: the `config` part must be sent before the `audio` part on the streaming endpoint, because the upstream call cannot be opened without it error_code: bad_request",
+      "class": "instructive_error",
+      "id": "dictation.multipart.audio_first",
+      "reps": 2,
+      "per_rep": [
+        "instructive_error",
+        "instructive_error"
+      ],
+      "matches_skill": "yes",
+      "surface": "dictation",
+      "mistake": "`audio` part sent before `config`",
+      "origin": "skill",
+      "documented": "reject"
+    },
+    {
+      "code": "HTTP 400",
+      "stage": "request",
+      "names_offender": null,
+      "names_fix": true,
+      "effect": "",
+      "evidence": "",
+      "signals": [],
+      "error_excerpt": "error: the `config` part must be sent before the `audio` part on the streaming endpoint, because the upstream call cannot be opened without it error_code: bad_request",
+      "class": "instructive_error",
+      "id": "dictation.multipart.no_config",
+      "reps": 2,
+      "per_rep": [
+        "instructive_error",
+        "instructive_error"
+      ],
+      "matches_skill": "yes",
+      "surface": "dictation",
+      "mistake": "no `config` part at all",
+      "origin": "skill",
+      "documented": "reject"
+    },
+    {
+      "code": "HTTP 200",
+      "stage": "request",
+      "names_offender": null,
+      "names_fix": null,
+      "effect": "unverifiable",
+      "evidence": "correct transcript returned, but the clip is English, which the default also produces, so whether the string was read as a language hint is not visible",
+      "signals": [],
+      "error_excerpt": "",
+      "class": "accepted_unverified",
+      "id": "dictation.config.language_string",
+      "reps": 2,
+      "per_rep": [
+        "accepted_unverified",
+        "accepted_unverified"
+      ],
+      "matches_skill": "n/a",
+      "surface": "dictation",
+      "mistake": "`language_codes: \"en\"` (string, not a list)",
+      "origin": "skill",
+      "documented": "unspecified"
+    },
+    {
+      "code": "HTTP 200",
+      "stage": "request",
+      "names_offender": null,
+      "names_fix": null,
+      "effect": "applied",
+      "evidence": "request was authenticated",
+      "signals": [],
+      "error_excerpt": "",
+      "class": "honored",
+      "id": "dictation.auth.bearer",
+      "reps": 2,
+      "per_rep": [
+        "honored",
+        "honored"
+      ],
+      "matches_skill": "n/a",
+      "surface": "dictation",
+      "mistake": "`Authorization: Bearer KEY`",
+      "origin": "skill",
+      "documented": "unspecified"
+    },
+    {
+      "code": "HTTP 415",
+      "stage": "request",
+      "names_offender": true,
+      "names_fix": false,
+      "effect": "",
+      "evidence": "",
+      "signals": [],
+      "error_excerpt": "status: 415 title: Unsupported Media Type detail: 'audio/mpeg' cannot be decoded incrementally; send it to the buffered /v1/transcribe endpoint instead",
+      "class": "opaque_error",
+      "id": "dictation.audio.mp3",
+      "reps": 2,
+      "per_rep": [
+        "opaque_error",
+        "opaque_error"
+      ],
+      "matches_skill": "yes",
+      "surface": "dictation",
+      "mistake": "MP3 audio",
+      "origin": "skill",
+      "documented": "reject"
+    },
+    {
+      "code": "HTTP 422",
+      "stage": "request",
+      "names_offender": true,
+      "names_fix": true,
+      "effect": "",
+      "evidence": "",
+      "signals": [],
+      "error_excerpt": "code: invalid_parameter message: voice: voice is retired: name the voice with voice_id, for example voice_id=aai-jane param: voice request_id: 9a71c282-5237-4f86-986d-ce2968cd17fb errors: message: voice is retired: name the voice with voice_id, for example voice_id=aai-jane param: voice retryable: False retry_after_seconds:  error: voice: voice is retired: name the voice with voice_id, for example",
+      "class": "instructive_error",
+      "id": "tts.voice_param",
+      "reps": 2,
+      "per_rep": [
+        "instructive_error",
+        "instructive_error"
+      ],
+      "matches_skill": "yes",
+      "surface": "tts",
+      "mistake": "`voice` instead of `voice_id`",
+      "origin": "skill",
+      "documented": "reject"
+    },
+    {
+      "code": "HTTP 422",
+      "stage": "request",
+      "names_offender": true,
+      "names_fix": true,
+      "effect": "",
+      "evidence": "",
+      "signals": [],
+      "error_excerpt": "code: voice_not_found message: The requested voice was not found. It may not exist, may have been deleted, or may be another account's private voice. Voices exist only in the data zone where they were created, so it may also belong to the EU data zone: use tts.eu.assemblyai.com for a voice created there. Did you mean voice_id=aai-jane? param: voice_id request_id: 4c700b29-5951-488e-81f2-794765ed09",
+      "class": "instructive_error",
+      "id": "tts.voice_bare_name",
+      "reps": 2,
+      "per_rep": [
+        "instructive_error",
+        "instructive_error"
+      ],
+      "matches_skill": "yes",
+      "surface": "tts",
+      "mistake": "bare voice name (`voice_id: \"jane\"`)",
+      "origin": "skill",
+      "documented": "reject"
+    },
+    {
+      "code": "HTTP 200",
+      "stage": "request",
+      "names_offender": null,
+      "names_fix": null,
+      "effect": "not_applied",
+      "evidence": "not part of the public API (no server-side echo for this input)",
+      "signals": [
+        "header x-tts-unknown-params: zz_not_a_real_param"
+      ],
+      "error_excerpt": "",
+      "class": "accepted_with_warning",
+      "id": "tts.unknown_field",
+      "reps": 2,
+      "per_rep": [
+        "accepted_with_warning",
+        "accepted_with_warning"
+      ],
+      "matches_skill": "yes",
+      "surface": "tts",
+      "mistake": "a parameter that does not exist (`zz_not_a_real_param`)",
+      "origin": "skill",
+      "documented": "warn"
+    },
+    {
+      "code": "HTTP 200",
+      "stage": "request",
+      "names_offender": null,
+      "names_fix": null,
+      "effect": "not_applied",
+      "evidence": "body is not WAV (first bytes '35 00 a2 00 2d 01 85 01 79 01 6d 01')",
+      "signals": [
+        "header x-tts-unknown-params: response_format"
+      ],
+      "error_excerpt": "",
+      "class": "accepted_with_warning",
+      "id": "tts.response_format",
+      "reps": 2,
+      "per_rep": [
+        "accepted_with_warning",
+        "accepted_with_warning"
+      ],
+      "matches_skill": "yes",
+      "surface": "tts",
+      "mistake": "OpenAI-style `response_format: \"wav\"` instead of `container: \"wav\"`",
+      "origin": "author",
+      "documented": "warn"
+    },
+    {
+      "code": "HTTP 422",
+      "stage": "request",
+      "names_offender": true,
+      "names_fix": true,
+      "effect": "",
+      "evidence": "",
+      "signals": [],
+      "error_excerpt": "code: invalid_parameter message: container: wav needs a pcm encoding; mp3 has no container param: container request_id: 8b766a02-f1ad-41bc-831d-cad4a78429c3 errors: message: wav needs a pcm encoding; mp3 has no container param: container retryable: False retry_after_seconds:  error: container: wav needs a pcm encoding; mp3 has no container",
+      "class": "instructive_error",
+      "id": "tts.wav_with_mp3",
+      "reps": 2,
+      "per_rep": [
+        "instructive_error",
+        "instructive_error"
+      ],
+      "matches_skill": "yes",
+      "surface": "tts",
+      "mistake": "`container: \"wav\"` together with `encoding: \"mp3\"`",
+      "origin": "skill",
+      "documented": "reject"
+    },
+    {
+      "code": "HTTP 404",
+      "stage": "request",
+      "names_offender": null,
+      "names_fix": false,
+      "effect": "",
+      "evidence": "",
+      "signals": [],
+      "error_excerpt": "Not found",
+      "class": "opaque_error",
+      "id": "tts.wrong_host",
+      "reps": 2,
+      "per_rep": [
+        "opaque_error",
+        "opaque_error"
+      ],
+      "matches_skill": "yes",
+      "surface": "tts",
+      "mistake": "TTS request sent to `api.assemblyai.com`",
+      "origin": "skill",
+      "documented": "reject"
+    },
+    {
+      "code": "HTTP 200",
+      "stage": "request",
+      "names_offender": null,
+      "names_fix": null,
+      "effect": "applied",
+      "evidence": "request was authenticated",
+      "signals": [],
+      "error_excerpt": "",
+      "class": "honored",
+      "id": "tts.auth.bearer",
+      "reps": 2,
+      "per_rep": [
+        "honored",
+        "honored"
+      ],
+      "matches_skill": "n/a",
+      "surface": "tts",
+      "mistake": "`Authorization: Bearer KEY`",
+      "origin": "author",
+      "documented": "unspecified"
+    },
+    {
+      "code": "HTTP 422",
+      "stage": "request",
+      "names_offender": true,
+      "names_fix": null,
+      "effect": "",
+      "evidence": "",
+      "signals": [],
+      "error_excerpt": "code: invalid_parameter message: speed: only 1 is supported, got 1.25 param: speed request_id: ba0c3721-7dce-49ef-9ca7-d510fc9efea2 errors: message: only 1 is supported, got 1.25 param: speed retryable: False retry_after_seconds:  error: speed: only 1 is supported, got 1.25",
+      "class": "instructive_error",
+      "id": "tts.speed",
+      "reps": 2,
+      "per_rep": [
+        "instructive_error",
+        "instructive_error"
+      ],
+      "matches_skill": "yes",
+      "surface": "tts",
+      "mistake": "`speed: 1.25`",
+      "origin": "skill",
+      "documented": "reject"
+    }
+  ]
+}

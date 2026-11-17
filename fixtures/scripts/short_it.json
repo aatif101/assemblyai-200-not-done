@@ -1,0 +1,11 @@
+{
+  "id": "short_it",
+  "purpose": "Short Italian clip with medical content. Used to probe features limited to other languages (Medical Mode, sentiment analysis).",
+  "language": "it",
+  "gap_seconds": 0.3,
+  "segments": [
+    {"speaker": "A", "text": "Buongiorno dottore. Il paziente ha la febbre alta e una tosse persistente da due settimane."},
+    {"speaker": "A", "text": "Abbiamo prescritto un antibiotico e un controllo tra dieci giorni. Sono molto contento dei risultati."}
+  ],
+  "ground_truth": {"speakers": 1, "language_code": "it", "must_contain": ["paziente", "febbre"]}
+}

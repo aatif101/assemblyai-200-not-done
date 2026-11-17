@@ -1,0 +1,51 @@
+{
+  "task": "t3_british",
+  "runs": true,
+  "runs_problems": [],
+  "outcome": true,
+  "checks": {
+    "server_transcript_fetched": {
+      "pass": true,
+      "evidence": "server/transcript.json present"
+    },
+    "server_completed": {
+      "pass": true,
+      "evidence": "status='completed'"
+    },
+    "id_matches_output": {
+      "pass": true,
+      "evidence": "out.json id='8848e751-c989-4a16-8496-af11460f4c63', server id='8848e751-c989-4a16-8496-af11460f4c63'"
+    },
+    "is_the_fixture": {
+      "pass": true,
+      "evidence": "audio_duration=13, fixture 12.11 s"
+    },
+    "british_server": {
+      "pass": true,
+      "evidence": "British ['organise', 'colour', 'centre', 'catalogued'], American []"
+    },
+    "british_output": {
+      "pass": true,
+      "evidence": "British ['organise', 'colour', 'centre', 'catalogued'], American []"
+    }
+  },
+  "evidence_kind": "server",
+  "info": {
+    "language_code": "en_uk",
+    "language_detection_options": {
+      "expected_languages": null,
+      "fallback_language": null,
+      "code_switching": null,
+      "code_switching_confidence_threshold": null,
+      "on_low_language_confidence": null,
+      "on_no_speech_detected": "fallback",
+      "swiss_german": null,
+      "language_detection_model": null,
+      "localization": [
+        "en_uk"
+      ]
+    },
+    "speech_model_used": "universal-3-5-pro"
+  },
+  "silent_failure": false
+}

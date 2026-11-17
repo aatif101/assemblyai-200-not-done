@@ -1,0 +1,11 @@
+{
+  "exit_code": 0,
+  "timed_out": false,
+  "seconds": 7.8,
+  "cap_hit": null,
+  "stdout_tail": "",
+  "stderr_tail": "AssemblyAI transcript ID: 038b58a3-7b46-4d01-a114-d3c15961cc2f\n",
+  "files": [
+    "out.json"
+  ]
+}

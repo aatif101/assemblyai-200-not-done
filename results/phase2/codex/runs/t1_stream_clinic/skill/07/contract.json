@@ -1,0 +1,12 @@
+{
+  "exit_code": 0,
+  "timed_out": false,
+  "seconds": 53.9,
+  "cap_hit": null,
+  "stdout_tail": "",
+  "stderr_tail": "Streaming audio in real time; collecting redacted final turns.\nComplete: 7 turns saved.\n",
+  "files": [
+    "out.json",
+    "out.json.frames.jsonl"
+  ]
+}
