@@ -1,0 +1,72 @@
+{
+  "run": "t4_legacy_upgrade/skill/05",
+  "files": [
+    "requirements.txt",
+    "run.sh",
+    "test_transcribe.py",
+    "transcribe.py"
+  ],
+  "judge_model": "gpt-6.1-sol",
+  "judge_effort": "medium",
+  "image": "twohundred-runner",
+  "image_digest": "sha256:f0dc2399e824cfd646a31f650736c272fb5e74dfb2f1703bca49d27708fec21c",
+  "prompt_sha256_16": "d7d087773e00e038",
+  "assertions": [
+    "Upgrades the SDK to 1.x (or replaces it with direct REST calls); no 0.x pin left",
+    "Replaces singular speech_model / SpeechModel.best with the speech_models list, or drops it",
+    "Replaces word_boost and boost_param with keyterms_prompt for the product names",
+    "Keeps speaker_labels enabled",
+    "Replaces LeMUR with Speech Understanding summarization or the LLM Gateway",
+    "Keeps the command line and the output format",
+    "Checks the transcript status for errors"
+  ],
+  "verdict": false,
+  "expectations": [
+    {
+      "text": "1. Upgrades the SDK to 1.x (or replaces it with direct REST calls); no 0.x pin left",
+      "passed": true,
+      "evidence": "requirements.txt:1 pins assemblyai==1.10.0."
+    },
+    {
+      "text": "2. Replaces singular speech_model / SpeechModel.best with the speech_models list, or drops it",
+      "passed": true,
+      "evidence": "transcribe.py:67 uses speech_models=[\"universal-3-5-pro\", \"universal-2\"]."
+    },
+    {
+      "text": "3. Replaces word_boost and boost_param with keyterms_prompt for the product names",
+      "passed": true,
+      "evidence": "transcribe.py:16 defines PRODUCT_NAMES; line 69 sets keyterms_prompt=PRODUCT_NAMES."
+    },
+    {
+      "text": "4. Keeps speaker_labels enabled",
+      "passed": true,
+      "evidence": "transcribe.py:68 sets speaker_labels=True."
+    },
+    {
+      "text": "5. Replaces LeMUR with Speech Understanding summarization or the LLM Gateway",
+      "passed": true,
+      "evidence": "transcribe.py:19–38 implements summarization using https://llm-gateway.assemblyai.com/v1/chat/completions."
+    },
+    {
+      "text": "6. Keeps the command line and the output format",
+      "passed": false,
+      "evidence": "run.sh:4–10 preserves the stated two-argument command line; transcribe.py:79–86 writes JSON, but README.md and the original output format are absent, so format compatibility cannot be confirmed."
+    },
+    {
+      "text": "7. Checks the transcript status for errors",
+      "passed": true,
+      "evidence": "transcribe.py:72–73 checks transcript.status != aai.TranscriptStatus.completed and raises RuntimeError with transcript.error."
+    }
+  ],
+  "usage": {
+    "input_tokens": 13380,
+    "cached_input_tokens": 8960,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 437,
+    "reasoning_output_tokens": 73
+  },
+  "errors": [],
+  "exit_code": 0,
+  "tool_calls": 0,
+  "stderr_tail": ""
+}

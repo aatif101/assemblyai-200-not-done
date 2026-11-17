@@ -1,0 +1,11 @@
+{
+  "exit_code": 0,
+  "timed_out": false,
+  "seconds": 4.0,
+  "cap_hit": null,
+  "stdout_tail": "",
+  "stderr_tail": "language_code: en_uk\n",
+  "files": [
+    "out.json"
+  ]
+}

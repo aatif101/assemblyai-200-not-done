@@ -1,0 +1,46 @@
+{
+  "transcript_id": "9c55bf12-1f66-43bd-bcad-d23fca7424b1",
+  "text": "Thank you for calling Harbor Ridge Insurance. This is #####. How can I help you today? Hi, #####. My name is #### #########. I need to update the billing address on my policy. I can help with that. To verify your identity, can you give me your Social Security number? Sure. It's ###-##-####. Thank you. And what is the best phone number to reach you? ###-###-####. Got it. What is the new address? 1240 Larkspur Avenue, Sacramento, California. Perfect. I have updated your policy. Is there anything else? No, that is everything. Thanks for your help.",
+  "utterances": [
+    {
+      "speaker": "A",
+      "text": "Thank you for calling Harbor Ridge Insurance. This is #####. How can I help you today?"
+    },
+    {
+      "speaker": "B",
+      "text": "Hi, #####. My name is #### #########. I need to update the billing address on my policy."
+    },
+    {
+      "speaker": "A",
+      "text": "I can help with that. To verify your identity, can you give me your Social Security number?"
+    },
+    {
+      "speaker": "B",
+      "text": "Sure. It's ###-##-####."
+    },
+    {
+      "speaker": "A",
+      "text": "Thank you. And what is the best phone number to reach you?"
+    },
+    {
+      "speaker": "B",
+      "text": "###-###-####."
+    },
+    {
+      "speaker": "A",
+      "text": "Got it. What is the new address?"
+    },
+    {
+      "speaker": "B",
+      "text": "1240 Larkspur Avenue, Sacramento, California."
+    },
+    {
+      "speaker": "A",
+      "text": "Perfect. I have updated your policy. Is there anything else?"
+    },
+    {
+      "speaker": "B",
+      "text": "No, that is everything. Thanks for your help."
+    }
+  ]
+}

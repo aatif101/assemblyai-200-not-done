@@ -1,0 +1,11 @@
+{
+  "exit_code": 1,
+  "timed_out": false,
+  "seconds": 1.2,
+  "cap_hit": null,
+  "stdout_tail": "",
+  "stderr_tail": "error: RuntimeError(\"server error: {'type': 'Error', 'error_code': 1008, 'error': 'Unauthorized Connection: Too many concurrent sessions'}\")\n",
+  "files": [
+    "out.json.frames.jsonl"
+  ]
+}

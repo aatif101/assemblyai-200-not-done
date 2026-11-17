@@ -1,0 +1,71 @@
+{
+  "run": "t4_legacy_upgrade/skill+mcp/03",
+  "files": [
+    "requirements.txt",
+    "run.sh",
+    "transcribe.py"
+  ],
+  "judge_model": "gpt-6.1-sol",
+  "judge_effort": "medium",
+  "image": "twohundred-runner",
+  "image_digest": "sha256:f0dc2399e824cfd646a31f650736c272fb5e74dfb2f1703bca49d27708fec21c",
+  "prompt_sha256_16": "aee1a57a713c3819",
+  "assertions": [
+    "Upgrades the SDK to 1.x (or replaces it with direct REST calls); no 0.x pin left",
+    "Replaces singular speech_model / SpeechModel.best with the speech_models list, or drops it",
+    "Replaces word_boost and boost_param with keyterms_prompt for the product names",
+    "Keeps speaker_labels enabled",
+    "Replaces LeMUR with Speech Understanding summarization or the LLM Gateway",
+    "Keeps the command line and the output format",
+    "Checks the transcript status for errors"
+  ],
+  "verdict": false,
+  "expectations": [
+    {
+      "text": "Upgrades the SDK to 1.x (or replaces it with direct REST calls); no 0.x pin left",
+      "passed": true,
+      "evidence": "requirements.txt:1 pins assemblyai==1.10.0."
+    },
+    {
+      "text": "Replaces singular speech_model / SpeechModel.best with the speech_models list, or drops it",
+      "passed": true,
+      "evidence": "transcribe.py:24 uses speech_models=[\"universal-3-5-pro\"]."
+    },
+    {
+      "text": "Replaces word_boost and boost_param with keyterms_prompt for the product names",
+      "passed": true,
+      "evidence": "transcribe.py:26 uses keyterms_prompt=PRODUCT_NAMES; line 14 defines the product names."
+    },
+    {
+      "text": "Keeps speaker_labels enabled",
+      "passed": true,
+      "evidence": "transcribe.py:25 sets speaker_labels=True."
+    },
+    {
+      "text": "Replaces LeMUR with Speech Understanding summarization or the LLM Gateway",
+      "passed": true,
+      "evidence": "transcribe.py:32 calls aai.LLMGateway().chat.completions.create with the summarization prompt at lines 38–44."
+    },
+    {
+      "text": "Keeps the command line and the output format",
+      "passed": false,
+      "evidence": "run.sh:4–10 accepts two arguments; transcribe.py:55–62 writes transcript_id, text, utterances, and summary. The referenced README.md or prior output format is absent, so format preservation cannot be verified."
+    },
+    {
+      "text": "Checks the transcript status for errors",
+      "passed": true,
+      "evidence": "transcribe.py:29–30 checks transcript.status == aai.TranscriptStatus.error and exits with the error message."
+    }
+  ],
+  "usage": {
+    "input_tokens": 11966,
+    "cached_input_tokens": 8960,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 492,
+    "reasoning_output_tokens": 59
+  },
+  "errors": [],
+  "exit_code": 0,
+  "tool_calls": 0,
+  "stderr_tail": ""
+}

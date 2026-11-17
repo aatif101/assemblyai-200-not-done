@@ -1,0 +1,66 @@
+{
+  "agent": {
+    "result_event": true,
+    "subtype": "error",
+    "num_turns": 0,
+    "usage": {},
+    "total_cost_usd": null,
+    "mcp_calls": 0,
+    "skill_read": false,
+    "errors": [
+      "You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at Nov 16th, 2026 3:30 AM.",
+      "{'message': 'You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at Nov 16th, 2026 3:30 AM.'}"
+    ],
+    "cap_hit": null,
+    "exit_code": 1,
+    "seconds": 3.8,
+    "stderr_tail": "WARNING: failed to clean up stale arg0 temp dirs: Permission denied (os error 13)\n"
+  },
+  "agent_cli": "codex",
+  "task": "t1_stream_clinic",
+  "condition": "skill",
+  "index": 1,
+  "kind": "sweep",
+  "model": "gpt-6.1-sol",
+  "reasoning_effort": "medium",
+  "max_turns": 40,
+  "turn_rule": "completed tool items (command, file change, MCP call)",
+  "max_agent_seconds": 1200,
+  "skill_commit": "f584ec557e97ca9ce8151ec4d3b6e2ec8e3ade75",
+  "skill_install": "assemblyai/ + AGENTS.md pointer (assemblyai-skill README, Codex)",
+  "mcp_url": null,
+  "disabled_features": [
+    "apps",
+    "plugins",
+    "remote_plugin",
+    "browser_use",
+    "browser_use_external",
+    "computer_use",
+    "image_generation"
+  ],
+  "web_search": "disabled",
+  "blocked_hosts": [
+    "www.assemblyai.com",
+    "assemblyai.com",
+    "github.com",
+    "www.github.com",
+    "raw.githubusercontent.com",
+    "api.github.com",
+    "codeload.github.com",
+    "objects.githubusercontent.com",
+    "gist.github.com",
+    "gist.githubusercontent.com"
+  ],
+  "credential_kind": [
+    "codex auth.json (ChatGPT plan)"
+  ],
+  "image": "twohundred-runner",
+  "image_digest": "sha256:8712e2f7324127011b8216d6801e1a65963266e5557ca2a0990c4af125ae0fc1",
+  "started_at": "2026-11-15T23:45:49Z",
+  "codex_version": "codex-cli 0.169.0",
+  "workspace_skipped": [
+    "sample.wav"
+  ],
+  "ended_at": "2026-11-15T23:45:54Z",
+  "complete": true
+}

@@ -1,0 +1,9 @@
+{
+  "exit_code": 127,
+  "timed_out": false,
+  "seconds": 0.3,
+  "cap_hit": null,
+  "stdout_tail": "",
+  "stderr_tail": "timeout: failed to run command ‘./run.sh’: No such file or directory\n",
+  "files": []
+}

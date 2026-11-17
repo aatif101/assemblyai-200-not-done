@@ -1,0 +1,166 @@
+{
+  "task": "t3_british",
+  "condition": "skill+mcp",
+  "index": 0,
+  "kind": "pilot",
+  "model": "claude-sonnet-5-5",
+  "max_turns": 40,
+  "max_agent_seconds": 1200,
+  "max_budget_usd": null,
+  "skill_commit": "f584ec557e97ca9ce8151ec4d3b6e2ec8e3ade75",
+  "mcp": {
+    "mcpServers": {
+      "assemblyai-docs": {
+        "type": "http",
+        "url": "http://host.docker.internal:8765/docs/mcp"
+      }
+    }
+  },
+  "disallowed_tools": [
+    "WebSearch",
+    "WebFetch"
+  ],
+  "blocked_hosts": [
+    "www.assemblyai.com",
+    "assemblyai.com",
+    "github.com",
+    "www.github.com",
+    "raw.githubusercontent.com",
+    "api.github.com",
+    "codeload.github.com",
+    "objects.githubusercontent.com",
+    "gist.github.com",
+    "gist.githubusercontent.com"
+  ],
+  "credential_kind": [
+    "CLAUDE_CODE_OAUTH_TOKEN"
+  ],
+  "image": "twohundred-runner",
+  "image_digest": "sha256:07a03e522246ddc0cece43ce3c2abf7f4fdd712172e60f7d61999dcc34320f6a",
+  "started_at": "2026-11-15T09:29:31Z",
+  "claude_version": "2.1.296 (Claude Code)",
+  "agent": {
+    "result_event": true,
+    "model_reported": "claude-sonnet-5-5",
+    "tools": [
+      "Task",
+      "Bash",
+      "CronCreate",
+      "CronDelete",
+      "CronList",
+      "DesignSync",
+      "Edit",
+      "EnterWorktree",
+      "ExitWorktree",
+      "ListAgents",
+      "ListMcpResourcesTool",
+      "Monitor",
+      "NotebookEdit",
+      "PushNotification",
+      "Read",
+      "ReadMcpResourceDirTool",
+      "ReadMcpResourceTool",
+      "RemoteTrigger",
+      "ReportFindings",
+      "ScheduleWakeup",
+      "SendMessage",
+      "Skill",
+      "TaskStop",
+      "ToolSearch",
+      "Workflow",
+      "Write",
+      "mcp__assemblyai-docs__query_docs_filesystem_assembly_ai",
+      "mcp__assemblyai-docs__search_assembly_ai",
+      "mcp__assemblyai-docs__submit_feedback"
+    ],
+    "mcp_servers": [
+      {
+        "name": "assemblyai-docs",
+        "status": "connected",
+        "source": "dynamic"
+      }
+    ],
+    "skills": [
+      "assemblyai",
+      "deep-research",
+      "design",
+      "design-sync",
+      "dataviz",
+      "update-config",
+      "verify",
+      "debug",
+      "code-review",
+      "simplify",
+      "batch",
+      "fewer-permission-prompts",
+      "doctor",
+      "loop",
+      "schedule",
+      "claude-api",
+      "workflow-authoring",
+      "run",
+      "run-skill-generator",
+      "plugin-authoring"
+    ],
+    "subtype": "success",
+    "is_error": false,
+    "num_turns": 7,
+    "total_cost_usd": 0.0437988,
+    "duration_ms": 19630,
+    "usage": {
+      "input_tokens": 12,
+      "cache_creation_input_tokens": 3776,
+      "cache_read_input_tokens": 106608,
+      "output_tokens": 1801,
+      "output_tokens_details": {
+        "thinking_tokens": 61
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 3776,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 427,
+          "cache_read_input_tokens": 19666,
+          "cache_creation_input_tokens": 950,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 950
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "cap_hit": null,
+    "exit_code": 0,
+    "seconds": 22.8,
+    "stderr_tail": ""
+  },
+  "workspace_skipped": [
+    ".claude/skills/assemblyai/evals/evals.json",
+    ".claude/skills/assemblyai/references/api-reference.md",
+    ".claude/skills/assemblyai/references/audio-intelligence.md",
+    ".claude/skills/assemblyai/references/dictation.md",
+    ".claude/skills/assemblyai/references/js-sdk.md",
+    ".claude/skills/assemblyai/references/llm-gateway.md",
+    ".claude/skills/assemblyai/references/python-sdk.md",
+    ".claude/skills/assemblyai/references/speech-understanding.md",
+    ".claude/skills/assemblyai/references/streaming.md",
+    ".claude/skills/assemblyai/references/text-to-speech.md",
+    ".claude/skills/assemblyai/references/voice-agents.md",
+    ".claude/skills/assemblyai/SKILL.md",
+    "sample.wav"
+  ],
+  "ended_at": "2026-11-15T09:30:00Z",
+  "complete": true
+}

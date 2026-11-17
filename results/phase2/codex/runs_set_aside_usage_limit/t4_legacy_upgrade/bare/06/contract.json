@@ -1,0 +1,9 @@
+{
+  "exit_code": 1,
+  "timed_out": false,
+  "seconds": 6.1,
+  "cap_hit": null,
+  "stdout_tail": "",
+  "stderr_tail": "Traceback (most recent call last):\n  File \"/work/transcribe.py\", line 48, in <module>\n    main(sys.argv[1], sys.argv[2])\n  File \"/work/transcribe.py\", line 26, in main\n    transcript = aai.Transcriber().transcribe(audio_path, config=config)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/agent/.local/lib/python3.12/site-packages/assemblyai/transcriber.py\", line 1106, in transcribe\n    return self._impl.transcribe(\n           ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/agent/.local/lib/python3.12/site-packages/assemblyai/transcriber.py\", line 882, in transcribe\n    return self.transcribe_file(\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/agent/.local/lib/python3.12/site-packages/assemblyai/transcriber.py\", line 860, in transcribe_file\n    return self.transcribe_url(\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"/home/agent/.local/lib/python3.12/site-packages/assemblyai/transcriber.py\", line 839, in transcribe_url\n    response=api.create_transcript(\n             ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/agent/.local/lib/python3.12/site-packages/assemblyai/api.py\", line 45, in create_transcript\n    raise types.TranscriptError(\nassemblyai.types.TranscriptError: failed to transcribe url https://cdn.assemblyai.com/upload/[REDACTED:upload_id]/9d327b45-1686-4cff-bae5-7b54e7f62050: The speech_model parameter is deprecated. Use speech_models: [\"universal-3-5-pro\", \"universal-2\"] for the best accuracy, performance, and language coverage. See documentation: https://www.assemblyai.com/docs/pre-recorded-audio/select-the-speech-model\n",
+  "files": []
+}

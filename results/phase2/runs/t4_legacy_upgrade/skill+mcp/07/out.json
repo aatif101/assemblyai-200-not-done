@@ -1,0 +1,11 @@
+{
+  "transcript_id": "8b10026a-00fc-4cb0-b3ee-3acf180281dc",
+  "text": "Quick update for the team. The Quorvex dashboard ships on Thursday. Zyntrix Flow is still locked on the billing migration. And Talvanta onboarding moves to the next sprint. Please update the Quorvex release notes before the standup.",
+  "utterances": [
+    {
+      "speaker": "A",
+      "text": "Quick update for the team. The Quorvex dashboard ships on Thursday. Zyntrix Flow is still locked on the billing migration. And Talvanta onboarding moves to the next sprint. Please update the Quorvex release notes before the standup."
+    }
+  ],
+  "summary": "The Quorvex dashboard ships on Thursday with a pending reminder to update its release notes, while Zyntrix Flow remains locked due to billing migration and Talvanta onboarding is deferred to the next sprint."
+}

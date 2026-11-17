@@ -1,0 +1,69 @@
+{
+  "agent": {
+    "result_event": true,
+    "subtype": "success",
+    "num_turns": 9,
+    "usage": {
+      "input_tokens": 118449,
+      "cached_input_tokens": 103680,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 3204,
+      "reasoning_output_tokens": 263
+    },
+    "total_cost_usd": null,
+    "mcp_calls": 0,
+    "skill_read": false,
+    "errors": [],
+    "cap_hit": null,
+    "exit_code": 0,
+    "seconds": 97.2,
+    "stderr_tail": "WARNING: failed to clean up stale arg0 temp dirs: Permission denied (os error 13)\n"
+  },
+  "agent_cli": "codex",
+  "task": "t3_british",
+  "condition": "bare",
+  "index": 0,
+  "kind": "pilot",
+  "model": "gpt-6-astra",
+  "reasoning_effort": "medium",
+  "max_turns": 40,
+  "turn_rule": "completed tool items (command, file change, MCP call)",
+  "max_agent_seconds": 1200,
+  "skill_commit": null,
+  "skill_install": null,
+  "mcp_url": null,
+  "disabled_features": [
+    "apps",
+    "plugins",
+    "remote_plugin",
+    "browser_use",
+    "browser_use_external",
+    "computer_use",
+    "image_generation"
+  ],
+  "web_search": "disabled",
+  "blocked_hosts": [
+    "www.assemblyai.com",
+    "assemblyai.com",
+    "github.com",
+    "www.github.com",
+    "raw.githubusercontent.com",
+    "api.github.com",
+    "codeload.github.com",
+    "objects.githubusercontent.com",
+    "gist.github.com",
+    "gist.githubusercontent.com"
+  ],
+  "credential_kind": [
+    "codex auth.json (ChatGPT plan)"
+  ],
+  "image": "twohundred-runner",
+  "image_digest": "sha256:312068634ee9c6663fa8f097d85161ba94a43eec2e1a644d7ab66a284ecf05f3",
+  "started_at": "2026-11-15T22:08:19Z",
+  "codex_version": "codex-cli 0.169.0",
+  "workspace_skipped": [
+    "sample.wav"
+  ],
+  "ended_at": "2026-11-15T22:10:03Z",
+  "complete": true
+}
